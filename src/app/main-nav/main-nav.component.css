@@ -1,0 +1,9 @@
+.bg-yellow {
+  color: #CC120F;
+  background: linear-gradient(45deg, #F8C709, #fcf196);
+}
+
+.labelNav{
+  margin-top: 10px;
+  color: black;
+}

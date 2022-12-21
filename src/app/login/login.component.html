@@ -1,0 +1,89 @@
+<div class=" container-fluid px-1 px-md-2 px-lg-1 px-xl-2 py-2 mx-auto">
+  <div class=" card card0 border-0">
+    <div class=" row d-flex">
+      <div class="col-lg-6">
+        <div *ngIf="tipoFormularioLogin" class="card3 card  px-5 py-3 border-0">
+          <div class="row px-1 mb-2">
+            <div class="text-gray">Guias prepago</div>
+          </div>
+          <div class="row px-1 mb-4">
+            <div class="or text-md">Inicie sesión</div>
+          </div>
+          <div class="row px-3">
+            <input class="mb-4" type="text" name="email" placeholder="Ingrese su usuario">
+          </div>
+          <div class="row px-3">
+            <input class="mb-4" type="password" name="password" placeholder="Ingrese su contraseña">
+          </div>
+          <div class="row px-1 mb-4">
+            <a (click)="onGoToRecuperarPass()" class="ml-auto mb-0 text-sm">¿Olvidó su contraseña?</a>
+          </div>
+
+          <div class="row px-1 mb-4">
+            <a (click)="onGoToVencioPass()" class="ml-auto mb-0 text-sm">Su contraseña venció</a>
+          </div>
+
+          <div class="row mb-4 px-3">
+            <button type="submit" class="btn btn-blue text-center">Inicie sesión</button>
+          </div>
+        </div>
+
+
+        <div *ngIf="tipoFormularioVencioPass" class="card3 card  px-5 py-3 border-0">
+          <div class="row px-1 mb-2">
+            <div class="text-gray">Guias prepago</div>
+          </div>
+          <div class="row px-1 mb-4">
+            <div class="or text-md">Su contraseña venció</div>
+          </div>
+          <div class="row px-1 mb-2">
+            <div class="text-sm">Favor de ingresar una nueva.</div>
+          </div>
+          <div class="row px-3">
+            <input class="mb-4" type="password" name="email" placeholder="Contraseña anterior">
+          </div>
+          <div class="row px-3">
+            <input class="mb-4" type="password" name="password" placeholder="Nueva contraseña">
+          </div>
+          <div class="row px-3">
+            <input class="mb-4" type="password" name="password" placeholder="Confirmar contraseña">
+          </div>
+          <div class="row mb-4 px-3">
+            <button type="submit" (click)="onGoToLogin()" class="btn btn-blue text-center">Guardar contraseña</button>
+          </div>
+        </div>
+
+        <div *ngIf="tipoFormularioRecuperarPass" class="card3 card  px-5 py-3 border-0">
+          <div class="row px-1 mb-2">
+            <div class="text-gray">Guias prepago</div>
+          </div>
+          <div class="row px-1 mb-4">
+            <div class="or text-md">¿Olvidó su contraseña?</div>
+          </div>
+          <div class="row px-1 mb-4">
+            <div class="text-sm">Por favor ingresa el correo que tiene registrado, se le enviará un mensaje con las
+              indicaciones para restablecer su cuenta.</div>
+          </div>
+          <div class="row px-3">
+            <input class="mb-4" type="text" name="email" placeholder="Ingrese un correo registrado">
+          </div>
+          <div class="row mb-4 px-3">
+            <button type="submit" (click)="onGoToLogin()" class="btn btn-blue text-center">Enviar correo</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card1">
+
+          <div class="row justify-content-center border-line">
+            <img src="./assets/images/login/img_login-administrador.png">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
