@@ -25,6 +25,10 @@ import { ClientsComponent } from './modules/clients/clients.component';
 import { MainFooComponent } from './main-foo/main-foo.component';
 import { FormEditAddComponent } from './management/form-edit-add/form-edit-add.component';
 import { ProfileComponent } from './management/profile/profile.component';
+import { ManagementClientsComponent } from './modules/clients/management-clients/management-clients.component';
+import { FormEditAddClientComponent } from './modules/clients/management-clients/form-edit-add-client/form-edit-add-client.component';
+import { FormEditClientComponent } from './modules/clients/management-clients/form-edit-client/form-edit-client.component';
+import { FormDetailClientComponent } from './modules/clients/management-clients/form-detail-client/form-detail-client.component';
 
 
 
@@ -40,6 +44,10 @@ import { ProfileComponent } from './management/profile/profile.component';
     MainFooComponent,
     FormEditAddComponent,
     ProfileComponent,
+    ManagementClientsComponent,
+    FormEditAddClientComponent,
+    FormEditClientComponent,
+    FormDetailClientComponent,
 
   ],
   imports: [
