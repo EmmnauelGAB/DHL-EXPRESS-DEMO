@@ -41,8 +41,16 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/management">Administracion</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/clients">Clientes</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"
+              style="cursor: pointer;" translate> Clientes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item"  translate routerLink="/management-clients">Administracion Clientes</a>
+            <a class="dropdown-item"   translate routerLink="/management-clients">Administracion Guias</a>
+          </div>
+          
         </li>
       </ul>
     </div>
