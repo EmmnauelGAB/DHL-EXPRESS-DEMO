@@ -1,2 +1,120 @@
-<p>form-edit-add works!</p>
+<div class="container3">
+  <mat-card class="Text">
+    <mat-card-header color="warn">
+      <mat-card-title>Creacion de Usuario</mat-card-title>
+    </mat-card-header>
+  </mat-card>
+</div>
 
+
+<div class="container2">
+  <mat-card class="">
+    <mat-card-header class="redText">
+      <mat-card-title>Informacion de Usuario</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Realice los cambios necesarios y de clic en el botón guardar para que estos se registren en la base de datos
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+</div>
+
+<div class="contenedor1">
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Usuario">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Nombre completo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Correo electronico principal">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Correo electronico Secundario">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Numero de empleado">
+  </mat-form-field>
+</div>
+
+<div class="container2">
+  <mat-card class="">
+    <mat-card-header class="redText">
+      <mat-card-title>Tomar fotografía</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Como parte de nuestros procesos de verificación de información es necesario que se tome una fotografía (tipo
+        selfie). A continuación de clic en el botón siguiente y sonría!!</p>
+    </mat-card-content>
+  </mat-card>
+
+  <button mat-stroked-button class="casilla5">
+    <mat-icon color="warn">camera_enhance</mat-icon>
+    <mat-card class="">
+      <mat-card-header color="warn">
+        <mat-card-title> Abrir Camara</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </button>
+
+  <mat-card class="container2">
+    <mat-card-header class="redText">
+      <mat-card-title>Adjuntar documentación</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Como parte de nuestros procesos de verificación de información es necesario que se tome una fotografía (tipo selfie). A continuación de clic en el botón siguiente y sonría!!</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div style="text-align: center">
+  <button mat-stroked-button class="casilla ">
+    <mat-icon color="warn">contacts</mat-icon>
+    <mat-card class="">
+      <mat-card-header color="warn">
+        <mat-card-title> Identificación oficial</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </button>
+  <button mat-stroked-button class="casilla2 ">
+    <mat-icon color="warn">home</mat-icon>
+    <mat-card class="">
+      <mat-card-header color="warn">
+        <mat-card-title>RFC</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </button>
+</div>
+<div style="text-align: center">
+  <button mat-stroked-button class="casilla3 ">
+    <mat-icon color="warn">home</mat-icon>
+    <mat-card class="">
+      <mat-card-header color="warn">
+        <mat-card-title> CURP</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </button>
+  <button mat-stroked-button class="casilla4 ">
+    <mat-icon color="warn">home</mat-icon>
+    <mat-card class="">
+      <mat-card-header color="warn">
+        <mat-card-title>Comprobante de domicilio</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </button>
+</div>
+
+
+
+
+<div class="btns d-flex justify-content-between align-items-center">
+  <button mat-stroked-button color="warn" routerLink="/management">Cancelar</button>
+
+  <button mat-raised-button color="warn">Agregar Usuario</button>
+</div>

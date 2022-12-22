@@ -6,12 +6,10 @@ import { ClientsComponent } from './modules/clients/clients.component';
 import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
 import { FormEditAddComponent } from './management/form-edit-add/form-edit-add.component';
 
-
-
 const appRoutes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: HomeComponent },
-  { path: 'management', component: ManagementComponent },
+  { path: 'management', component: ManagementComponent},
   { path: 'form', component: FormEditAddComponent },
   { path: 'clients', component: ClientsComponent },
   { path: '**', component: PageNotFoundComponent },
