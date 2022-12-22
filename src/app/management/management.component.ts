@@ -11,7 +11,7 @@ import {MatTableDataSource} from '@angular/material/table';
 export class ManagementComponent implements AfterViewInit {
 
   search : String ="";
-  displayedColumns: string[] = ['position', 'name', 'lastname', 'lastname2', 'email', 'perfil', 'accion'];
+  displayedColumns: string[] = ['position', 'name', 'email', 'perfil', 'accion'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator)

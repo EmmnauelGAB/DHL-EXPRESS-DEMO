@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing } from "./app.routing";
 
@@ -12,6 +12,8 @@ import { MatIconModule } from '@angular/material/icon'
 import { ReactiveFormsModule } from '@angular/forms';
 
 
+
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -22,6 +24,7 @@ import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.c
 import { ClientsComponent } from './modules/clients/clients.component';
 import { MainFooComponent } from './main-foo/main-foo.component';
 import { FormEditAddComponent } from './management/form-edit-add/form-edit-add.component';
+import { ProfileComponent } from './management/profile/profile.component';
 
 
 
@@ -36,6 +39,7 @@ import { FormEditAddComponent } from './management/form-edit-add/form-edit-add.c
     ClientsComponent,
     MainFooComponent,
     FormEditAddComponent,
+    ProfileComponent,
 
   ],
   imports: [
@@ -51,10 +55,10 @@ import { FormEditAddComponent } from './management/form-edit-add/form-edit-add.c
     MatIconModule,
     routing,
     ReactiveFormsModule,
-
   ],
-
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
 })
 export class AppModule { }
