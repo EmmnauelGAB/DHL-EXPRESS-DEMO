@@ -23,7 +23,12 @@ table  {
   }
   
   .addUser{
-    
+    background-color: #CC120F;
+    color: #ffffff;
     float: right;
+  }
+
+  .titulo {
+    color: #000000;
   }
   

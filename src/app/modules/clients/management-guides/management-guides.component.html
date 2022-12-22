@@ -1,0 +1,165 @@
+
+  
+  <div class="mat-elevation-z8">
+    <div>
+      <div class="buscar titulo">
+        <h2><b>Administrar Guias</b></h2>
+   </div>
+
+  
+    </div>
+    <div *ngIf="viewTablaODC">    
+        <div class="buscar"> <b>ORDENES DE COMPRA</b> </div> 
+    <table mat-table [dataSource]="dataSource" #tabla1>
+      <!-- Position Column -->
+      <ng-container matColumnDef="folio">
+        <th mat-header-cell *matHeaderCellDef> Folio </th>
+        <td mat-cell *matCellDef="let element"> {{element.folio}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="fechaCaducidad">
+        <th mat-header-cell *matHeaderCellDef> Fecha Caducidad </th>
+        <td mat-cell *matCellDef="let element"> {{element.fechaCaducidad}} </td>
+      </ng-container>
+  
+         <!-- Name Column -->
+         <ng-container matColumnDef="totalGuias">
+            <th mat-header-cell *matHeaderCellDef> TotalGuias </th>
+            <td mat-cell *matCellDef="let element"> {{element.totalGuias}} </td>
+          </ng-container>
+
+             <!-- Name Column -->
+      <ng-container matColumnDef="guiasUsadas">
+        <th mat-header-cell *matHeaderCellDef> Guias Usadas </th>
+        <td mat-cell *matCellDef="let element"> {{element.guiasUsadas}} </td>
+      </ng-container>
+      
+     <!-- email Column -->
+      <ng-container matColumnDef="guiasAsignadas">
+        <th mat-header-cell *matHeaderCellDef> GuiasAsignadas </th>
+        <td mat-cell *matCellDef="let element"> {{element.guiasAsignadas}} </td>
+      </ng-container>
+  
+      <!-- perfil Column -->
+      <ng-container matColumnDef="guiasDisponibles">
+        <th mat-header-cell *matHeaderCellDef> Guias Disponibles </th>
+        <td mat-cell *matCellDef="let element"> {{element.guiasDisponibles}} </td>
+      </ng-container>
+  
+      <!-- accion Column-->
+      <ng-container matColumnDef="accion">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let j = index;">
+          <section>
+            <div class="example-button-row">
+              <div class="example-flex-container">
+                <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" (click)="mostrarTablaProductosDisponibles()">
+                  <mat-icon>edit</mat-icon>
+                </button>        
+              </div>
+            </div>
+          </section>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator class="paginator" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+
+<div *ngIf="viewTablaProductosDisponibles">
+    <div  class="buscar">
+        <div> <b>ELIJA UN SUBUSUARIO</b> </div> 
+     
+      <mat-form-field>
+          <input matInput type="text" placeholder="Selecciona Usuario" value="Juan Alonso Mtz">
+         
+        </mat-form-field>
+        <label> Folio de Orden de compra : 10000990</label>
+    </div>
+    <div>
+      <div class="buscar">
+       
+        <div> <b>CAPTURAR GUÍAS A ASIGNAR - PRODUCTOS DISPONIBLES</b> </div> 
+      </div>
+    </div>
+    
+
+    <table mat-table [dataSource]="dataSource2" #tabla>
+      <!-- Position Column -->
+      <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef> descripcion </th>
+        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="guiasTotales">
+        <th mat-header-cell *matHeaderCellDef> Guias Totales </th>
+        <td mat-cell *matCellDef="let element"> {{element.guiasTotales}} </td>
+      </ng-container>
+  
+         <!-- Name Column -->
+         <ng-container matColumnDef="guiasAsignadasDisponibles">
+            <th mat-header-cell *matHeaderCellDef> Guias Asignadas Disponibles </th>
+            <td mat-cell *matCellDef="let element"> {{element.guiasAsignadasDisponibles}} </td>
+          </ng-container>
+
+             <!-- Name Column -->
+      <ng-container matColumnDef="guiasAsignadasImpresas">
+        <th mat-header-cell *matHeaderCellDef> Guias Asignadas e Impresas </th>
+        <td mat-cell *matCellDef="let element"> {{element.guiasAsignadasImpresas}} </td>
+      </ng-container>
+      
+     <!-- email Column -->
+      <ng-container matColumnDef="guiasDisponiblesAsignar">
+        <th mat-header-cell *matHeaderCellDef> Guias Disponibles Para Asignar </th>
+        <td mat-cell *matCellDef="let element"> {{element.guiasDisponiblesAsignar}} </td>
+      </ng-container>
+  
+
+  
+      <!-- accion Column-->
+ 
+      <ng-container matColumnDef="guiasAsignar">
+        <th mat-header-cell *matHeaderCellDef>Guias a Asignar</th>
+        <td mat-cell *matCellDef="let j = index;">
+          <section>
+           
+            <mat-form-field>
+                <input matInput type="text" value="0">
+            </mat-form-field>
+              
+          </section>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="guiasDesasignar">
+        <th mat-header-cell *matHeaderCellDef>Guias a Desasignar</th>
+        <td mat-cell *matCellDef="let j = index;">
+          <section>
+            <mat-form-field>
+                <input matInput type="text" value="0">
+            </mat-form-field>
+          </section>
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+      
+    </table>
+
+    <div class="btns d-flex justify-content-between align-items-center">
+        <button class="but" mat-stroked-button (click)="ocultarTablaProductosDisponibles()">Cancelar</button>
+      
+        <button class="but" mat-raised-button  (click)="ocultarTablaProductosDisponibles()">Guardar Cambios</button>
+      </div>
+      
+    <br/>
+</div>
+  </div>
+  
+  

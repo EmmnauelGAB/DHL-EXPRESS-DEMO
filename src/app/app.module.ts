@@ -29,6 +29,7 @@ import { ManagementClientsComponent } from './modules/clients/management-clients
 import { FormEditAddClientComponent } from './modules/clients/management-clients/form-edit-add-client/form-edit-add-client.component';
 import { FormEditClientComponent } from './modules/clients/management-clients/form-edit-client/form-edit-client.component';
 import { FormDetailClientComponent } from './modules/clients/management-clients/form-detail-client/form-detail-client.component';
+import { ManagementGuidesComponent } from './modules/clients/management-guides/management-guides.component';
 
 
 
@@ -48,6 +49,7 @@ import { FormDetailClientComponent } from './modules/clients/management-clients/
     FormEditAddClientComponent,
     FormEditClientComponent,
     FormDetailClientComponent,
+    ManagementGuidesComponent,
 
   ],
   imports: [
