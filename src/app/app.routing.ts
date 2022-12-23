@@ -14,10 +14,14 @@ import { ManagementGuidesV2Component } from './modules/clients/management-guides
 import { FormEditGuideComponent } from './modules/clients/management-guides-v2/form-edit-guide/form-edit-guide.component';
 import { FormDetailGuideComponent } from './modules/clients/management-guides-v2/form-detail-guide/form-detail-guide.component';
 import { FormAddGuideComponent } from './modules/clients/management-guides-v2/form-add-guide/form-add-guide.component';
+
+import { ManagementOdcComponent } from './modules/clients/management-odc/management-odc.component';
+
 import { ProfileComponent } from './management/profile/profile.component';
 import { FormEditComponent } from './management/form-edit/form-edit.component';
 import { ProfileAddComponent } from './management/profile/profile-add/profile-add.component';
 import { ProfileEditComponent } from './management/profile/profile-edit/profile-edit.component';
+
 
 const appRoutes = [
   { path: 'login', component: LoginComponent },
@@ -38,6 +42,7 @@ const appRoutes = [
   { path: 'formAddGuide', component: FormAddGuideComponent },
   { path: 'formEditGuide', component: FormEditGuideComponent },
   { path: 'formDetailGuide', component: FormDetailGuideComponent },
+  { path: 'management-odc', component: ManagementOdcComponent },
   { path: '**', component: PageNotFoundComponent },
 
 ];
