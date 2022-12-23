@@ -68,3 +68,12 @@
   color: #000000;
   font-size: 2rem;
 }
+
+.btnRed{
+  background-color: #D40511;
+  color: #ffffff;
+  float: right;
+}
+mat-icon{
+  color: #D40511;
+}
