@@ -1,20 +1,17 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit,  ViewChild } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {ThemePalette} from '@angular/material/core';
 
 
 @Component({
-  selector: 'app-management',
-  templateUrl: './management.component.html',
-  styleUrls: ['./management.component.css']
+  selector: 'app-profile-add',
+  templateUrl: './profile-add.component.html',
+  styleUrls: ['./profile-add.component.css']
 })
-export class ManagementComponent implements AfterViewInit {
-
-
-
+export class ProfileAddComponent implements AfterViewInit  {
   search : String ="";
-  displayedColumns: string[] = ['position', 'name', 'email', 'perfil', 'accion'];
+  displayedColumns: string[] = ['Select', 'perfil'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator)
@@ -23,25 +20,7 @@ export class ManagementComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
-
-  // constructor(public dialog: MatDialog) {}
-
-  // openDialog() {
-  //   const dialogRef = this.dialog.open(DialogContentExampleDialog);
-
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log(`Dialog result: ${result}`);
-  //   });
-  // }
-
 }
-@Component({
-  selector: 'management.component-dialog',
-  templateUrl: './management.component-dialog.html',
-})
-export class DialogContentExampleDialog {
-}
-
 export interface PeriodicElement {
   position: number;
   name: string;
@@ -853,4 +832,3 @@ const ELEMENT_DATA: PeriodicElement[] = [
     perfil: 'Nascetur Ridiculus Mus PC',
   },
 ];
-

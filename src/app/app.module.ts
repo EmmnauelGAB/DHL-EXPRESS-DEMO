@@ -34,7 +34,13 @@ import { ManagementGuidesV2Component } from './modules/clients/management-guides
 import { FormEditGuideComponent } from './modules/clients/management-guides-v2/form-edit-guide/form-edit-guide.component';
 import { FormDetailGuideComponent } from './modules/clients/management-guides-v2/form-detail-guide/form-detail-guide.component';
 import { FormAddGuideComponent } from './modules/clients/management-guides-v2/form-add-guide/form-add-guide.component';
+
 import { ManagementOdcComponent } from './modules/clients/management-odc/management-odc.component';
+
+import { FormEditComponent } from './management/form-edit/form-edit.component';
+import { ProfileAddComponent } from './management/profile/profile-add/profile-add.component';
+import { ProfileEditComponent } from './management/profile/profile-edit/profile-edit.component';
+
 
 
 
@@ -59,7 +65,13 @@ import { ManagementOdcComponent } from './modules/clients/management-odc/managem
     FormEditGuideComponent,
     FormDetailGuideComponent,
     FormAddGuideComponent,
+
     ManagementOdcComponent,
+
+    FormEditComponent,
+    ProfileAddComponent,
+    ProfileEditComponent
+
 
   ],
   imports: [

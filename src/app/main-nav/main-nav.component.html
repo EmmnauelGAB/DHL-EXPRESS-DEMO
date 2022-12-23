@@ -38,8 +38,15 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="">Inicio</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/management">Administracion</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"
+              style="cursor: pointer;" translate> Administracion
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item"  translate routerLink="/management">Administracion Usuarios</a>
+            <a class="dropdown-item"  translate routerLink="/profile">Perfil</a>
+          </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -53,7 +60,7 @@
             <a class="dropdown-item"   translate routerLink="/management-guides2">Administración Guías</a>
             <a class="dropdown-item"   translate >Manual de Usuario</a>
           </div>
-          
+
         </li>
       </ul>
     </div>
