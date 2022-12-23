@@ -1,6 +1,8 @@
 table  {
     width: 90%;
     margin:1rem auto;
+    border-top: 2px solid #999999 !important;
+    border-bottom: 2px solid #999999 !important;
   }
   
   .contenedor {
@@ -63,4 +65,9 @@ table  {
     background-color: #CC120F;
     color: #ffffff;
     float: right;
+  }
+
+  .redText{
+    color: #D40511;
+    font-size: 17px;;
   }

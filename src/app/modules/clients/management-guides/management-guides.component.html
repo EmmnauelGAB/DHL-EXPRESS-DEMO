@@ -2,54 +2,55 @@
   
   <div class="mat-elevation-z8">
     <div>
-      <div class="buscar titulo">
-        <h2><b>Administrar Guias</b></h2>
+      <div class="buscar titulo pt-3">
+        <p>Cliente > Generar y desasignar Guías a partir de ODC</p>
+        <h1 class="pt-3"><b>Generar y desasignar Guías a partir de ODC</b></h1>
    </div>
 
   
     </div>
     <div *ngIf="viewTablaODC">    
-        <div class="buscar"> <b>ORDENES DE COMPRA</b> </div> 
+        <div class=" redText buscar pt-3"> <b>Ordenes de Compra</b> </div> 
     <table mat-table [dataSource]="dataSource" #tabla1>
       <!-- Position Column -->
       <ng-container matColumnDef="folio">
-        <th mat-header-cell *matHeaderCellDef> Folio </th>
+        <th mat-header-cell *matHeaderCellDef> <b> Folio  </b></th>
         <td mat-cell *matCellDef="let element"> {{element.folio}} </td>
       </ng-container>
   
       <!-- Name Column -->
       <ng-container matColumnDef="fechaCaducidad">
-        <th mat-header-cell *matHeaderCellDef> Fecha Caducidad </th>
+        <th mat-header-cell *matHeaderCellDef> <b>Fecha Caducidad </b></th>
         <td mat-cell *matCellDef="let element"> {{element.fechaCaducidad}} </td>
       </ng-container>
   
          <!-- Name Column -->
          <ng-container matColumnDef="totalGuias">
-            <th mat-header-cell *matHeaderCellDef> TotalGuias </th>
+            <th mat-header-cell *matHeaderCellDef> <b>Total Guías </b></th>
             <td mat-cell *matCellDef="let element"> {{element.totalGuias}} </td>
           </ng-container>
 
              <!-- Name Column -->
       <ng-container matColumnDef="guiasUsadas">
-        <th mat-header-cell *matHeaderCellDef> Guias Usadas </th>
+        <th mat-header-cell *matHeaderCellDef> <b>Guías Usadas </b></th>
         <td mat-cell *matCellDef="let element"> {{element.guiasUsadas}} </td>
       </ng-container>
       
      <!-- email Column -->
       <ng-container matColumnDef="guiasAsignadas">
-        <th mat-header-cell *matHeaderCellDef> GuiasAsignadas </th>
+        <th mat-header-cell *matHeaderCellDef> <b>Guías Asignadas </b></th>
         <td mat-cell *matCellDef="let element"> {{element.guiasAsignadas}} </td>
       </ng-container>
   
       <!-- perfil Column -->
       <ng-container matColumnDef="guiasDisponibles">
-        <th mat-header-cell *matHeaderCellDef> Guias Disponibles </th>
+        <th mat-header-cell *matHeaderCellDef> <b>Guísas Disponibles </b></th>
         <td mat-cell *matCellDef="let element"> {{element.guiasDisponibles}} </td>
       </ng-container>
   
       <!-- accion Column-->
       <ng-container matColumnDef="accion">
-        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <th mat-header-cell *matHeaderCellDef><b>Acciones</b></th>
         <td mat-cell *matCellDef="let j = index;">
           <section>
             <div class="example-button-row">
@@ -71,18 +72,18 @@
 
 <div *ngIf="viewTablaProductosDisponibles">
     <div  class="buscar">
-        <div> <b>ELIJA UN SUBUSUARIO</b> </div> 
+        <div class="redText pt-3"> <b>Elija un subusuario</b> </div> 
      
-      <mat-form-field>
+      <mat-form-field class="pt-4">
           <input matInput type="text" placeholder="Selecciona Usuario" value="Juan Alonso Mtz">
          
         </mat-form-field>
         <label> Folio de Orden de compra : 10000990</label>
     </div>
     <div>
-      <div class="buscar">
+      <div class="buscar redText pt-3">
        
-        <div> <b>CAPTURAR GUÍAS A ASIGNAR - PRODUCTOS DISPONIBLES</b> </div> 
+        <div> <b>Capturar Guías a Asignar - Productos Disponibles</b> </div> 
       </div>
     </div>
     
@@ -90,31 +91,31 @@
     <table mat-table [dataSource]="dataSource2" #tabla>
       <!-- Position Column -->
       <ng-container matColumnDef="descripcion">
-        <th mat-header-cell *matHeaderCellDef> descripcion </th>
+        <th mat-header-cell *matHeaderCellDef> <b> Descripción </b></th>
         <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
       </ng-container>
   
       <!-- Name Column -->
       <ng-container matColumnDef="guiasTotales">
-        <th mat-header-cell *matHeaderCellDef> Guias Totales </th>
+        <th mat-header-cell *matHeaderCellDef> <b>Guías Totales </b></th>
         <td mat-cell *matCellDef="let element"> {{element.guiasTotales}} </td>
       </ng-container>
   
          <!-- Name Column -->
          <ng-container matColumnDef="guiasAsignadasDisponibles">
-            <th mat-header-cell *matHeaderCellDef> Guias Asignadas Disponibles </th>
+            <th mat-header-cell *matHeaderCellDef> <b> Guías Asignadas Disponibles </b> </th>
             <td mat-cell *matCellDef="let element"> {{element.guiasAsignadasDisponibles}} </td>
           </ng-container>
 
              <!-- Name Column -->
       <ng-container matColumnDef="guiasAsignadasImpresas">
-        <th mat-header-cell *matHeaderCellDef> Guias Asignadas e Impresas </th>
+        <th mat-header-cell *matHeaderCellDef> <b>Guías Asignadas e Impresas </b> </th>
         <td mat-cell *matCellDef="let element"> {{element.guiasAsignadasImpresas}} </td>
       </ng-container>
       
      <!-- email Column -->
       <ng-container matColumnDef="guiasDisponiblesAsignar">
-        <th mat-header-cell *matHeaderCellDef> Guias Disponibles Para Asignar </th>
+        <th mat-header-cell *matHeaderCellDef> <b>Guías Disponibles Para Asignar </b></th>
         <td mat-cell *matCellDef="let element"> {{element.guiasDisponiblesAsignar}} </td>
       </ng-container>
   
@@ -123,7 +124,7 @@
       <!-- accion Column-->
  
       <ng-container matColumnDef="guiasAsignar">
-        <th mat-header-cell *matHeaderCellDef>Guias a Asignar</th>
+        <th mat-header-cell *matHeaderCellDef><b>Guias a Asignar</b></th>
         <td mat-cell *matCellDef="let j = index;">
           <section>
            
@@ -136,7 +137,7 @@
       </ng-container>
 
       <ng-container matColumnDef="guiasDesasignar">
-        <th mat-header-cell *matHeaderCellDef>Guias a Desasignar</th>
+        <th mat-header-cell *matHeaderCellDef> <b>Guías a Desasignar</b></th>
         <td mat-cell *matCellDef="let j = index;">
           <section>
             <mat-form-field>
@@ -153,7 +154,7 @@
     </table>
 
     <div class="btns d-flex justify-content-between align-items-center">
-        <button class="but" mat-stroked-button (click)="ocultarTablaProductosDisponibles()">Cancelar</button>
+        <button  mat-stroked-button (click)="ocultarTablaProductosDisponibles()">Cancelar</button>
       
         <button class="but" mat-raised-button  (click)="ocultarTablaProductosDisponibles()">Guardar Cambios</button>
       </div>
