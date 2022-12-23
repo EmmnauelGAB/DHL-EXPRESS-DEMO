@@ -99,10 +99,17 @@ export interface ProductosDisponibles {
 
 const ELEMENT_DATA2: ProductosDisponibles[] = [
   {
-    descripcion: 'Documento 1G',
+    descripcion: 'Documento 1KG',
     guiasTotales: '100',
     guiasAsignadasDisponibles: '0',
     guiasAsignadasImpresas: '0',
+    guiasDisponiblesAsignar: '71',
+  },
+  {
+    descripcion: 'Documento 2KG',
+    guiasTotales: '200',
+    guiasAsignadasDisponibles: '2',
+    guiasAsignadasImpresas: '3',
     guiasDisponiblesAsignar: '71',
   },
 ];
