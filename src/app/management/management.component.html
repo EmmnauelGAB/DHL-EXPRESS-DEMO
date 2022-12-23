@@ -1,19 +1,4 @@
-<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="./assets/images/adminIMG/banner_admin.png" alt="First slide">
-      <div class="container">
-        <div class="carousel-caption text-start">
-          <h1>Example headline.</h1>
-          <p>Some representative placeholder content for the first slide of the carousel.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-
-<div class="mat-elevation-z8">
   <div>
     <div class="buscar">
       <h1>Administrar Usuarios</h1>
@@ -46,18 +31,6 @@
       <td mat-cell *matCellDef="let element"> {{element.name}} </td>
     </ng-container>
 
-    <!-- lastname Column
-    <ng-container matColumnDef="lastname">
-      <th mat-header-cell *matHeaderCellDef> Apellido Paterno </th>
-      <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
-    </ng-container>
-
-    lastname2 Column
-    <ng-container matColumnDef="lastname2">
-      <th mat-header-cell *matHeaderCellDef> Apellido Materno </th>
-      <td mat-cell *matCellDef="let element"> {{element.lastname2}} </td>
-    </ng-container>-->
-
     <!-- email Column -->
     <ng-container matColumnDef="email">
       <th mat-header-cell *matHeaderCellDef> Correo Primario </th>
@@ -77,10 +50,11 @@
         <section>
           <div class="example-button-row">
             <div class="example-flex-container">
-              <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" routerLink="/form">
+              <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" routerLink="/form-edit">
                 <mat-icon>edit</mat-icon>
               </button>
               <button mat-icon-button color="warn" aria-label="Example icon button with a menu icon">
+                <!-- <button mat-icon-button color="warn" aria-label="Example icon button with a menu icon" (click)="openDialog()"></button> -->
                 <mat-icon>delete_outline</mat-icon>
               </button>
             </div>
@@ -93,4 +67,4 @@
   </table>
   <mat-paginator class="paginator" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
   </mat-paginator>
-</div>
+
