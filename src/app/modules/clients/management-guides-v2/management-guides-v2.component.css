@@ -1,0 +1,53 @@
+table  {
+    width: 90%;
+    margin:1rem auto;
+    border-top: 2px solid #999999 !important;
+    border-bottom: 2px solid #999999 !important;
+  }
+  
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    margin:1rem auto;
+    max-width: 600px;
+    box-shadow: -1px 3px 66px 0px rgba(0,0,0,0.75);
+    padding: 1rem;
+  }
+  
+  .buscar{
+    width: 87%;
+    top: 50%;
+    margin:1rem auto;
+  }
+  
+
+  .paginator{
+    width: 90%;
+  }
+  
+  .addUser{
+    background-color: #CC120F;
+    color: #ffffff;
+    float: right;
+  }
+
+  .titulo {
+    color: #000000;
+  }
+  
+
+  .iconRed{
+    color: #CC120F;
+  }
+
+  .iconYellow{
+    color: #F8C709;
+  }
+
+  .iconBlue{
+    color: #0f90cc;
+  }
+
+ 
+  
+

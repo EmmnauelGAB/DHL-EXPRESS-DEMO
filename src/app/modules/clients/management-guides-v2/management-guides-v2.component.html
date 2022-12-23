@@ -1,0 +1,92 @@
+<div class="mat-elevation-z8">
+    <div>
+      <div class="buscar titulo pt-2">
+        <p>Cliente > Administrar Guías</p>
+        <h1 class="pt-2"><b>Administrar Guías</b></h1>
+        <form class="example-form pt-2">
+          <mat-form-field color="red" class="example-full-width" appearance="outline">
+            <span matPrefix> </span>
+            <button class="iconRed" matPrefix mat-button><mat-icon>search</mat-icon></button>
+            <input type="tel" matInput placeholder="Buscar" name="search" [(ngModel)]="search">            
+          </mat-form-field>
+  
+          <button class="addUser" mat-raised-button routerLink="/formAddGuide" aria-label="Example icon button with a menu icon">
+            Agregar Guía
+          </button>
+          <br />
+          {{search}}
+        </form>
+      </div>
+    </div>
+  
+  
+
+    <table mat-table [dataSource]="dataSource" #tabla1>
+      <!-- Position Column -->
+      <ng-container matColumnDef="numeroGuia">
+        <th mat-header-cell *matHeaderCellDef> <b> Número de Guía </b> </th>
+        <td mat-cell *matCellDef="let element"> {{element.numeroGuia}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="odcAsociado">
+        <th mat-header-cell *matHeaderCellDef> <b>  ODC Asociado </b></th>
+        <td mat-cell *matCellDef="let element"> {{element.odcAsociado}} </td>
+      </ng-container>
+  
+         <!-- Name Column -->
+         <ng-container matColumnDef="nombreContacto">
+            <th mat-header-cell *matHeaderCellDef> <b>  Nombre de Contacto </b></th>
+            <td mat-cell *matCellDef="let element"> {{element.nombreContacto}} </td>
+          </ng-container>
+
+             <!-- Name Column -->
+      <ng-container matColumnDef="remitente">
+        <th mat-header-cell *matHeaderCellDef> <b> Remitente </b> </th>
+        <td mat-cell *matCellDef="let element"> {{element.remitente}} </td>
+      </ng-container>
+      
+    
+      <!-- email Column -->
+      <ng-container matColumnDef="destinatario">
+        <th mat-header-cell *matHeaderCellDef> <b>Destinatario </b> </th>
+        <td mat-cell *matCellDef="let element"> {{element.destinatario}} </td>
+      </ng-container>
+  
+        <!-- email Column -->
+        <ng-container matColumnDef="campo6">
+            <th mat-header-cell *matHeaderCellDef> <b>Campo 6 </b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.campo6}} </td>
+     </ng-container>
+  
+          
+      <!-- accion Column-->
+      <ng-container matColumnDef="accion">
+        <th mat-header-cell *matHeaderCellDef class="text-center"> <b>Acciones </b></th>
+        <td mat-cell *matCellDef="let j = index;">
+          <section>
+            <div class="example-button-row text-center">
+              <div class="example-flex-container center">
+                <button mat-icon-button class="iconBlue" aria-label="Example icon button with a home icon" routerLink="/formEditGuide">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                
+                <button mat-icon-button class="iconRed" aria-label="Example icon button with a menu icon">
+                  <mat-icon>delete_outline</mat-icon>
+                </button>
+
+                <button mat-icon-button class="iconYellow" aria-label="Example icon button with a home icon" routerLink="/formDetailGuide">
+                  <mat-icon>search</mat-icon>
+                </button>
+              </div>
+            </div>
+          </section>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator class="paginator" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+  

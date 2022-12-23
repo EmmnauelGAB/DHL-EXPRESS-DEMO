@@ -30,6 +30,10 @@ import { FormEditAddClientComponent } from './modules/clients/management-clients
 import { FormEditClientComponent } from './modules/clients/management-clients/form-edit-client/form-edit-client.component';
 import { FormDetailClientComponent } from './modules/clients/management-clients/form-detail-client/form-detail-client.component';
 import { ManagementGuidesComponent } from './modules/clients/management-guides/management-guides.component';
+import { ManagementGuidesV2Component } from './modules/clients/management-guides-v2/management-guides-v2.component';
+import { FormEditGuideComponent } from './modules/clients/management-guides-v2/form-edit-guide/form-edit-guide.component';
+import { FormDetailGuideComponent } from './modules/clients/management-guides-v2/form-detail-guide/form-detail-guide.component';
+import { FormAddGuideComponent } from './modules/clients/management-guides-v2/form-add-guide/form-add-guide.component';
 
 
 
@@ -50,6 +54,10 @@ import { ManagementGuidesComponent } from './modules/clients/management-guides/m
     FormEditClientComponent,
     FormDetailClientComponent,
     ManagementGuidesComponent,
+    ManagementGuidesV2Component,
+    FormEditGuideComponent,
+    FormDetailGuideComponent,
+    FormAddGuideComponent,
 
   ],
   imports: [
