@@ -79,14 +79,14 @@ transform: translateY(-50%);
 .line {
   height: 3px;
   width: 10%;
-  background-color: #CC120F;
+  background-color: #D40511;
   margin-top: 10px;
 }
 
 .or {
   width: 80%;
   font-weight: bold;
-  color: #CC120F;
+  color: #D40511;
 }
 
 .text-gray {
@@ -138,7 +138,7 @@ input:focus, textarea:focus {
   -moz-box-shadow: none !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  border: 2px solid #CC120F;
+  border: 2px solid #D40511;
   outline-width: 0;
 }
 
@@ -155,7 +155,7 @@ a {
 }
 
 .btn-blue {
-  background-color: #CC120F;
+  background-color: #D40511;
   width: 500px;
   color: #fff;
   border-radius: 5px;
@@ -167,13 +167,13 @@ a {
 }
 
 .bg-yellow {
-  color: #CC120F;
+  color: #D40511;
   background: linear-gradient(45deg, #F8C709, #fcf196);
 }
 
 .bg-red {
   color: #fff;
-  background-color: #CC120F;
+  background-color: #D40511;
 }
 
 @media screen and (max-width: 991px) {
