@@ -54,7 +54,7 @@ table  {
     display: flex;
     flex-direction: row;
     margin:2rem auto;
-    max-width: 250px;
+    max-width: 350px;
   }
 
   .titulo {
@@ -62,9 +62,10 @@ table  {
   }
 
   .but{
-    background-color: #CC120F;
+    background-color: #D40511;
     color: #ffffff;
     float: right;
+    margin-right: 1rem;
   }
 
   .redText{
