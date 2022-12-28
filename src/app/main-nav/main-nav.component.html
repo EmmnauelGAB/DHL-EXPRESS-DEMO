@@ -1,69 +1,64 @@
-<div class="bg-yellow d-flex ">
 
-</div>
 <!-- Navbar -->
-<nav class="navbar bg-yellow">
-  <div class="container-fluid">
-    <div class="col-lg-2">
-      <div class="row px-3 py-2">
-        <img src="./assets/images/login/DHL_logo_rgb.png" routerLink="">
-      </div>
-    </div>
-    <form class="d-flex" role="search">
-
-
-      <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" >
-        <mat-icon>language</mat-icon>
-      </button>
-      <div class="labelNav">País</div>
-      <button mat-icon-button aria-label="Example icon button with a home icon" routerLink="/login">
-        <mat-icon>person</mat-icon>
-      </button>
-      <div class="labelNav" >User</div>
-
-      <div class="example-button-row">
-        <div class="example-flex-container">
-
-
-
+<div class="sticky-top">
+  <nav class="navbar  bg-yellow">
+    <div class="container-fluid">
+      <div class="col-lg-2">
+        <div class="row px-3 py-2">
+          <img src="./assets/images/login/DHL_logo_rgb.png" routerLink="">
         </div>
       </div>
-    </form>
-  </div>
-</nav>
-<nav class="navbar navbar-expand-lg bg-yellow">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="">Inicio</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false"
-              style="cursor: pointer;" translate> Administracion
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item"  translate routerLink="/management">Administracion Usuarios</a>
-            <a class="dropdown-item"  translate routerLink="/profile">Perfil</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false"
-              style="cursor: pointer;" translate> Clientes
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item"  translate routerLink="/management-clients">Administracion Clientes</a>
-            <a class="dropdown-item"  translate routerLink="/management-odc">Generar ODC</a>
-            <a class="dropdown-item"  translate routerLink="/management-guides">Generar Guías a partir de ODC</a>
-            <a class="dropdown-item"   translate routerLink="/management-guides2">Administración Guías</a>
-            <a class="dropdown-item"   translate >Manual de Usuario</a>
-          </div>
+      <form class="d-flex" role="search">
+        <button mat-icon-button aria-label="" >
+          <mat-icon>language</mat-icon>
+        </button>
+        <div class="labelNav">País</div>
+        <button mat-icon-button aria-label="" routerLink="/login">
+          <mat-icon>person</mat-icon>
+        </button>
+        <div class="labelNav" >User</div>
 
-        </li>
-      </ul>
+        <div class="example-button-row">
+          <div class="example-flex-container">
+          </div>
+        </div>
+      </form>
     </div>
-  </div>
-</nav>
+  </nav>
+  <nav class="navbar navbar-expand-lg bg-yellow">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">Inicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false"
+                style="cursor: pointer;" translate> Administracion
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item"  translate routerLink="/management">Administracion Usuarios</a>
+              <a class="dropdown-item"  translate routerLink="/profile">Perfil</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false"
+                style="cursor: pointer;" translate> Clientes
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item"  translate routerLink="/management-clients">Administracion Clientes</a>
+              <a class="dropdown-item"  translate routerLink="/management-odc">Generar ODC</a>
+              <a class="dropdown-item"  translate routerLink="/management-guides">Generar Guías a partir de ODC</a>
+              <a class="dropdown-item"   translate routerLink="/management-guides2">Administración Guías</a>
+              <a class="dropdown-item"   translate >Manual de Usuario</a>
+            </div>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
 <!-- Navbar -->
