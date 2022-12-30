@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
-import Stepper from 'bs-stepper';
 import {StepperOrientation} from '@angular/material/stepper';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
@@ -38,11 +37,7 @@ export class BuyGuidesComponent implements OnInit {
   formPhoneGroup : FormGroup;
 
   name = 'Angular';
-  private stepper: Stepper;
 
-  next() {
-    this.stepper.next();
-  }
 
   onSubmit() {
     return false;
