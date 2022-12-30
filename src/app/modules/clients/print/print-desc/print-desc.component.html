@@ -1,1 +1,298 @@
-<p>print-desc works!</p>
+<div>
+  <div class="buscar">
+    <p>Cliente > Impresión</p>
+    <h1 class="Text">Impresión</h1>
+    <mat-stepper
+      class="example-stepper"
+      [orientation]="(stepperOrientation | async)!"
+      labelPosition="bottom"
+    >
+      <mat-step [stepControl]="firstFormGroup" label="Captura guías a imprimir">
+        <mat-card-content>
+          <p>Por favor indique cuántas guías desea imprimir.</p>
+        </mat-card-content>
+        <form [formGroup]="firstFormGroup">
+          <div class="container-fluid">
+            <div class="redText pt-3 pb-4">
+              <b>Productos disponibles</b>
+              <table mat-table [dataSource]="dataSource" #tabla1>
+                <!-- Folio Column -->
+                <ng-container matColumnDef="folio">
+                  <th mat-header-cell *matHeaderCellDef>Descripción</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.folio }}
+                  </td>
+                </ng-container>
+
+                <!-- Total de guías Column -->
+                <ng-container matColumnDef="totalGuides">
+                  <th mat-header-cell *matHeaderCellDef>Total de guías</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.totalGuides }}
+                  </td>
+                </ng-container>
+
+                <!-- Guías usadas  Column -->
+                <ng-container matColumnDef="useGuides">
+                  <th mat-header-cell *matHeaderCellDef>Guías usadas</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.useGuides }}
+                  </td>
+                </ng-container>
+
+                <!-- Guías Asignadas Column -->
+                <ng-container matColumnDef="asingGuides">
+                  <th mat-header-cell *matHeaderCellDef>Guías Asignadas</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.asingGuides }}
+                  </td>
+                </ng-container>
+
+                <!-- Guías Asignadas Column-->
+                <ng-container matColumnDef="print">
+                  <th mat-header-cell *matHeaderCellDef>Guías impresas</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.asingGuides }}
+                  </td>
+                </ng-container>
+
+                <!-- Guías Disponibles  Column -->
+                <ng-container matColumnDef="availableGuides">
+                  <th mat-header-cell *matHeaderCellDef>Guías Disponibles</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.availableGuides }}
+                  </td>
+                </ng-container>
+
+                <!-- Guías Disponibles  Column -->
+                <ng-container matColumnDef="printGuides">
+                  <th mat-header-cell *matHeaderCellDef>Guías a imprimir</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.availableGuides }}
+                  </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr
+                  mat-row
+                  *matRowDef="let row; columns: displayedColumns"
+                ></tr>
+              </table>
+            </div>
+            <div
+              class="btns d-flex justify-content-between align-items-center m-2"
+            >
+              <button mat-stroked-button routerLink="/print" class="btnRed">
+                Regresar
+              </button>
+              <button mat-stroked-button color="warn">Cancelar</button>
+              <button
+                class="but"
+                mat-raised-button
+                matStepperNext
+                class="btnRed"
+              >
+                Continuar
+              </button>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup" label="Remitente">
+        <form [formGroup]="secondFormGroup">
+          <div class="container2 container-fluid">
+            <div class="blackText pt-3">
+              <b
+                >Capture los datos del remitente, recuerda que estos datos se
+                incluiran en todas la guias a imprimir.
+              </b>
+            </div>
+            <!--<div class="d-flex p-4"></div>-->
+            <div class="">
+              <div class="contenedor1">
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    placeholder="Nombre de la empresa"
+                  />
+                </mat-form-field>
+
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Contacto" />
+                </mat-form-field>
+
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    placeholder="Direccion de correo electronico (Opcional)"
+                  />
+                </mat-form-field>
+
+                <div class="d-flex p-4">
+                  <mat-form-field>
+                    <input
+                      matInput
+                      type="number"
+                      placeholder="Número de telefono"
+                    />
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput type="number" placeholder="Extención" />
+                  </mat-form-field>
+                </div>
+
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Calle y número" />
+                </mat-form-field>
+
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    placeholder="Departamento, torre, edificio, piso, etc."
+                  />
+                </mat-form-field>
+
+                <mat-form-field>
+                  <input matInput type="number" placeholder="Código postal" />
+                </mat-form-field>
+
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Colonia" />
+                </mat-form-field>
+
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Ciudad" />
+                </mat-form-field>
+
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Estado" />
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="btns d-flex justify-content-between align-items-center m-4">
+          <button class="but m-2 btnRed" mat-raised-button matStepperPrevious>
+            Regresar
+          </button>
+          <button class="m-2" mat-stroked-button color="warn">Cancelar</button>
+          <button
+            class="but m-2"
+            mat-raised-button
+            matStepperNext
+            class="btnRed"
+          >
+            Continuar
+          </button>
+        </div>
+      </mat-step>
+      <mat-step [stepControl]="thirdFormGroup" label="Destinatario">
+        <form [formGroup]="thirdFormGroup">
+          <div class="container2 container-fluid">
+            <div class="container2 container-fluid">
+              <div class="blackText pt-3">
+                <b
+                  >Capture los datos del destinatario, recuerde que estos datos
+                  se incluirán en todas las guías a imprimir.
+                </b>
+              </div>
+              <!--<div class="d-flex p-4"></div>-->
+              <div class="">
+                <div class="contenedor1">
+                  <mat-form-field>
+                    <input
+                      matInput
+                      type="text"
+                      placeholder="Nombre de la empresa"
+                    />
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput type="text" placeholder="Contacto" />
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input
+                      matInput
+                      type="text"
+                      placeholder="Direccion de correo electronico (Opcional)"
+                    />
+                  </mat-form-field>
+
+                  <div class="d-flex p-4">
+                    <mat-form-field>
+                      <input
+                        matInput
+                        type="number"
+                        placeholder="Número de telefono"
+                      />
+                    </mat-form-field>
+
+                    <mat-form-field>
+                      <input matInput type="number" placeholder="Extención" />
+                    </mat-form-field>
+                  </div>
+
+                  <mat-form-field>
+                    <input matInput type="text" placeholder="Calle y número" />
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input
+                      matInput
+                      type="text"
+                      placeholder="Departamento, torre, edificio, piso, etc."
+                    />
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput type="number" placeholder="Código postal" />
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput type="text" placeholder="Colonia" />
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput type="text" placeholder="Ciudad" />
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <input matInput type="text" placeholder="Estado" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="btns d-flex justify-content-between align-items-center m-4"
+          >
+            <button class="but m-2 btnRed" mat-raised-button matStepperPrevious>
+              Regresar
+            </button>
+            <button class="m-2" mat-stroked-button>Cancelar</button>
+
+            <button class="but m-2 btnRed" mat-raised-button matStepperNext>
+              Continuar
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Confirmar</ng-template>
+        <p>Todas las guías seleccionadas para imprimir aparecerán con los datos ingresados en los pasos anteriores.</p>
+        <div class="btns d-flex justify-content-between align-items-center m-4">
+          <button mat-button matStepperPrevious class="btnRed">Regresar</button>
+          <button class="m-2" mat-stroked-button>Cancelar</button>
+
+          <button class="but m-2 btnRed" mat-raised-button matStepperNext>
+            Confirmar Impresión
+          </button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </div>
+</div>

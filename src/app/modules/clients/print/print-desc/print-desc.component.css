@@ -1,0 +1,57 @@
+table  {
+  width: 90%;
+  margin:1rem auto;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  margin:1rem auto;
+  max-width: 600px;
+  box-shadow: -1px 3px 66px 0px rgba(0,0,0,0.75);
+  padding: 1rem;
+}
+.contenedor1 {
+  display: flex;
+  flex-direction: column;
+  margin:1rem auto;
+  max-width: 400px;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  margin:3rem auto;
+  max-width: 600px;
+}
+
+.buscar{
+  width: 87%;
+  top: 50%;
+  margin:1rem auto;
+}
+
+.paginator{
+  width: 90%;
+}
+
+.addUser{
+  width: 10%;
+  float: right;
+}
+.btnRed{
+  background-color: #D40511;
+  color: #ffffff;
+  float: right;
+}
+mat-icon{
+  color: #D40511;
+}
+.redText{
+  color: #D40511;
+  font-size: 1rem;
+}
+.Text{
+  color: #000000;
+  font-size: 2rem;
+}
