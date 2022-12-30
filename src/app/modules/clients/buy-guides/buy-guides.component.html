@@ -1,0 +1,324 @@
+
+
+  
+  <div class="mat-elevation-z8">
+    <div>
+      <div class="buscar titulo pt-3">
+        <p>Cliente > Comprar Guías</p>
+        <h1 class="pt-3"><b>Comprar Guías</b></h1>
+
+        <mat-stepper
+        class="example-stepper"
+        [orientation]="(stepperOrientation | async)!" labelPosition="bottom">
+        <mat-step [stepControl]="firstFormGroup" label="Cantidad de Guías">
+          <form [formGroup]="firstFormGroup">
+           <!-- <mat-form-field appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext>Next</button>
+            </div>-->
+
+
+            <div  class="container2 container-fluid">
+                <div class="redText pt-3 pb-4"> <b>Cliente, ¿Cuántas guías desea comprar? </b> </div> 
+                <div class="d-flex">                           
+              
+                    <div class="row px-1 mb-4">
+                    <label><b>Peso</b></label>
+                    <label>1 kg</label>
+                    <label>2 kg</label>
+                    </div>
+
+
+                    <div class="row px-1 mb-4">
+                        <label><b>Cantidad</b></label>
+                      <mat-form-field >                         
+                          <input matInput type="number" value="10">                         
+                      </mat-form-field>
+                      <mat-form-field>                         
+                           <input matInput type="number" value="0">                           
+                       </mat-form-field>
+                    </div>                                        
+                </div>
+
+                <div class="redText pt-3 pb-4"> <b>Precio </b> </div> 
+                <div class="d-flex">                           
+              
+                    <div class="row px-1 mb-4">                
+                        <label>Peso 1 kg</label>
+                        <label>Total sin descuento</label>
+                        <label>Descuento(%)</label>
+                        <label>Total con descuento</label>
+                        <label>IVA(16%)</label>
+                        <label>Total a Pagar</label>
+                    </div>
+
+
+                    <div class="row px-1 mb-4">
+                        <label><b>$ 1672.40</b></label>
+                        <label><b>$ 1672.40</b></label>
+                        <label><b>$ 0.00</b></label>
+                        <label><b>$ 1672.40</b></label>
+                        <label><b>$ 267.59</b></label>
+                        <label><b>$ 1939.99</b></label>
+                      
+                    </div>                                        
+                </div>
+            
+            <div class="btns d-flex justify-content-between align-items-center m-2">
+                <button  mat-stroked-button >Cancelar</button>
+              
+                <button class="but" mat-raised-button matStepperNext>Continuar</button>
+              </div>
+
+        </div>
+            
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup" label="Elegir Forma de Pago">
+          <form [formGroup]="secondFormGroup">
+
+
+            <div  class="container2 container-fluid">
+                <div class="blackText pt-3"> <b>Elija su forma de pago </b> </div> 
+                <div class="d-flex p-4">                           
+              
+                  
+                    <div class="row px-1 mb-4 m-4 ">
+                        <button><img class="icon" src="./assets/images/clients/ic_banco-g.png"/>
+                            <br/>
+                            <label>Transferencia cuenta clabe</label>
+                        </button>
+                    </div>
+
+                   
+
+                    <div class="row px-1 mb-4 m-4">
+                        <button><img class="icon" src="./assets/images/clients/ic_tarjeta-credito-g.png"/>
+                            <br/>
+                            <label>Tarjeta de Crédito o Débito</label>
+                        </button>
+                    </div>
+
+                                                       
+                </div>
+
+
+                <div class="p-4">                           
+              
+                    <div class="redText pt-3"> <b>Pasos para pagar con cuenta clabe, por transferencia electrónica o en ventanilla bancaria.</b> </div> 
+                    <div class=" px-1 mb-4 m-4  d-flex">
+                        <img class="icon2" src="./assets/images/clients/direccion_facturacion.png"/>
+                        <label><b>1. Dirección de facturación  </b> <br/> Puedes facturar a la dirección de tu cuenta o ingresar una direccion diferente.</label>
+                    </div>
+
+                    <div class=" px-1 mb-4 m-4  d-flex">
+                        <img class="icon2" src="./assets/images/clients/odc.png"/>
+                        <label><b>2. Generar orden de compra  </b> <br/> En el siguiente paso haga clic en el botón generar orden de compra, su compra quedará en pausa hasta que realice su pago.</label>
+                    </div>
+
+                    <div class=" px-1 mb-4 m-4  d-flex">
+                        <img class="icon2" src="./assets/images/clients/email.png"/>
+                        <label><b>3. Pago por cuenta clabe  </b> <br/> Siga las instrucciones que se enviarán a su correo para realizar la transfrencia o el pago en ventanilla del banco.</label>
+                    </div>
+
+                    <div class=" px-1 mb-4 m-4  d-flex">
+                        <img class="icon2" src="./assets/images/clients/usar_guias.png"/>
+                        <label><b>4. Confirmación  </b> <br/> Al momento de recibir su pago, le enviaremos un correo de confirmacion y podrá hacer uso de sus guias.</label>
+                    </div>
+
+                                                       
+                </div>
+                
+
+
+            
+            
+            <div class="btns d-flex justify-content-between align-items-center m-4">
+                <button class="but m-2" mat-raised-button matStepperPrevious>Regresar</button>
+                <button class="m-2" mat-stroked-button >Cancelar</button>
+              
+                <button class="but m-2" mat-raised-button matStepperNext>Continuar</button>
+              </div>
+
+
+             
+              
+
+        </div>
+
+
+
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="thirdFormGroup" label="Revisar y Pagar">
+          <form [formGroup]="thirdFormGroup">
+        
+
+            <div  class="container2 container-fluid">
+                <div class="blackText pt-3"> <b>Revisar y Pagar. </b> </div> 
+                                                 
+                <div class="redText pt-3"> <b>Resumen de compra.</b> </div> 
+               
+                
+                Descripción
+
+                <div class="d-flex pt-3">                           
+              
+                    <div class="row px-1 mb-4">                
+                        <label ><b>10 Guías de 1 kg</b></label>
+                        <label>Total sin descuento</label>
+                        <label>Descuento(%)</label>
+                        <label>Total con descuento</label>
+                        <label>IVA(16%)</label>
+                        <label>Total a Pagar</label>
+                    </div>
+
+
+                    <div class="row px-1 mb-4">
+                        <label class="redText"><b>$ 1672.40</b></label>
+                        <label><b>$ 1672.40</b></label>
+                        <label><b>$ 0.00</b></label>
+                        <label><b>$ 1672.40</b></label>
+                        <label><b>$ 267.59</b></label>
+                        <label><b>$ 1939.99</b></label>
+                      
+                    </div>                                        
+                </div>
+            
+
+                <div class="redText pt-3"> <b>Pago.</b> </div> 
+                <label> Forma de Pago <br/> <b>El pago se realizará por transferencia electrónica a una cena clabe,  por depósito en ventanilla del banco. </b></label>
+                <div class="redText pt-3"> <b>Facturación.</b> </div> 
+                <label>Dirección de Facturación <br/> <b>Insurgentes Sur 64, Torre B, colonia Juárez, ALcaldia Cuahutemoc, Mexico, CDMX, CP 06060</b></label>
+                         
+                
+                <div class="btns d-flex justify-content-between align-items-center m-4">
+                    <button class="but m-2" mat-raised-button matStepperPrevious>Regresar</button>
+                    <button class="m-2" mat-stroked-button >Cancelar</button>
+                  
+                    <button class="but m-2" mat-raised-button matStepperNext>Generar ODC</button>
+                  </div>
+    
+            </div>
+
+
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Compra Exitosa</ng-template>
+          <p>Orden de Compra Generada con éxito</p>
+          <div>
+            <button mat-button matStepperPrevious>Regresar</button>
+          </div>
+        </mat-step>
+      </mat-stepper>
+      
+   </div>
+
+   
+
+
+
+   
+   
+
+
+
+    </div>
+
+    <div>
+
+
+     
+      <div>
+      
+      </div>
+
+  
+
+    <div *ngIf="viewTablaCliente">    
+        <div class=" redText buscar pt-4"> <b>Cliente</b> </div> 
+    <table mat-table [dataSource]="dataSource" #tabla1>
+      <!-- Position Column -->
+      <ng-container matColumnDef="rfc">
+        <th mat-header-cell *matHeaderCellDef> <b> RFC  </b></th>
+        <td mat-cell *matCellDef="let element"> {{element.rfc}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="razonSocial">
+        <th mat-header-cell *matHeaderCellDef> <b> Razon Social </b></th>
+        <td mat-cell *matCellDef="let element"> {{element.razonSocial}} </td>
+      </ng-container>
+  
+         <!-- Name Column -->
+         <ng-container matColumnDef="nombreContacto">
+            <th mat-header-cell *matHeaderCellDef> <b>Nombre Contacto </b></th>
+            <td mat-cell *matCellDef="let element"> {{element.nombreContacto}} </td>
+          </ng-container>
+
+             <!-- Name Column -->
+      <ng-container matColumnDef="correoElectronico">
+        <th mat-header-cell *matHeaderCellDef> <b>Correo Electrónico </b></th>
+        <td mat-cell *matCellDef="let element"> {{element.correoElectronico}} </td>
+      </ng-container>
+      
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+    <div class="btns d-flex justify-content-between align-items-centers pb-4">
+      <button class="but" mat-raised-button  (click)="mostrarTablaCapturaCotizacion()">Capturar Cotización</button>
+    </div>
+  </div>
+
+<div *ngIf="viewTablaCapturaCotizacion">
+    
+    <div>
+      <div class="buscar redText pt-3">
+       
+        <div> <b>Cotización - Captura</b> </div> 
+      </div>
+    </div>
+    
+
+    <table mat-table [dataSource]="dataSource2" #tabla>
+      <!-- Position Column -->
+     
+  
+      <ng-container matColumnDef="numeroGuias">
+        <th mat-header-cell *matHeaderCellDef> <b>Numero de guías</b></th>
+        <td mat-cell *matCellDef="let j = index;">
+          <section>
+            <mat-form-field>
+                <input matInput type="text" value="0">
+            </mat-form-field>
+          </section>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="precio">
+        <th mat-header-cell *matHeaderCellDef> <b> Precio </b></th>
+        <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+      
+    </table>
+
+    <div class="btns d-flex justify-content-between align-items-center pr-4">
+        <button class="but" mat-raised-button >Cancelar</button>      
+        <button class="but" mat-raised-button  (click)="ocultarTablaProductosDisponibles()">Guardar </button>
+        <button class="but" mat-raised-button  >Generar ODC</button>
+      </div>
+      
+    <br/>
+</div>
+  </div>
+  
+  

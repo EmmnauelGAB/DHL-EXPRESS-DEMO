@@ -21,6 +21,7 @@ import { ProfileComponent } from './management/profile/profile.component';
 import { FormEditComponent } from './management/form-edit/form-edit.component';
 import { ProfileAddComponent } from './management/profile/profile-add/profile-add.component';
 import { ProfileEditComponent } from './management/profile/profile-edit/profile-edit.component';
+import { BuyGuidesComponent } from './modules/clients/buy-guides/buy-guides.component';
 
 
 const appRoutes = [
@@ -43,6 +44,7 @@ const appRoutes = [
   { path: 'formEditGuide', component: FormEditGuideComponent },
   { path: 'formDetailGuide', component: FormDetailGuideComponent },
   { path: 'management-odc', component: ManagementOdcComponent },
+  { path: 'buy-guides', component: BuyGuidesComponent },
   { path: '**', component: PageNotFoundComponent },
 
 ];

@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatIconModule } from '@angular/material/icon'
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { MatStepperModule } from '@angular/material/stepper';
 
 
 
@@ -40,6 +40,7 @@ import { ManagementOdcComponent } from './modules/clients/management-odc/managem
 import { FormEditComponent } from './management/form-edit/form-edit.component';
 import { ProfileAddComponent } from './management/profile/profile-add/profile-add.component';
 import { ProfileEditComponent } from './management/profile/profile-edit/profile-edit.component';
+import { BuyGuidesComponent } from './modules/clients/buy-guides/buy-guides.component';
 
 
 
@@ -70,7 +71,8 @@ import { ProfileEditComponent } from './management/profile/profile-edit/profile-
 
     FormEditComponent,
     ProfileAddComponent,
-    ProfileEditComponent
+    ProfileEditComponent,
+    BuyGuidesComponent
 
 
   ],
@@ -87,6 +89,7 @@ import { ProfileEditComponent } from './management/profile/profile-edit/profile-
     MatIconModule,
     routing,
     ReactiveFormsModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent],
