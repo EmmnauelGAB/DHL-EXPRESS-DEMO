@@ -7,7 +7,7 @@ import {StepperOrientation} from '@angular/material/stepper';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {BreakpointObserver} from '@angular/cdk/layout';
-
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-buy-guides',
@@ -26,26 +26,20 @@ export class BuyGuidesComponent implements OnInit {
   displayedColumns2: string[] = ['numeroGuias', 'precio'];
   dataSource2 = new MatTableDataSource<CapturaCotizacion>(ELEMENT_DATA2);
  
- // firstFormGroup: FormGroup ;
-  //secondFormGroup: FormGroup;
-  completed: boolean = false;
-  state: string;
-  isLinear = true;
-  formNameGroup : FormGroup;
-  formPasswordGroup : FormGroup;
-  formEmailGroup : FormGroup;
-  formPhoneGroup : FormGroup;
+ 
+  direccionFacturacionChose: number;
 
-  name = 'Angular';
-
-
+  formClabeInterbancaria: boolean = false;
+  formTarjeta: boolean = false;
+  isChecked:boolean=false;
+  
   onSubmit() {
     return false;
   }
   @ViewChild(MatPaginator)
 
   paginator!: MatPaginator;
-  constructor(private _formBuilder: FormBuilder, breakpointObserver: BreakpointObserver) {
+  constructor(private _formBuilder: FormBuilder, breakpointObserver: BreakpointObserver, public dialog: MatDialog) {
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 800px)')
       .pipe(map(({matches}) => (matches ? 'horizontal' : 'vertical')));
@@ -104,6 +98,24 @@ export class BuyGuidesComponent implements OnInit {
   }
 
 
+  public mostrarFormClabeInterbancaria(){
+    this.formClabeInterbancaria=true;
+    this.formTarjeta=false;
+  }
+  
+
+  public mostrarFormTarjeta(){
+    this.formClabeInterbancaria=false;
+    this.formTarjeta=true;
+  }
+  
+
+  openDialog() {
+    this.dialog.open(DialogElementsExampleDialog);
+  }
+
+
+
 }
 
 
@@ -134,3 +146,17 @@ const ELEMENT_DATA2: CapturaCotizacion[] = [
   },
   
 ];
+
+
+@Component({
+  selector: 'dialog-elements-example-dialog',
+  templateUrl: './buy-guides-dialog.component.html',
+  styleUrls: ['./buy-guides.component.css']
+})
+export class DialogElementsExampleDialog {
+
+  constructor(public dialog: MatDialog) {}
+  closeDialog(){
+    this.dialog.closeAll();
+ }
+}

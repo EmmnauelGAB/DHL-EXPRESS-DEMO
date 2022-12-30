@@ -10,7 +10,7 @@
         <mat-stepper
         class="example-stepper"
         [orientation]="(stepperOrientation | async)!" labelPosition="bottom">
-        <mat-step [stepControl]="firstFormGroup" label="Cantidad de Guías">
+        <mat-step [stepControl]="firstFormGroup" label="Cantidad de Guías" >
           <form [formGroup]="firstFormGroup">
            <!-- <mat-form-field appearance="fill">
               <mat-label>Name</mat-label>
@@ -79,36 +79,40 @@
         </mat-step>
         <mat-step [stepControl]="secondFormGroup" label="Elegir Forma de Pago">
           <form [formGroup]="secondFormGroup">
-
-
             <div  class="container2 container-fluid">
                 <div class="blackText pt-3"> <b>Elija su forma de pago </b> </div> 
-                <div class="d-flex p-4">                           
-              
-                  
+                <div class="d-flex p-4">                                                           
                     <div class="row px-1 mb-4 m-4 ">
-                        <button><img class="icon" src="./assets/images/clients/ic_banco-g.png"/>
+                        <button (click)="mostrarFormClabeInterbancaria()"><img class="icon" src="./assets/images/clients/ic_banco-g.png"/>
                             <br/>
                             <label>Transferencia cuenta clabe</label>
                         </button>
                     </div>
-
-                   
-
+                  
                     <div class="row px-1 mb-4 m-4">
-                        <button><img class="icon" src="./assets/images/clients/ic_tarjeta-credito-g.png"/>
+                        <button  (click)="mostrarFormTarjeta()"><img class="icon" src="./assets/images/clients/ic_tarjeta-credito-g.png"/>
                             <br/>
                             <label>Tarjeta de Crédito o Débito</label>
                         </button>
-                    </div>
-
-                                                       
+                    </div>                                                       
                 </div>
 
+                <div class="p-4">   <mat-slide-toggle [(ngModel)]="isChecked" [ngModelOptions]="{standalone: true}">¿Tiene un código promocional? </mat-slide-toggle>  </div> 
+                <div *ngIf="isChecked" class="p-4">                                                          
+                  <div class=" px-1 d-flex">
+                      <mat-form-field appearance="outline">
+                        <input matInput type="text" placeholder="Ingrese su codigo promocional">
+                      </mat-form-field>    
+                      <div class="p-2 justify-content-between align-items-centers">
+                        <button class="but" mat-raised-button >Aplicar Codigo</button>                  
+                      </div>
+                   </div>                                 
+              </div>
 
-                <div class="p-4">                           
-              
-                    <div class="redText pt-3"> <b>Pasos para pagar con cuenta clabe, por transferencia electrónica o en ventanilla bancaria.</b> </div> 
+
+
+                <div *ngIf="formClabeInterbancaria" class="p-4">                                        
+                    <div class="redText pt-1"> <b>Pasos para pagar con cuenta clabe, por transferencia electrónica o en ventanilla bancaria.</b> </div> 
                     <div class=" px-1 mb-4 m-4  d-flex">
                         <img class="icon2" src="./assets/images/clients/direccion_facturacion.png"/>
                         <label><b>1. Dirección de facturación  </b> <br/> Puedes facturar a la dirección de tu cuenta o ingresar una direccion diferente.</label>
@@ -127,42 +131,144 @@
                     <div class=" px-1 mb-4 m-4  d-flex">
                         <img class="icon2" src="./assets/images/clients/usar_guias.png"/>
                         <label><b>4. Confirmación  </b> <br/> Al momento de recibir su pago, le enviaremos un correo de confirmacion y podrá hacer uso de sus guias.</label>
-                    </div>
-
-                                                       
+                    </div>                                                       
                 </div>
-                
 
 
-            
-            
-            <div class="btns d-flex justify-content-between align-items-center m-4">
-                <button class="but m-2" mat-raised-button matStepperPrevious>Regresar</button>
-                <button class="m-2" mat-stroked-button >Cancelar</button>
+                <div *ngIf="formTarjeta" class="p-4 contenedor1">      
+                 
+                  <mat-form-field appearance="outline">
+                    <mat-label>Tipo de Tarjeta</mat-label>
+                    <select matNativeControl required>
+                      <option value="" selected>Tipo de Tarjeta</option>
+                      <option value="credito">Crédito</option>
+                      <option value="debito">Débito</option>                     
+                    </select>
+                  </mat-form-field>
               
-                <button class="but m-2" mat-raised-button matStepperNext>Continuar</button>
+                  <mat-form-field appearance="outline">
+                    <input matInput type="text" placeholder="Nombre del Tarjetahabiente">
+                  </mat-form-field>
+                
+                  <mat-form-field appearance="outline">
+                    <input matInput type="text" placeholder="Numero de Tarjeta">
+                  </mat-form-field>
+                
+                <div>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Vigencia Mes</mat-label>
+                    <select matNativeControl required>
+                      <option value="" selected>Vigencia mes</option>
+                      <option value="enero">Enero</option>
+                      <option value="febrero">Febrero</option>
+                      <option value="marzo">Marzo</option>
+                      <option value="abril">Abril</option>
+                      <option value="mayo">Mayo</option>
+                      <option value="junio">Junio</option>
+                      <option value="julio">Julio</option>
+                      <option value="agosto">Agosto</option>
+                      <option value="septiembre">Septiembre</option>
+                      <option value="octubre">Octubre</option>
+                      <option value="noviembre">Noviembre</option>
+                      <option value="diciembre">Diciembre</option>
+                    </select>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline">
+                    <mat-label>Vigencia Año</mat-label>
+                    <select matNativeControl required>
+                      <option value="" selected>Vigencia año</option>
+                      <option value="2022">2022</option>
+                      <option value="2023">2023</option>
+                      <option value="2024">2024</option>
+                      <option value="2025">2025</option>
+                      <option value="2026">2026</option>
+                      <option value="2027">2027</option>
+                      <option value="2028">2028</option>
+                      <option value="2029">2029</option>
+                      <option value="2030">2030</option>                      
+                    </select>
+                  </mat-form-field>
+                </div>
+                <div>
+                  <mat-form-field appearance="outline">
+                      <input matInput type="text" placeholder="Código de Seguridad">
+                    </mat-form-field>
+                    <img src="./assets/images/clients/img_cvv-a.png"/>
+                    <img  src="./assets/images/clients/img_cvv-b.png"/>
+                </div>                                                                               
               </div>
 
-
-             
+                
+                <div *ngIf="formClabeInterbancaria || formTarjeta " class="p-4">                           
               
+                  <div class="redText pt-1"> <b>Dirección de Facturación</b> </div> 
+                 
+                 <mat-radio-group
+                    aria-labelledby="example-radio-group-label"
+                    class="example-radio-group"
+                    [(ngModel)]="direccionFacturacionChose"
+                    [ngModelOptions]="{standalone: true}">                   
+                    <mat-radio-button [value]="0">Insurgentes Sur 64, Torre B, colonia Juárez, Alcaldia Cuahutémoc, México, CDMX, CP 06060</mat-radio-button>
+                    <mat-radio-button [value]="1">Ingresar una dirección de facturación diferente</mat-radio-button>
+                  </mat-radio-group>
+              
+                  <div  *ngIf="direccionFacturacionChose === 1" class="p-4 contenedor1"> 
+                  
+                    <mat-form-field appearance="outline">
+                      <input matInput type="text" placeholder="Nombre de la Empresa">
+                    </mat-form-field>
 
+                    <mat-form-field appearance="outline">
+                      <mat-label></mat-label>
+                      <select matNativeControl required>
+                        <option value="" selected>Seleccione el país o región</option>
+                        <option value="cdmx">CDMX</option>
+                        <option value="puebla">Puebla</option>
+                        <option value="guadalajara">Guadalajara</option>                                          
+                      </select>
+                    </mat-form-field>
+                
+                    <mat-form-field appearance="outline">
+                      <input matInput type="text" placeholder="Calle y número">
+                    </mat-form-field>
+                  
+                    <mat-form-field appearance="outline">
+                      <input matInput type="text" placeholder="Departamento, torre, edificio, piso, etc">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                      <input matInput type="text" placeholder="Código postal">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                      <input matInput type="text" placeholder="Colonia">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                      <input matInput type="text" placeholder="Ciudad">
+                    </mat-form-field>
+                                    
+                    <mat-form-field appearance="outline">
+                      <input matInput type="text" placeholder="Estado">
+                    </mat-form-field>
+                  </div>                                                      
+              </div>
+                    
+            <div class="btns d-flex justify-content-between align-items-center m-4">
+                <button class="but m-2" mat-raised-button matStepperPrevious>Regresar</button>
+                <button class="m-2" mat-stroked-button >Cancelar</button>              
+                <button class="but m-2" mat-raised-button matStepperNext>Continuar</button>
+            </div>                         
         </div>
-
-
-
-          </form>
+      </form>
         </mat-step>
         <mat-step [stepControl]="thirdFormGroup" label="Revisar y Pagar">
-          <form [formGroup]="thirdFormGroup">
-        
-
+          <form [formGroup]="thirdFormGroup">        
             <div  class="container2 container-fluid">
                 <div class="blackText pt-3"> <b>Revisar y Pagar. </b> </div> 
                                                  
-                <div class="redText pt-3"> <b>Resumen de compra.</b> </div> 
-               
-                
+                <div class="redText pt-3"> <b>Resumen de compra.</b> </div>                                
                 Descripción
 
                 <div class="d-flex pt-3">                           
@@ -176,15 +282,13 @@
                         <label>Total a Pagar</label>
                     </div>
 
-
                     <div class="row px-1 mb-4">
                         <label class="redText"><b>$ 1672.40</b></label>
                         <label><b>$ 1672.40</b></label>
                         <label><b>$ 0.00</b></label>
                         <label><b>$ 1672.40</b></label>
                         <label><b>$ 267.59</b></label>
-                        <label><b>$ 1939.99</b></label>
-                      
+                        <label><b>$ 1939.99</b></label>                      
                     </div>                                        
                 </div>
             
@@ -199,126 +303,15 @@
                     <button class="but m-2" mat-raised-button matStepperPrevious>Regresar</button>
                     <button class="m-2" mat-stroked-button >Cancelar</button>
                   
-                    <button class="but m-2" mat-raised-button matStepperNext>Generar ODC</button>
+                    <button class="but m-2" mat-raised-button (click)="openDialog()">Generar ODC</button>
                   </div>
     
             </div>
-
-
           </form>
         </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Compra Exitosa</ng-template>
-          <p>Orden de Compra Generada con éxito</p>
-          <div>
-            <button mat-button matStepperPrevious>Regresar</button>
-          </div>
-        </mat-step>
-      </mat-stepper>
-      
+
+      </mat-stepper>      
    </div>
 
-   
-
-
-
-   
-   
-
-
-
     </div>
-
-    <div>
-
-
-     
-      <div>
-      
-      </div>
-
-  
-
-    <div *ngIf="viewTablaCliente">    
-        <div class=" redText buscar pt-4"> <b>Cliente</b> </div> 
-    <table mat-table [dataSource]="dataSource" #tabla1>
-      <!-- Position Column -->
-      <ng-container matColumnDef="rfc">
-        <th mat-header-cell *matHeaderCellDef> <b> RFC  </b></th>
-        <td mat-cell *matCellDef="let element"> {{element.rfc}} </td>
-      </ng-container>
-  
-      <!-- Name Column -->
-      <ng-container matColumnDef="razonSocial">
-        <th mat-header-cell *matHeaderCellDef> <b> Razon Social </b></th>
-        <td mat-cell *matCellDef="let element"> {{element.razonSocial}} </td>
-      </ng-container>
-  
-         <!-- Name Column -->
-         <ng-container matColumnDef="nombreContacto">
-            <th mat-header-cell *matHeaderCellDef> <b>Nombre Contacto </b></th>
-            <td mat-cell *matCellDef="let element"> {{element.nombreContacto}} </td>
-          </ng-container>
-
-             <!-- Name Column -->
-      <ng-container matColumnDef="correoElectronico">
-        <th mat-header-cell *matHeaderCellDef> <b>Correo Electrónico </b></th>
-        <td mat-cell *matCellDef="let element"> {{element.correoElectronico}} </td>
-      </ng-container>
-      
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-    
-    <div class="btns d-flex justify-content-between align-items-centers pb-4">
-      <button class="but" mat-raised-button  (click)="mostrarTablaCapturaCotizacion()">Capturar Cotización</button>
-    </div>
-  </div>
-
-<div *ngIf="viewTablaCapturaCotizacion">
-    
-    <div>
-      <div class="buscar redText pt-3">
-       
-        <div> <b>Cotización - Captura</b> </div> 
-      </div>
-    </div>
-    
-
-    <table mat-table [dataSource]="dataSource2" #tabla>
-      <!-- Position Column -->
-     
-  
-      <ng-container matColumnDef="numeroGuias">
-        <th mat-header-cell *matHeaderCellDef> <b>Numero de guías</b></th>
-        <td mat-cell *matCellDef="let j = index;">
-          <section>
-            <mat-form-field>
-                <input matInput type="text" value="0">
-            </mat-form-field>
-          </section>
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="precio">
-        <th mat-header-cell *matHeaderCellDef> <b> Precio </b></th>
-        <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
-      
-    </table>
-
-    <div class="btns d-flex justify-content-between align-items-center pr-4">
-        <button class="but" mat-raised-button >Cancelar</button>      
-        <button class="but" mat-raised-button  (click)="ocultarTablaProductosDisponibles()">Guardar </button>
-        <button class="but" mat-raised-button  >Generar ODC</button>
-      </div>
-      
-    <br/>
-</div>
-  </div>
-  
   
