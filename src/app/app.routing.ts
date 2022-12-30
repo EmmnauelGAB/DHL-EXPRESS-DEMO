@@ -22,6 +22,8 @@ import { FormEditComponent } from './management/form-edit/form-edit.component';
 import { ProfileAddComponent } from './management/profile/profile-add/profile-add.component';
 import { ProfileEditComponent } from './management/profile/profile-edit/profile-edit.component';
 import { BuyGuidesComponent } from './modules/clients/buy-guides/buy-guides.component';
+import { PrintComponent } from './modules/clients/print/print.component';
+import { PrintDescComponent } from './modules/clients/print/print-desc/print-desc.component';
 
 
 const appRoutes = [
@@ -45,7 +47,10 @@ const appRoutes = [
   { path: 'formDetailGuide', component: FormDetailGuideComponent },
   { path: 'management-odc', component: ManagementOdcComponent },
   { path: 'buy-guides', component: BuyGuidesComponent },
+  { path: 'print', component: PrintComponent },
+  { path: 'print-desc', component: PrintDescComponent },
   { path: '**', component: PageNotFoundComponent },
+
 
 ];
 export const routing = RouterModule.forRoot(appRoutes);

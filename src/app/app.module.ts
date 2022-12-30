@@ -41,6 +41,8 @@ import { FormEditComponent } from './management/form-edit/form-edit.component';
 import { ProfileAddComponent } from './management/profile/profile-add/profile-add.component';
 import { ProfileEditComponent } from './management/profile/profile-edit/profile-edit.component';
 import { BuyGuidesComponent } from './modules/clients/buy-guides/buy-guides.component';
+import { PrintComponent } from './modules/clients/print/print.component';
+import { PrintDescComponent } from './modules/clients/print/print-desc/print-desc.component';
 
 
 
@@ -66,13 +68,15 @@ import { BuyGuidesComponent } from './modules/clients/buy-guides/buy-guides.comp
     FormEditGuideComponent,
     FormDetailGuideComponent,
     FormAddGuideComponent,
+    PrintComponent,
 
     ManagementOdcComponent,
 
     FormEditComponent,
     ProfileAddComponent,
     ProfileEditComponent,
-    BuyGuidesComponent
+    BuyGuidesComponent,
+    PrintDescComponent
 
 
   ],
