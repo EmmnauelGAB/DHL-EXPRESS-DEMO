@@ -2,3 +2,13 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.redText {
+    color: #D40511;
+    font: normal normal bold 24px/40px Delivery App;
+}
+
+.content {
+    min-height: 70%;
+    background-color: #F2F2F2;
+}

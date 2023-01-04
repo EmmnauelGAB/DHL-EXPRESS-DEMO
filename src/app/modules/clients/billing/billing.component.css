@@ -1,0 +1,112 @@
+
+.content {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+}
+
+p .txtNormal {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    text-align: left;
+    font: normal normal normal 18px/24px Delivery App;
+    letter-spacing: 0px;
+    color: #333333;
+}
+
+.titulo {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    width: 85%;
+    text-align: left;
+    color: #000000;
+}
+
+.titulo h1 {
+    font: 400 24px/32px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: 0px;
+    color: #333333;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+form {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    text-align: center;
+    min-width: 40%;
+}
+
+.group {
+    margin: 0px auto;
+    padding: 1px;
+    border-radius: 4px;
+    border: 1px solid #D5D5D5;
+    min-width: 30%;
+    width: 80%;
+}
+
+.btnRed{
+    background: #D40511 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    text-align: center;
+    font: normal normal bold 16px/20px Delivery App;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    height: 50px;
+    width: 80px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+  
+.buscar {
+    border: 0px !important;
+}
+
+.buscar:focus {
+    box-shadow: none;
+}
+
+mat-card {
+    min-width: 40%;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h2 {
+    text-align: left;
+}
+
+.detailInvoice  {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.detailInvoice p {
+    text-align: left;
+    letter-spacing: 0px;
+    color: #8C8C8C;
+    opacity: 1;
+    font: normal normal bold 18px/22px Roboto, "Helvetica Neue", sans-serif;
+}
+
+.detailInvoice .txtNegrita {
+    text-align: left;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.btnDescargar{
+    font: normal normal bold 16px/20px Delivery App;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: #D40511 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    text-align: center;
+    color: #FFFFFF;
+    float: right;
+    margin: 10px 0px 10px 0;
+    padding: 10px;
+}

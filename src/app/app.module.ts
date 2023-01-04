@@ -1,4 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing } from "./app.routing";
 
@@ -14,6 +15,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -44,6 +46,8 @@ import { ProfileEditComponent } from './management/profile/profile-edit/profile-
 import { BuyGuidesComponent } from './modules/clients/buy-guides/buy-guides.component';
 import { PrintComponent } from './modules/clients/print/print.component';
 import { PrintDescComponent } from './modules/clients/print/print-desc/print-desc.component';
+import { BillingComponent } from './modules/clients/billing/billing.component';
+import { AvailableGuidesComponent } from './modules/clients/available-guides/available-guides.component';
 
 
 
@@ -77,7 +81,9 @@ import { PrintDescComponent } from './modules/clients/print/print-desc/print-des
     ProfileAddComponent,
     ProfileEditComponent,
     BuyGuidesComponent,
-    PrintDescComponent
+    PrintDescComponent,
+    BillingComponent,
+    AvailableGuidesComponent
 
 
   ],
@@ -97,7 +103,10 @@ import { PrintDescComponent } from './modules/clients/print/print-desc/print-des
     MatStepperModule,
     MatRadioModule,
     MatDialogModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
