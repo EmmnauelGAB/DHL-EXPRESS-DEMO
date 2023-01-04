@@ -4,7 +4,7 @@ table  {
     border-top: 2px solid #999999 !important;
     border-bottom: 2px solid #999999 !important;
   }
-  
+
   .contenedor {
     display: flex;
     flex-direction: column;
@@ -13,18 +13,18 @@ table  {
     box-shadow: -1px 3px 66px 0px rgba(0,0,0,0.75);
     padding: 1rem;
   }
-  
+
   .buscar{
     width: 87%;
     top: 50%;
     margin:1rem auto;
   }
-  
+
 
   .paginator{
     width: 90%;
   }
-  
+
   .addUser{
     background-color: #D40511;
     color: #ffffff;
@@ -34,7 +34,7 @@ table  {
   .titulo {
     color: #000000;
   }
-  
+
 
   .iconRed{
     color: #D40511;
@@ -48,6 +48,22 @@ table  {
     color: #0f90cc;
   }
 
- 
-  
+  .btnRed{
+    background-color: #D40511;
+    color: #ffffff;
+    float: right;
+    margin-right: 1rem;
+  }
+  .btnRedCancel{
+    background-color: #ffffff;
+    color: #D40511;
+    float: right;
+    margin-right: 1rem;
+  }
 
+  .btns {
+    display: flex;
+    flex-direction: row;
+    margin:2rem auto;
+    max-width: 350px;
+  }

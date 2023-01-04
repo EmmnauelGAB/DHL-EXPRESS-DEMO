@@ -45,6 +45,33 @@ export class PrintDescComponent implements AfterViewInit {
   });
   stepperOrientation: Observable<StepperOrientation>;
 
+  //Confirmacion
+  tiles: Tile[] = [
+    {text: 'Descripción', cols: 4, rows: 1, color: 'grey', Desc: ''},
+    {text: 'Guías a imprimir', cols: 1, rows: 2, color: 'grey', Desc: ''},
+    {text: 'Guías totales', cols: 2, rows: 1, color: 'grey', Desc: ''},
+    {text: 'Guías disponibles', cols: 2, rows: 1, color: 'grey', Desc: ''},
+  ];
+
+  infoRem: infoRe[] = [
+    {text: 'Nombre de la empresa', cols: 5, rows: 1, color: 'grey', Desc: ''},
+    {text: 'Contacto', cols: 3, rows: 1, color: 'grey', Desc: ''},
+    {text: 'Direccion de Correo electronico', cols: 2, rows: 1, color: 'grey', Desc: ''},
+    {text: 'Número de teléfono', cols: 3, rows: 1, color: 'grey', Desc: ''},
+    {text: 'Extensión', cols: 2, rows: 1, color: 'grey', Desc: ''},
+    {text: 'Dirección', cols: 5, rows: 2, color: 'grey', Desc: ''},
+  ]
+
+  infoDes: infoDe[] = [
+    {text: 'Nombre de la empresa', cols: 5, rows: 1, color: 'grey', Desc: ''},
+    {text: 'Contacto', cols: 3, rows: 1, color: 'grey', Desc: ''},
+    {text: 'Direccion de Correo electronico', cols: 2, rows: 1, color: 'grey', Desc: ''},
+    {text: 'Número de teléfono', cols: 3, rows: 1, color: 'grey', Desc: ''},
+    {text: 'Extensión', cols: 2, rows: 1, color: 'grey', Desc: ''},
+    {text: 'Dirección', cols: 5, rows: 2, color: 'grey', Desc: ''},
+  ]
+
+
 }
 export interface PeriodicElement {
   folio: string;
@@ -53,6 +80,30 @@ export interface PeriodicElement {
   useGuides: number;
   asingGuides: number;
   availableGuides: number;
+}
+
+export interface Tile {
+  color: string;
+  cols: number;
+  rows: number;
+  text: string;
+  Desc: string;
+}
+
+export interface infoRe {
+  color: string;
+  cols: number;
+  rows: number;
+  text: string;
+  Desc: string;
+}
+
+export interface infoDe {
+  color: string;
+  cols: number;
+  rows: number;
+  text: string;
+  Desc: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [];

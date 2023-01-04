@@ -34,3 +34,16 @@ table  {
 mat-icon{
   color: #D40511;
 }
+
+.btnRed{
+  background-color: #D40511;
+  color: #ffffff;
+  float: right;
+  margin-right: 1rem;
+}
+.btnRedCancel{
+  background-color: #ffffff;
+  color: #D40511;
+  float: right;
+  margin-right: 1rem;
+}

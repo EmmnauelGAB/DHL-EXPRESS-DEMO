@@ -1,6 +1,7 @@
 import { Component, ViewChild, AfterViewInit} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import {MatDialog, } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-profile',
@@ -18,6 +19,14 @@ export class ProfileComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
+
+  constructor(public dialog: MatDialog){
+
+  }
+
+  openDialogDelete() {
+    this.dialog.open(DialogContentExampleDialog, {width: '450px'});
+   }
 }
 export interface PeriodicElement {
   position: number;
@@ -28,6 +37,21 @@ export interface PeriodicElement {
   perfil: string;
 }
 
+//on PopUp Delete Perfil
+@Component({
+  selector: 'profile.component-dialog',
+  templateUrl: './profile.component.delete.html',
+  styleUrls: ['./profile.component.css']
+})
+export class DialogContentExampleDialog {
+
+  constructor(public dialog: MatDialog) {}
+  closeDialog(){
+    this.dialog.closeAll();
+  }
+
+}
+//end PopUp Delete Perfil
 const ELEMENT_DATA: PeriodicElement[] = [
   {
     position: 7,

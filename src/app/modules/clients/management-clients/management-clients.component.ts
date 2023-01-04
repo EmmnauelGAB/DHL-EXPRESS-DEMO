@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 
@@ -14,7 +15,7 @@ export class ManagementClientsComponent implements OnInit {
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +23,11 @@ export class ManagementClientsComponent implements OnInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
+
+  openDialogDelete() {
+    this.dialog.open(DialogDeleteUser, {width: '450px'});
+  }
+
 }
 
 
@@ -130,5 +136,18 @@ const ELEMENT_DATA: Client[] = [
     email: 'i.marinez@praxisglobe.net',
     phone: '55 27 58 23 12',
   },
-   
+
 ];
+
+@Component({
+  selector: 'dialog-delete',
+  templateUrl: './management-clients.component-delete.html',
+  styleUrls: ['./management-clients.component.css']
+})
+export class DialogDeleteUser {
+
+  constructor(public dialog: MatDialog) {}
+  closeDialog(){
+    this.dialog.closeAll();
+  }
+}

@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatStepperModule } from '@angular/material/stepper';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -95,7 +96,8 @@ import { PrintDescComponent } from './modules/clients/print/print-desc/print-des
     ReactiveFormsModule,
     MatStepperModule,
     MatRadioModule,
-    MatDialogModule
+    MatDialogModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent],

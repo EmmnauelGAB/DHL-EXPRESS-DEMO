@@ -283,7 +283,76 @@
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>Confirmar</ng-template>
-        <p>Todas las guías seleccionadas para imprimir aparecerán con los datos ingresados en los pasos anteriores.</p>
+        <div class="contenedor1">
+          <p>
+            <strong
+              >Todas las guías seleccionadas para imprimir aparecerán con los
+              datos ingresados en los pasos anteriores.</strong
+            >
+          </p>
+          <div class="card-wrapper">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title class="redText">
+                  <strong>Productos disponibles</strong>
+                </mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <mat-grid-list cols="5" rowHeight="100px">
+                  <mat-grid-tile
+                    *ngFor="let tile of tiles"
+                    [colspan]="tile.cols"
+                    [rowspan]="tile.rows"
+                    [style.background]="tile.color">
+                    {{ tile.text }}
+                    <mat-card-content>
+                      {{ tile.Desc }}
+                    </mat-card-content>
+                  </mat-grid-tile>
+                </mat-grid-list>
+              </mat-card-content>
+              <mat-card-header>
+                <mat-card-title class="redText">
+                  <strong>Información del remitente</strong>
+                </mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <mat-grid-list cols="5" rowHeight="100px">
+                  <mat-grid-tile
+                    *ngFor="let info of infoRem"
+                    [colspan]="info.cols"
+                    [rowspan]="info.rows"
+                    [style.background]="info.color">
+                    {{ info.text }}
+                    <mat-card-content>
+                      {{ info.Desc }}
+                    </mat-card-content>
+                  </mat-grid-tile>
+                </mat-grid-list>
+              </mat-card-content>
+              <mat-card-header>
+                <mat-card-title class="redText">
+                  <strong>Información del Destinatario </strong>
+                </mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <mat-grid-list cols="5" rowHeight="100px">
+                  <mat-grid-tile
+                    *ngFor="let info of infoDes"
+                    [colspan]="info.cols"
+                    [rowspan]="info.rows"
+                    [style.background]="info.color">
+                    {{ info.text }}
+                    <mat-card-content>
+                      {{ info.Desc }}
+                    </mat-card-content>
+                  </mat-grid-tile>
+                </mat-grid-list>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+
         <div class="btns d-flex justify-content-between align-items-center m-4">
           <button mat-button matStepperPrevious class="btnRed">Regresar</button>
           <button class="m-2" mat-stroked-button>Cancelar</button>

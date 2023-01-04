@@ -24,22 +24,27 @@ export class ManagementComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  // constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) {}
 
-  // openDialog() {
-  //   const dialogRef = this.dialog.open(DialogContentExampleDialog);
-
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log(`Dialog result: ${result}`);
-  //   });
-  // }
+  openDialog() {
+   this.dialog.open(DialogContentExampleDialog, {width: '450px'});
+  }
 
 }
+
+//PopUp Delete Usuario
 @Component({
   selector: 'management.component-dialog',
   templateUrl: './management.component-dialog.html',
+  styleUrls: ['./management.component.css']
 })
 export class DialogContentExampleDialog {
+
+  constructor(public dialog: MatDialog) {}
+  closeDialog(){
+    this.dialog.closeAll();
+  }
+
 }
 
 export interface PeriodicElement {
