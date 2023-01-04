@@ -1,0 +1,53 @@
+<div class="content">
+    <div class="titulo pt-3">
+        <p>Cliente  >  Guías disponibles </p>
+        <h1 class="Text"> Guías disponibles </h1>  
+    </div>
+    <mat-card>
+        <mat-card-content>
+          <form class="example-form pt-2">
+            <mat-form-field color="red" class="example-full-width" appearance="outline">
+              <span matPrefix> </span>
+              <button class="iconRed" matPrefix mat-button><mat-icon>search</mat-icon></button>
+              <input type="text" matInput placeholder="Buscar" name="search">            
+            </mat-form-field>
+          </form>
+
+            <table mat-table [dataSource]="dataSource" #avaibleguidesTable>
+                <ng-container matColumnDef="purchaseOrder">
+                  <th mat-header-cell *matHeaderCellDef> <b> Orden de compra  </b></th>
+                  <td mat-cell *matCellDef="let element"> {{element.purchaseOrder}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="guideNumber">
+                  <th mat-header-cell *matHeaderCellDef> <b>Número de guía </b></th>
+                  <td mat-cell *matCellDef="let element"> {{element.guideNumber}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="creationDate">
+                    <th mat-header-cell *matHeaderCellDef> <b>Fecha de creación </b></th>
+                    <td mat-cell *matCellDef="let element"> {{element.creationDate}} </td>
+                </ng-container>
+          
+                <ng-container matColumnDef="expiration">
+                  <th mat-header-cell *matHeaderCellDef> <b> Caducidad </b></th>
+                  <td mat-cell *matCellDef="let element"> {{element.expiration}} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="dowloadFile">
+                  <th mat-header-cell *matHeaderCellDef> <b>Descargar archivo </b></th>
+                  <td mat-cell *matCellDef="let element"> 
+                    <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" (click)="dowloadFile(element.purchaseOrder)">
+                      <mat-icon svgIcon="pdf_icon"></mat-icon>
+                    </button>   
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay;"></tr>
+              </table>
+              <mat-paginator class="paginator" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+              </mat-paginator>
+        </mat-card-content>
+    </mat-card>
+</div>

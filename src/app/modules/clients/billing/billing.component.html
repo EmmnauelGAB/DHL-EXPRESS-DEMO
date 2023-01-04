@@ -1,0 +1,44 @@
+
+<div class="content">
+    <div class="titulo pt-3">
+        <p>Cliente  >  Facturación</p>
+        <h1 class="Text"> Facturación </h1>  
+    </div>
+    <form [formGroup]="formFindInvoice" (ngSubmit)="findInvoice()">
+        <p class="txtNormal">Ingrese el número de orden de compra</p>
+        <div class="input-group mb-3 group">
+            <input type="text" class="form-control buscar" placeholder="10000990" formControlName="numberInvoice" />
+            <button class="btn btnRed" type="submit" id="button-find-invoice">
+                Buscar
+            </button>
+        </div>
+        <mat-card>
+            <mat-card-content>
+                <h2 class="redText"> Información de la orden de compra</h2>
+                <div class="detailInvoice">
+                    <div class="groupDetailInvoice">
+                        <p>Orden de compra</p> 
+                        <p class="txtNegrita"> {{(dataInvoice) ? dataInvoice.purchaseOrder : ''}} </p>
+                    </div>
+                    <div class="groupDetailInvoice">
+                        <p>Número de factura</p>
+                        <p class="txtNegrita"> {{(dataInvoice) ? dataInvoice.invoiceNumber : ''}} </p>
+                    </div>
+                    <div class="groupDetailInvoice">
+                        <p>RFC</p>
+                        <p class="txtNegrita"> {{(dataInvoice) ? dataInvoice.rfc : ''}} </p>
+                    </div>
+                    <div></div>
+                    <div class="groupDetailInvoice">
+                        <p>Nombre del cliente</p>
+                        <p class="txtNegrita"> {{(dataInvoice) ? dataInvoice.customerName : '' }} </p>
+                    </div>
+                    
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <button class="btn btnDescargar" type="button" id="button-dowload-invoice">
+            Descargar factura
+        </button>
+    </form>
+</div>

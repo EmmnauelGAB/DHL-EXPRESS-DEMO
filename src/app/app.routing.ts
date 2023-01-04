@@ -24,6 +24,8 @@ import { ProfileEditComponent } from './management/profile/profile-edit/profile-
 import { BuyGuidesComponent } from './modules/clients/buy-guides/buy-guides.component';
 import { PrintComponent } from './modules/clients/print/print.component';
 import { PrintDescComponent } from './modules/clients/print/print-desc/print-desc.component';
+import { AvailableGuidesComponent } from './modules/clients/available-guides/available-guides.component';
+import { BillingComponent } from './modules/clients/billing/billing.component';
 
 
 const appRoutes = [
@@ -49,6 +51,8 @@ const appRoutes = [
   { path: 'buy-guides', component: BuyGuidesComponent },
   { path: 'print', component: PrintComponent },
   { path: 'print-desc', component: PrintDescComponent },
+  { path: 'available-guides', component: AvailableGuidesComponent },
+  { path: 'billing', component: BillingComponent },
   { path: '**', component: PageNotFoundComponent },
 
 
