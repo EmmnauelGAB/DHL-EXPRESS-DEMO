@@ -1,5 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing } from "./app.routing";
 
@@ -18,14 +18,14 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './_public/home/home.component';
+import { LoginComponent } from './_public/login/login.component';
 import { ManagementComponent } from './management/management.component';
-import { MainNavComponent } from './main-nav/main-nav.component';
+import { MainNavComponent } from './shared/main-nav/main-nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
 import { ClientsComponent } from './modules/clients/clients.component';
-import { MainFooComponent } from './main-foo/main-foo.component';
+import { MainFooComponent } from './shared/main-foo/main-foo.component';
 import { FormEditAddComponent } from './management/form-edit-add/form-edit-add.component';
 import { ProfileComponent } from './management/profile/profile.component';
 import { ManagementClientsComponent } from './modules/clients/management-clients/management-clients.component';
@@ -48,6 +48,8 @@ import { PrintComponent } from './modules/clients/print/print.component';
 import { PrintDescComponent } from './modules/clients/print/print-desc/print-desc.component';
 import { BillingComponent } from './modules/clients/billing/billing.component';
 import { AvailableGuidesComponent } from './modules/clients/available-guides/available-guides.component';
+import { AuthInterceptorService } from './core/interceptors/auth-interceptor.service';
+import { ClientsRoutingModule } from './modules/clients/clients.routing';
 
 
 
@@ -105,10 +107,12 @@ import { AvailableGuidesComponent } from './modules/clients/available-guides/ava
     MatDialogModule,
     MatGridListModule,
     MatCardModule,
-    HttpClientModule
-
+    HttpClientModule,
+    ClientsRoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
