@@ -1,26 +1,34 @@
-
 <!-- Navbar -->
 <div class="sticky-top">
-  <nav class="navbar  bg-yellow">
+  <nav class="navbar bg-yellow">
     <div class="container-fluid">
       <div class="col-lg-2">
         <div class="row px-3 py-2">
-          <img src="./assets/images/login/DHL_logo_rgb.png" routerLink="">
+          <img src="./assets/images/login/DHL_logo_rgb.png" routerLink="" />
         </div>
       </div>
       <form class="d-flex" role="search">
-        <button mat-icon-button aria-label="" >
+        <button mat-icon-button aria-label="">
           <mat-icon>language</mat-icon>
         </button>
-        <div class="labelNav">País</div>
+        <div class="labelNav">
+          <select
+            class="form-select form-select-sm danger"
+            #langSelect
+            (change)="changeLang(langSelect.value)"
+          >
+            <option selected *ngFor="let lang of langs" [value]="lang">
+              {{ lang }}
+            </option>
+          </select>
+        </div>
         <button mat-icon-button aria-label="" routerLink="/login">
-          <mat-icon>person</mat-icon>
+          <mat-icon>add_shopping_cart</mat-icon>
         </button>
-        <div class="labelNav" >User</div>
+        <div class="labelNav">{{ "CAR" | translate }}</div>
 
         <div class="example-button-row">
-          <div class="example-flex-container">
-          </div>
+          <div class="example-flex-container"></div>
         </div>
       </form>
     </div>
@@ -30,35 +38,64 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" routerLink="">Inicio</a>
+            <a class="nav-link" routerLink="">{{ "INICIO" | translate }}</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"
-                style="cursor: pointer;" translate> Administracion
+            <a
+              class="nav-link dropdown-toggle"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              style="cursor: pointer"
+            >
+              {{ "ADMIN" | translate }}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item"  translate routerLink="/management">Administracion Usuarios</a>
-              <a class="dropdown-item"  translate routerLink="/profile">Perfil</a>
+              <a class="dropdown-item" routerLink="/management"
+                >Administracion Usuarios</a
+              >
+              <a class="dropdown-item" routerLink="/profile">Perfil</a>
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"
-                style="cursor: pointer;" translate> Clientes
+            <a
+              class="nav-link dropdown-toggle"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              style="cursor: pointer"
+            >
+              {{ "CLIENT" | translate }}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item"  translate routerLink="/clients/management-clients">Administracion Clientes</a>
-              <a class="dropdown-item"  translate routerLink="/clients/management-odc">Generar ODC</a>
-              <a class="dropdown-item"  translate routerLink="/clients/management-guides">Generar Guías a partir de ODC</a>
-              <a class="dropdown-item"   translate routerLink="/clients/management-guides2">Administración Guías</a>
-              <a class="dropdown-item"   translate routerLink="/clients/buy-guides">Comprar Guías</a>
-              <a class="dropdown-item"   translate >Manual de Usuario</a>
-              <a class="dropdown-item" translate routerLink="/clients/print">Impresión</a>
-              <a class="dropdown-item" translate routerLink="/clients/available-guides">Guías disponibles</a>              
-              <a class="dropdown-item" translate routerLink="/clients/billing">Facturación</a>              
+              <a class="dropdown-item" routerLink="/clients/management-clients"
+                >Administracion Clientes</a
+              >
+              <a class="dropdown-item" routerLink="/clients/management-odc"
+                >Generar ODC</a
+              >
+              <a class="dropdown-item" routerLink="/clients/management-guides"
+                >Generar Guías a partir de ODC</a
+              >
+              <a class="dropdown-item" routerLink="/clients/management-guides2"
+                >Administración Guías</a
+              >
+              <a class="dropdown-item" routerLink="/clients/buy-guides"
+                >Comprar Guías</a
+              >
+              <a class="dropdown-item">Manual de Usuario</a>
+              <a class="dropdown-item" routerLink="/clients/print">Impresión</a>
+              <a class="dropdown-item" routerLink="/clients/available-guides"
+                >Guías disponibles</a
+              >
+              <a class="dropdown-item" routerLink="/clients/billing"
+                >Facturación</a
+              >
             </div>
-
           </li>
         </ul>
       </div>

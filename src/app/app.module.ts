@@ -21,11 +21,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './_public/home/home.component';
 import { LoginComponent } from './_public/login/login.component';
 import { ManagementComponent } from './management/management.component';
-import { MainNavComponent } from './shared/main-nav/main-nav.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
 import { ClientsComponent } from './modules/clients/clients.component';
-import { MainFooComponent } from './shared/main-foo/main-foo.component';
 import { FormEditAddComponent } from './management/form-edit-add/form-edit-add.component';
 import { ProfileComponent } from './management/profile/profile.component';
 import { ManagementClientsComponent } from './modules/clients/management-clients/management-clients.component';
@@ -50,9 +49,19 @@ import { BillingComponent } from './modules/clients/billing/billing.component';
 import { AvailableGuidesComponent } from './modules/clients/available-guides/available-guides.component';
 import { AuthInterceptorService } from './core/interceptors/auth-interceptor.service';
 import { ClientsRoutingModule } from './modules/clients/clients.routing';
+import { MainNavComponent } from './shared/main-nav/main-nav.component';
+import { MainFooComponent } from './shared/main-foo/main-foo.component';
+import { MatChipsModule } from '@angular/material/chips';
 
+//Multilenguaje -- traslate
+import { HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-
+//funcion exportable AOT traslate
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -76,9 +85,7 @@ import { ClientsRoutingModule } from './modules/clients/clients.routing';
     FormDetailGuideComponent,
     FormAddGuideComponent,
     PrintComponent,
-
     ManagementOdcComponent,
-
     FormEditComponent,
     ProfileAddComponent,
     ProfileEditComponent,
@@ -107,8 +114,17 @@ import { ClientsRoutingModule } from './modules/clients/clients.routing';
     MatDialogModule,
     MatGridListModule,
     MatCardModule,
+    ClientsRoutingModule,
     HttpClientModule,
-    ClientsRoutingModule
+    MatChipsModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: (createTranslateLoader),
+          deps: [HttpClient]
+      }
+  })
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },

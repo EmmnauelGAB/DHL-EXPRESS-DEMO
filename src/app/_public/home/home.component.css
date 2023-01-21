@@ -1,26 +1,37 @@
+/** Boton Rojo de agregar a carrito */
 .btnRed{
   background-color: #D40511;
   color: #ffffff;
-  float: right;
-}
-.buscar{
-  width: 87%;
-  top: 50%;
-  margin:1rem auto;
+  float: left;
 }
 
+/**Columna 3 de card*/
+#lateral {
+  width: 400px;
+
+}
+
+/**fondo de ahorro */
+.textYellow {
+  background-color: #FFCC00;
+  font-size: 70%
+}
+
+/**fuente de antes */
+.textSize {
+  font-size: 50%
+}
+/** Texto Informacion Card central */
+.containerInfo {
+  margin: 12px;
+}
+
+/**Contenedor central*/
 .container2 {
   display: flex;
   flex-direction: column;
   margin:1rem auto;
-  max-width: 900px;
-}
-
-
-.casilla2 {
-  height: 5rem;
-  margin: 0.5rem;
-  width: 14rem;
+  max-width: 1000px;
 }
 
 mat-icon{
