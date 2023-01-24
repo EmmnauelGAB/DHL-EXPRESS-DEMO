@@ -17,6 +17,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './_public/home/home.component';
 import { LoginComponent } from './_public/login/login.component';
@@ -52,6 +53,8 @@ import { ClientsRoutingModule } from './modules/clients/clients.routing';
 import { MainNavComponent } from './shared/main-nav/main-nav.component';
 import { MainFooComponent } from './shared/main-foo/main-foo.component';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 //Multilenguaje -- traslate
 import { HttpClient } from '@angular/common/http';
@@ -117,6 +120,8 @@ export function createTranslateLoader(http: HttpClient) {
     ClientsRoutingModule,
     HttpClientModule,
     MatChipsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,
@@ -128,6 +133,7 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
+
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
