@@ -55,6 +55,11 @@ import { MainFooComponent } from './shared/main-foo/main-foo.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
+
 
 //Multilenguaje -- traslate
 import { HttpClient } from '@angular/common/http';
@@ -122,6 +127,10 @@ export function createTranslateLoader(http: HttpClient) {
     MatChipsModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatDividerModule,
+    MatButtonToggleModule,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,
