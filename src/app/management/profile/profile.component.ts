@@ -1,7 +1,10 @@
 import { Component, ViewChild, AfterViewInit} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
-import {MatDialog, } from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
+import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
+import { MODAL_PROFILES } from 'src/app/commons/constants';
+import { LogService } from 'src/app/commons/service/log.service';
 
 @Component({
   selector: 'app-profile',
@@ -20,14 +23,24 @@ export class ProfileComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  constructor(public dialog: MatDialog){
+  constructor(public dialog: MatDialog, public logService:LogService) { }
 
+  openDialogDelete():void {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '600px',
+      height: '272px',
+      data: MODAL_PROFILES,
+      autoFocus: false
+    })
+
+    dialogRef.afterClosed().subscribe( res => {
+      if(res){
+        this.logService.info("Desactivar rol...!!! ");
+      }      
+    })
   }
-
-  openDialogDelete() {
-    this.dialog.open(DialogContentExampleDialog, {width: '450px'});
-   }
 }
+
 export interface PeriodicElement {
   position: number;
   name: string;
@@ -37,20 +50,6 @@ export interface PeriodicElement {
   perfil: string;
 }
 
-//on PopUp Delete Perfil
-@Component({
-  selector: 'profile.component-dialog',
-  templateUrl: './profile.component.delete.html',
-  styleUrls: ['./profile.component.css']
-})
-export class DialogContentExampleDialog {
-
-  constructor(public dialog: MatDialog) {}
-  closeDialog(){
-    this.dialog.closeAll();
-  }
-
-}
 //end PopUp Delete Perfil
 const ELEMENT_DATA: PeriodicElement[] = [
   {

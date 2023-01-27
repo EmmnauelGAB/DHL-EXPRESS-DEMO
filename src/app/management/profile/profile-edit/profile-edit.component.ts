@@ -1,23 +1,38 @@
-import { Component, AfterViewInit,  ViewChild } from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+
 @Component({
   selector: 'app-profile-edit',
   templateUrl: './profile-edit.component.html',
   styleUrls: ['./profile-edit.component.css']
 })
-export class ProfileEditComponent implements AfterViewInit {
-  search : String ="";
-  displayedColumns: string[] = ['Select', 'perfil'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+export class ProfileEditComponent implements OnInit {
+  search : String ="";   
+  editForm: FormGroup
+  permisosData: PeriodicElement[]
+  selected : PeriodicElement[] = [];
 
-  @ViewChild(MatPaginator)
-  paginator!: MatPaginator;
+  constructor(private formBuilder: FormBuilder) {  }
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+  ngOnInit() {
+    this.editForm = this.formBuilder.group({ })
+    this.permisosData = ELEMENT_DATA
   }
+  
+  onCheckChange($event: any, permiso:PeriodicElement){
+    if(this.isPresent(permiso)){
+      this.selected = this.selected.filter(item => item.email !== permiso.email)
+    } else {
+      this.selected.push(permiso)
+    }
+  }
+
+  isPresent(value:PeriodicElement) {
+    return this.selected.filter(item => item.email === value.email).length > 0
+  }
+
 }
+
 export interface PeriodicElement {
   position: number;
   name: string;
@@ -27,7 +42,7 @@ export interface PeriodicElement {
   perfil: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+export const ELEMENT_DATA: PeriodicElement[] = [
   {
     position: 7,
     name: 'Kibo Little',

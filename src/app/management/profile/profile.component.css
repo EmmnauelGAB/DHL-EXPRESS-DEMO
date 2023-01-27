@@ -1,92 +1,56 @@
-.container3 {
+.content {
   display: flex;
   flex-direction: column;
-  margin:1rem auto;
-  max-width: 800px;
-}
-.container2 {
-  display: flex;
-  flex-direction: column;
-  margin:3rem auto;
-  max-width: 600px;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
 }
 
-.contenedor1 {
-  display: flex;
-  flex-direction: column;
-  margin:1rem auto;
-  max-width: 400px;
+mat-card {
+  margin-top: 20px;
+  width: 60%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin-bottom: 3rem;
 }
 
-.btns {
-  display: flex;
-  flex-direction: row;
-  margin:2rem auto;
-  max-width: 250px;
-}
-
-.btn4 {
-  display: flex;
-  flex-direction: row;
-  margin:2rem auto;
-  max-width: 600px;
-}
-
-.casilla {
-  height: 5rem;
-  margin: 0.5rem;
-  width: 14rem;
-}
-
-.casilla2 {
-  height: 5rem;
-  margin: 0.5rem;
-  width: 14rem;
-}
-.casilla3 {
-  height: 5rem;
-  margin: 0.5rem;
-  width: 14rem;
-}
-.casilla4 {
-  height: 5rem;
-  margin: 0.5rem;
-  width: 14rem;
-}
-.casilla5 {
-  height: 5rem;
-  margin: 0.5rem;
-
-}
-.redText{
-  color: #D40511;
-  font-size: 2rem;
-}
-.Text{
-  color: #000000;
-  font-size: 2rem;
-}
-.addUser{
-  width: 30%;
-  float: right;
-}
-.btnRed{
-  background-color: #D40511;
-  color: #ffffff;
-  float: right;
-}
 mat-icon{
   color: #D40511;
 }
-.btnRed{
+
+.managment_profiles-form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.managment_profiles-btnAddRol {
+  width: 10rem;
+  height: 3rem;
+  margin: 0px;
+
   background-color: #D40511;
   color: #ffffff;
-  float: right;
-  margin-right: 1rem;
 }
-.btnRedCancel{
-  background-color: #ffffff;
-  color: #D40511;
-  float: right;
-  margin-right: 1rem;
+
+table  {
+  width: 100%;
+  margin:1rem auto;
+  border-top: 2px solid #999999 !important;
+  border-bottom: 2px solid #999999 !important;
+  text-align: left;
+}
+
+table th {
+  text-align: left;
+  color: #000000;
+}
+
+@media (max-width: 767px) {
+  .managment_profiles-btnAddRol {
+    width: 90%;
+  }
+
+  mat-card {
+    width: 100%;
+  }
 }

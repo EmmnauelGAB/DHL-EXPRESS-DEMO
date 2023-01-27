@@ -60,6 +60,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 
 //funcion exportable AOT traslate
 export function createTranslateLoader(http: HttpClient) {
@@ -95,7 +96,8 @@ export function createTranslateLoader(http: HttpClient) {
     BuyGuidesComponent,
     PrintDescComponent,
     BillingComponent,
-    AvailableGuidesComponent
+    AvailableGuidesComponent,
+    ConfirmDialogComponent
 
 
   ],

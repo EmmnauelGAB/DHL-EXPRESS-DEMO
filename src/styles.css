@@ -1,14 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Delivery App', Roboto, "Helvetica Neue", sans-serif; }
 
-.redText {
+@font-face {
+    font-family: 'Delivery App';
+    src: url(assets/fonts/Delivery_A_Rg.ttf) format("opentype");
+}
+
+.content_title-red {
     color: #D40511;
     font: normal normal bold 24px/40px Delivery App;
 }
 
+.iconRed{
+    color: #D40511;
+}
+
 .content {
     min-height: 70%;
-    background-color: #F2F2F2;
+    background-color: #FBFBFB;
+}
+
+.content_title {
+    width: 85%;
+    text-align: left;
+}
+
+.content_title-navigation {
+    font: normal normal normal 14px/20px Delivery App !important;
+    letter-spacing: 0.06px;
+    color: #333333;
+    opacity: 1;
+}
+
+.content_title-main {
+    /* font: 400 24px/32px Roboto, "Helvetica Neue", sans-serif !important; */
+    font: normal normal bold 40px/40px Delivery App !important;
+    letter-spacing: 0px;
+    color: #333333;
+    opacity: 1;
+    margin-top: 3rem !important;
+    font-weight: bold !important;
+}
+
+.content_title-red {
+    text-align: left;
+    font: normal normal bold 24px/40px Delivery App !important;
+    letter-spacing: 0px;
+    color: #D40511;
+    opacity: 1;
+    margin: 0px !important;
+}
+
+@media (max-width: 768px) {
+    .content {
+        min-height: 100%;
+    }
 }

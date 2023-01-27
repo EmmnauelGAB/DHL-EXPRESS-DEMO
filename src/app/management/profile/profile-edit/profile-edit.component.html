@@ -1,75 +1,42 @@
-<div class="container3">
-  <p>Cliente > Administrar Perfiles > Editar Perfil</p>
-  <mat-card class="Text">
-    <mat-card-header color="warn">
-      <mat-card-title>Editar Perfil</mat-card-title>
-    </mat-card-header>
-  </mat-card>
-
-</div>
-
-<div class="container2">
-  <mat-card class="">
-    <mat-card-header class="redText">
-      <mat-card-title>Informacion de Usuario</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>Para crear un nuevo perfil, por favor escriba el nombre.
-      </p>
-    </mat-card-content>
-  </mat-card>
-
-  <div class="contenedor1">
-
-
-
-    <mat-form-field>
-      <input matInput type="text" placeholder="Nombre del perfil">
-    </mat-form-field>
-
+<div class="content">
+  <div class="content_title pt-3">
+    <p class="content_title-navigation"> Cliente &nbsp; &nbsp;>&nbsp; &nbsp; Administrar roles&nbsp; &nbsp;>&nbsp; &nbsp; Editar Perfil </p>
+    <h1 class="content_title-main"> Editar Perfil </h1>  
   </div>
 
-  <mat-card class="">
-    <mat-card-header class="redText">
-      <mat-card-title>Informacion de Usuario</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>Seleccione las opciones de menú disponibles en la aplicación.
-      </p>
-    </mat-card-content>
-  </mat-card>
+  <div class="managment_edit-body">
+    <form [formGroup]="editForm">
+      
+      <div class="row px-4">
+        <h1 class="content_title-red">Informacion de Usuario</h1>
+        <h2 class="content-edit-subtitle">Si desea puede cambiar el nombre del perfil.</h2>
 
+        <mat-form-field class="col-md-8 mx-auto my-3">
+          <mat-label>Nombre del perfil</mat-label>
+          <input matInput type="text" placeholder="" value="Administrador">
+        </mat-form-field>
 
-  <table mat-table [dataSource]="dataSource" #tabla1>
-
-    <ng-container matColumnDef="Select">
-      <th mat-header-cell *matHeaderCellDef>  </th>
-      <td mat-cell *matCellDef="let element">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault">
-          </label>
-        </div>
-      </td>
-    </ng-container>
-
-    <!-- perfil Column -->
-    <ng-container matColumnDef="perfil" class="textSize">
-      <th mat-header-cell *matHeaderCellDef><strong >Administracion</strong><th>
-      <td mat-cell *matCellDef="let element"> {{element.perfil}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-  <mat-paginator class="paginator" [pageSizeOptions]="[10, 20]" showFirstLastButtons
-    aria-label="Select page of periodic elements">
-  </mat-paginator>
-
+        <h1 class="content_title-red">Informacion de Usuario</h1>
+        <h2 class="content-edit-subtitle">Seleccione las opciones de menú disponibles en la aplicación.</h2>
+      </div>
+      <mat-card class="managment_edit-card my-3">
+        <mat-card-content>
+          <label class="form_check-title">Permisos</label>
+          <div class="form-check row" *ngFor="let permiso of permisosData; let i = index">
+            <div class="col-md-12 col-lg-12 mx-auto my-3">
+                <input class="form-check-input check" type="checkbox" [value]="permiso" (change)="onCheckChange($event, permiso)">
+                <label class="form-check-label" for="flexCheckDefault">{{permisosData[i].perfil}}</label>
+            </div> 
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <!-- <pre>
+        Options selected: {{selected | json}}
+      </pre> -->
+      <div class="profile_edit-footer row justify-content-center justify-content-lg-end justify-content-md-end">
+        <button mat-stroked-button class="btn btnWhite col-10 col-md-5 col-lg-3 m-2" routerLink="/profile">Cancelar</button>
+        <button mat-raised-button  class="btn btnRed col-10 col-md-5 col-lg-3 m-2" routerLink="/profile">Guardar cambios</button>
+      </div>
+    </form>
+  </div>
 </div>
-<div class="btns d-flex justify-content-between align-items-center">
-  <button mat-stroked-button color="warn" routerLink="/profile">Cancelar</button>
-
-  <button mat-raised-button class="btnRed">Guardar Perfil</button>
-</div>
-

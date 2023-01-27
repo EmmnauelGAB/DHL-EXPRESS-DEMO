@@ -25,7 +25,7 @@ import { AuthGuard } from 'src/app/core/guards/auth.guard';
 const routes: Routes = [
     {
         path: 'clients',
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
         children: [
             { path: 'management-clients', component: ManagementClientsComponent },
             { path: 'formAddClient', component: FormEditAddClientComponent },

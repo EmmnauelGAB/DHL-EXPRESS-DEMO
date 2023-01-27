@@ -1,0 +1,10 @@
+<div class="container-fluid dialog">
+    <h1 class="dialog_title" mat-dialog-title>{{data.title}}</h1>
+    <div mat-dialog-content class="dialog_body">
+        <p class="dialog_message" #elementRefParagraph></p>
+    </div>
+    <div class="dialog_footer" mat-dialog-actions>
+        <button mat-button  class="dialog_footer-btnWhite" (click)="closeDialog()">{{data.titleBtnCancel}}</button>
+        <button mat-raised-button mat-dialog-close class="dialog_footer-btnRed" [mat-dialog-close] = true >{{data.titleBtnAffirmative}}</button>
+    </div>
+  </div>

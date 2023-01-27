@@ -1,0 +1,77 @@
+.dialog {
+    height: 100%;
+}
+
+.dialog_body {
+    height: 40%;
+}
+
+.dialog_title {
+    text-align: left;
+    font: normal normal 900 32px/42px Delivery App;
+    letter-spacing: 0px;
+    color: #333333;
+    opacity: 1;
+}
+
+.dialog_message {
+    text-align: left;
+    font: normal normal normal 18px/24px Delivery App;
+    letter-spacing: 0px;
+    color: #8C8C8C;
+}
+
+.dialog_message-name {
+    font: normal normal bold 18px/24px Delivery App !important;
+    letter-spacing: 0px !important;
+    color: #333333 !important;
+}
+
+.dialog_footer {
+    display: flex;
+    justify-content: flex-end;
+    bottom: 0;
+}
+
+.dialog_footer-btnRed {
+    background: #D40511 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    margin-right: 1rem;
+    height: 48px;
+
+    text-align: center;
+    color: #ffffff;
+    font: normal normal bold 18px/32px Delivery App;
+    letter-spacing: 0.01px;
+    margin-top: 1rem;
+  }
+  
+  .dialog_footer-btnRed:hover {
+    background: #9F040C 0% 0% no-repeat padding-box;
+    color: #FFFFFF;
+    opacity: 100%;
+  }
+
+  .dialog_footer-btnWhite {
+    background: #FBFBFB 0% 0% no-repeat padding-box;
+    border: 2px solid #D40511;
+    opacity: 1;
+    margin-right: 1rem;
+    height: 48px;
+
+    text-align: center;
+    color: #D40511;
+    font: normal normal bold 18px/32px Delivery App;
+    letter-spacing: 0.01px;
+    margin-top: 1rem;
+  }
+  
+  .dialog_footer-btnWhite:hover {
+    background: #FBFBFB 0% 0% no-repeat padding-box;
+    border: 2px solid #D40511;
+    border-radius: 4px;
+    
+    color: #D40511;
+    opacity: 100%;
+  }
