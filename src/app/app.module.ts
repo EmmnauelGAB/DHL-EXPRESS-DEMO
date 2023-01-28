@@ -21,13 +21,13 @@ import {MatCardModule} from '@angular/material/card';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './_public/home/home.component';
 import { LoginComponent } from './_public/login/login.component';
-import { ManagementComponent } from './management/management.component';
+import { ManagementComponent } from './modules/management/management.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { ClientsComponent } from './modules/clients/clients.component';
-import { FormEditAddComponent } from './management/form-edit-add/form-edit-add.component';
-import { ProfileComponent } from './management/profile/profile.component';
+import { FormEditAddComponent } from './modules/management/form-edit-add/form-edit-add.component';
+import { ProfileComponent } from './modules/management/profile/profile.component';
 import { ManagementClientsComponent } from './modules/clients/management-clients/management-clients.component';
 import { FormEditAddClientComponent } from './modules/clients/management-clients/form-edit-add-client/form-edit-add-client.component';
 import { FormEditClientComponent } from './modules/clients/management-clients/form-edit-client/form-edit-client.component';
@@ -40,9 +40,9 @@ import { FormAddGuideComponent } from './modules/clients/management-guides-v2/fo
 
 import { ManagementOdcComponent } from './modules/clients/management-odc/management-odc.component';
 
-import { FormEditComponent } from './management/form-edit/form-edit.component';
-import { ProfileAddComponent } from './management/profile/profile-add/profile-add.component';
-import { ProfileEditComponent } from './management/profile/profile-edit/profile-edit.component';
+import { FormEditComponent } from './modules/management/form-edit/form-edit.component';
+import { ProfileAddComponent } from './modules/management/profile/profile-add/profile-add.component';
+import { ProfileEditComponent } from './modules/management/profile/profile-edit/profile-edit.component';
 import { BuyGuidesComponent } from './modules/clients/buy-guides/buy-guides.component';
 import { PrintComponent } from './modules/clients/print/print.component';
 import { PrintDescComponent } from './modules/clients/print/print-desc/print-desc.component';

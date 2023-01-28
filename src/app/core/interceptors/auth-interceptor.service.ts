@@ -2,10 +2,10 @@ import { HttpResponse } from '@angular/common/http';
 import { HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, finalize, Observable, tap, throwError } from 'rxjs';
-import { CONST_TOKEN, headers } from 'src/app/commons/constants';
-import { LogService } from '../../commons/service/log.service';
-import { SessionStorageService } from '../../commons/service/session-storage.service';
-import { AuthService } from 'src/app/commons/service/auth.service';
+import { CONST_TOKEN, headers } from 'src/app/core/constants';
+import { LogService } from '../service/log.service';
+import { SessionStorageService } from '../service/session-storage.service';
+import { AuthService } from 'src/app/core/service/auth.service';
 
 @Injectable({
   providedIn: 'root'

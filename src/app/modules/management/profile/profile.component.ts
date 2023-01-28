@@ -3,8 +3,8 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatDialog} from '@angular/material/dialog';
 import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
-import { MODAL_PROFILES } from 'src/app/commons/constants';
-import { LogService } from 'src/app/commons/service/log.service';
+import { MODAL_PROFILES } from 'src/app/core/constants';
+import { LogService } from 'src/app/core/service/log.service';
 
 @Component({
   selector: 'app-profile',

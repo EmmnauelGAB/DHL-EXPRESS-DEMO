@@ -1,14 +1,14 @@
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './_public/login/login.component';
 import { HomeComponent } from './_public/home/home.component';
-import { ManagementComponent } from './management/management.component';
-import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
-import { FormEditAddComponent } from './management/form-edit-add/form-edit-add.component';
+import { ManagementComponent } from './modules/management/management.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { FormEditAddComponent } from './modules/management/form-edit-add/form-edit-add.component';
 
-import { ProfileComponent } from './management/profile/profile.component';
-import { FormEditComponent } from './management/form-edit/form-edit.component';
-import { ProfileAddComponent } from './management/profile/profile-add/profile-add.component';
-import { ProfileEditComponent } from './management/profile/profile-edit/profile-edit.component';
+import { ProfileComponent } from './modules/management/profile/profile.component';
+import { FormEditComponent } from './modules/management/form-edit/form-edit.component';
+import { ProfileAddComponent } from './modules/management/profile/profile-add/profile-add.component';
+import { ProfileEditComponent } from './modules/management/profile/profile-edit/profile-edit.component';
 
 const appRoutes = [
   // clients: ClientsRoutingModule

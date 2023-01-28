@@ -1,5 +1,5 @@
 import { ElementRef } from "@angular/core";
-import { Dialog } from "../core/models/general/dialog.model";
+import { Dialog } from "./models/general/dialog.model";
 
 export let headers = {
     'Content-Type': 'application/json;charset=utf-8'
