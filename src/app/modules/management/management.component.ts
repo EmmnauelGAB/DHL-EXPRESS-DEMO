@@ -29,6 +29,11 @@ export class ManagementComponent implements AfterViewInit {
    this.dialog.open(DialogContentExampleDialog, {width: '450px'});
   }
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
 }
 
 //PopUp Delete Usuario
@@ -59,6 +64,30 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {
     usuario: 'gerardo.miranda',
     name: 'Gerardo Miranda Herrera',
+    roles: 'Administrador',
+    estatus: 'Validado',
+    fechaAl: 'mm/dd/aaaa',
+    ultimoIn: 'mm/dd/aaaa',
+  },
+  {
+    usuario: 'usuario_new@miranda',
+    name: 'Ernesto',
+    roles: 'Cliente',
+    estatus: 'Validado',
+    fechaAl: 'mm/dd/aaaa',
+    ultimoIn: 'mm/dd/aaaa',
+  },
+  {
+    usuario: 'o.cabrera@praxisglobe.net',
+    name: 'Omar Cabrera Acero',
+    roles: 'Cliente',
+    estatus: 'Validado',
+    fechaAl: 'mm/dd/aaaa',
+    ultimoIn: 'mm/dd/aaaa',
+  },
+  {
+    usuario: 'emmanuel.garcia',
+    name: 'GEmmanuel Garcia Barron',
     roles: 'Administrador',
     estatus: 'Validado',
     fechaAl: 'mm/dd/aaaa',

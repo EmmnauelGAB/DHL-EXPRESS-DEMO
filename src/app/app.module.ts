@@ -59,7 +59,10 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
+//importar csv
+import { MatTableExporterModule } from 'mat-table-exporter';
 
 //Multilenguaje -- traslate
 import { HttpClient } from '@angular/common/http';
@@ -115,6 +118,7 @@ export function createTranslateLoader(http: HttpClient) {
     MatInputModule,
     MatButtonModule,
     FormsModule,
+    MatTableExporterModule,
     MatSlideToggleModule,
     MatIconModule,
     routing,
@@ -132,6 +136,7 @@ export function createTranslateLoader(http: HttpClient) {
     MatSelectModule,
     MatCheckboxModule,
     MatDividerModule,
+    MatToolbarModule,
     MatButtonToggleModule,
     TranslateModule.forRoot({
       loader: {
