@@ -1,45 +1,68 @@
 <!-- Navbar -->
 <div class="sticky-top">
-  <nav class="navbar bg-yellow">
-    <div class="container-fluid">
-      <div class="col-lg-2">
-        <div class="row px-3 py-2">
-          <img src="./assets/images/login/DHL_logo_rgb.png" routerLink="" />
+  <!-- Jumbotron -->
+  <div class="p-3 bg-yellow" >
+    <div class="container">
+      <div class="row">
+        <!-- Left elements logo -->
+        <div class="col-md-6 d-flex justify-content-center justify-content-md-start mb-3 mb-md-2">
+          <a href="#!" class="ms-md-2">
+            <img src="./assets/images/home/size%207x24(1).png" height="35" />
+          </a>
         </div>
-      </div>
-      <form class="d-flex" role="search">
-        <button mat-icon-button aria-label="">
-          <mat-icon>language</mat-icon>
-        </button>
-        <div class="labelNav">
-          <select
-            class="form-select form-select-sm danger"
-            #langSelect
-            (change)="changeLang(langSelect.value)"
-          >
-            <option selected *ngFor="let lang of langs" [value]="lang">
-              {{ lang }}
-            </option>
-          </select>
-        </div>
-        <button mat-icon-button aria-label="" routerLink="/login">
-          <mat-icon>add_shopping_cart</mat-icon>
-        </button>
-        <div class="labelNav">{{ "CAR" | translate }}</div>
+        <!-- Right elements -->
+        <div class="col-md-6 d-flex justify-content-center justify-content-md-end align-items-center">
+          <div class="d-flex">
+            <!-- Languages -->
+            <form class="d-flex" role="search">
+              <button mat-icon-button aria-label="">
+                <mat-icon>language</mat-icon>
+              </button>
+              <div class="">
+                <select
+                  class="form-select form-select-sm danger"
+                  #langSelect
+                  (change)="changeLang(langSelect.value)">
+                  <option selected *ngFor="let lang of langs" [value]="lang">
+                    {{ lang }}
+                  </option>
+                </select>
+              </div>
+              <!-- User -->
+              <button mat-icon-button aria-label="" routerLink="/login">
+                <mat-icon matBadge="15" matBadgeColor="warn">person</mat-icon>
+              </button>
+              <div class="labelNav">!Hola</div>
+              <!-- Cart -->
+              <div class="demo-section">
+                <button mat-icon-button aria-label="" routerLink="/login">
+                  <mat-icon matBadge="15" matBadgeColor="warn">add_shopping_cart</mat-icon>
+                  <span class="cdk-visually-hidden">
+                    Example with a home icon with overlaid badge showing the number 15
+                  </span>
+                </button>
+              </div>
+              <div class="labelNav">{{ "CAR" | translate }}</div>
+              <div class="example-button-row">
+                <div class="example-flex-container"></div>
+              </div>
+            </form>
 
-        <div class="example-button-row">
-          <div class="example-flex-container"></div>
+          </div>
         </div>
-      </form>
+        <!-- Right elements -->
+      </div>
     </div>
-  </nav>
+  </div>
+  <!-- Jumbotron -->
   <nav class="navbar navbar-expand-lg bg-yellow">
     <div class="container-fluid">
+      <a class="nav-link" routerLink="">{{ "INICIO" | translate }}</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="">{{ "INICIO" | translate }}</a>
-          </li>
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"

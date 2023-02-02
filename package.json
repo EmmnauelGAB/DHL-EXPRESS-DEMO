@@ -31,6 +31,7 @@
     "bs-stepper": "^1.7.0",
     "jquery": "^3.6.2",
     "mat-icon-import": "^0.1.1",
+    "mat-table-exporter": "^10.2.4",
     "material-icons": "^1.13.1",
     "material-steppers": "^2.0.0",
     "rxjs": "~7.5.0",
