@@ -1,0 +1,64 @@
+<form [formGroup]="addressForm">
+  <div class="row">
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            placeholder="Razón social o nombre"
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Contacto" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            placeholder="Dirección de correo electrónico"/>
+        </mat-form-field>
+
+        <div class="row">
+          <mat-form-field class="col-6">
+            <input
+              matInput
+              type="number"
+              placeholder="Número de teléfono"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="col-6">
+            <input matInput type="number" placeholder="Extención" />
+          </mat-form-field>
+        </div>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Calle y número" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            placeholder="Departamento, torre, edificio, piso, etc."
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="number" placeholder="Código postal" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Colonia" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Ciudad" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Estado" />
+        </mat-form-field>
+      </div>
+</form>

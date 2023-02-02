@@ -1,367 +1,112 @@
-<div>
-  <div class="buscar">
-    <p>Cliente > Impresión</p>
-    <h1 class="Text">Impresión</h1>
+<div class="content">
+    <div class="content_title pt-3">
+        <p class="content_title-navigation"> Cliente &nbsp; &nbsp;>&nbsp; &nbsp;Impresión</p>
+        <h1 class="content_title-main"> Impresión </h1>  
+    </div>
+    
     <mat-stepper
-      class="example-stepper"
-      [orientation]="(stepperOrientation | async)!"
-      labelPosition="bottom"
-    >
-      <mat-step [stepControl]="firstFormGroup" label="Captura guías a imprimir">
-        <mat-card-content>
-          <p>Por favor indique cuántas guías desea imprimir.</p>
-        </mat-card-content>
-        <form [formGroup]="firstFormGroup">
-          <div class="container-fluid">
-            <div class="redText pt-3 pb-4">
-              <b>Productos disponibles</b>
-              <table mat-table [dataSource]="dataSource" #tabla1>
-                <!-- Folio Column -->
-                <ng-container matColumnDef="folio">
-                  <th mat-header-cell *matHeaderCellDef>Descripción</th>
-                  <td mat-cell *matCellDef="let element">
-                    {{ element.folio }}
-                  </td>
-                </ng-container>
-
-                <!-- Total de guías Column -->
-                <ng-container matColumnDef="totalGuides">
-                  <th mat-header-cell *matHeaderCellDef>Total de guías</th>
-                  <td mat-cell *matCellDef="let element">
-                    {{ element.totalGuides }}
-                  </td>
-                </ng-container>
-
-                <!-- Guías usadas  Column -->
-                <ng-container matColumnDef="useGuides">
-                  <th mat-header-cell *matHeaderCellDef>Guías usadas</th>
-                  <td mat-cell *matCellDef="let element">
-                    {{ element.useGuides }}
-                  </td>
-                </ng-container>
-
-                <!-- Guías Asignadas Column -->
-                <ng-container matColumnDef="asingGuides">
-                  <th mat-header-cell *matHeaderCellDef>Guías Asignadas</th>
-                  <td mat-cell *matCellDef="let element">
-                    {{ element.asingGuides }}
-                  </td>
-                </ng-container>
-
-                <!-- Guías Asignadas Column-->
-                <ng-container matColumnDef="print">
-                  <th mat-header-cell *matHeaderCellDef>Guías impresas</th>
-                  <td mat-cell *matCellDef="let element">
-                    {{ element.asingGuides }}
-                  </td>
-                </ng-container>
-
-                <!-- Guías Disponibles  Column -->
-                <ng-container matColumnDef="availableGuides">
-                  <th mat-header-cell *matHeaderCellDef>Guías Disponibles</th>
-                  <td mat-cell *matCellDef="let element">
-                    {{ element.availableGuides }}
-                  </td>
-                </ng-container>
-
-                <!-- Guías Disponibles  Column -->
-                <ng-container matColumnDef="printGuides">
-                  <th mat-header-cell *matHeaderCellDef>Guías a imprimir</th>
-                  <td mat-cell *matCellDef="let element">
-                    {{ element.availableGuides }}
-                  </td>
-                </ng-container>
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr
-                  mat-row
-                  *matRowDef="let row; columns: displayedColumns"
-                ></tr>
-              </table>
-            </div>
-            <div
-              class="btns d-flex justify-content-between align-items-center m-2"
-            >
-              <button mat-stroked-button routerLink="/print" class="btnRed">
-                Regresar
-              </button>
-              <button mat-stroked-button color="warn">Cancelar</button>
-              <button
-                class="but"
-                mat-raised-button
-                matStepperNext
-                class="btnRed"
-              >
-                Continuar
-              </button>
-            </div>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="secondFormGroup" label="Remitente">
-        <form [formGroup]="secondFormGroup">
-          <div class="container2 container-fluid">
-            <div class="blackText pt-3">
-              <b
-                >Capture los datos del remitente, recuerda que estos datos se
-                incluiran en todas la guias a imprimir.
-              </b>
-            </div>
-            <!--<div class="d-flex p-4"></div>-->
-            <div class="">
-              <div class="contenedor1">
-                <mat-form-field>
-                  <input
-                    matInput
-                    type="text"
-                    placeholder="Nombre de la empresa"
-                  />
-                </mat-form-field>
-
-                <mat-form-field>
-                  <input matInput type="text" placeholder="Contacto" />
-                </mat-form-field>
-
-                <mat-form-field>
-                  <input
-                    matInput
-                    type="text"
-                    placeholder="Direccion de correo electronico (Opcional)"
-                  />
-                </mat-form-field>
-
-                <div class="d-flex p-4">
-                  <mat-form-field>
-                    <input
-                      matInput
-                      type="number"
-                      placeholder="Número de telefono"
-                    />
-                  </mat-form-field>
-
-                  <mat-form-field>
-                    <input matInput type="number" placeholder="Extención" />
-                  </mat-form-field>
-                </div>
-
-                <mat-form-field>
-                  <input matInput type="text" placeholder="Calle y número" />
-                </mat-form-field>
-
-                <mat-form-field>
-                  <input
-                    matInput
-                    type="text"
-                    placeholder="Departamento, torre, edificio, piso, etc."
-                  />
-                </mat-form-field>
-
-                <mat-form-field>
-                  <input matInput type="number" placeholder="Código postal" />
-                </mat-form-field>
-
-                <mat-form-field>
-                  <input matInput type="text" placeholder="Colonia" />
-                </mat-form-field>
-
-                <mat-form-field>
-                  <input matInput type="text" placeholder="Ciudad" />
-                </mat-form-field>
-
-                <mat-form-field>
-                  <input matInput type="text" placeholder="Estado" />
-                </mat-form-field>
-              </div>
-            </div>
-          </div>
-        </form>
-        <div class="btns d-flex justify-content-between align-items-center m-4">
-          <button class="but m-2 btnRed" mat-raised-button matStepperPrevious>
-            Regresar
-          </button>
-          <button class="m-2" mat-stroked-button color="warn">Cancelar</button>
-          <button
-            class="but m-2"
-            mat-raised-button
-            matStepperNext
-            class="btnRed"
-          >
-            Continuar
-          </button>
-        </div>
-      </mat-step>
-      <mat-step [stepControl]="thirdFormGroup" label="Destinatario">
-        <form [formGroup]="thirdFormGroup">
-          <div class="container2 container-fluid">
-            <div class="container2 container-fluid">
-              <div class="blackText pt-3">
-                <b
-                  >Capture los datos del destinatario, recuerde que estos datos
-                  se incluirán en todas las guías a imprimir.
-                </b>
-              </div>
-              <!--<div class="d-flex p-4"></div>-->
-              <div class="">
-                <div class="contenedor1">
-                  <mat-form-field>
-                    <input
-                      matInput
-                      type="text"
-                      placeholder="Nombre de la empresa"
-                    />
-                  </mat-form-field>
-
-                  <mat-form-field>
-                    <input matInput type="text" placeholder="Contacto" />
-                  </mat-form-field>
-
-                  <mat-form-field>
-                    <input
-                      matInput
-                      type="text"
-                      placeholder="Direccion de correo electronico (Opcional)"
-                    />
-                  </mat-form-field>
-
-                  <div class="d-flex p-4">
-                    <mat-form-field>
-                      <input
-                        matInput
-                        type="number"
-                        placeholder="Número de telefono"
-                      />
-                    </mat-form-field>
-
-                    <mat-form-field>
-                      <input matInput type="number" placeholder="Extención" />
-                    </mat-form-field>
+        class="example-stepper"
+        [orientation]="(stepperOrientation | async)!"
+        labelPosition="bottom">
+  
+        <mat-step [stepControl]="firstFormGroup" label="Remitente">
+          <form [formGroup]="remitenteForm" class="mt-4" >
+            <h2 class="content_title-red ">Datos del remitente</h2>
+            <label class="label-title-gray">Seleccione la dirección del remitente o agregue una.</label>
+            <div class="contenedor container-fluid">
+              <label class="label-title-black mb-4">Mi libreta de direcciones.</label>
+              
+              <mat-radio-group
+                aria-labelledby="example-radio-group-label"
+                class="example-radio-group"
+                formControlName="addressSelect" (ngModelChange)="onChangeAddress($event)" >
+                <button type="button" class="btn btn-light btnMostrarAll" (click)="mostrarAlldirecciones('remitente')" [ngClass]="{'show': showButtonChangeAddres, 'hide': !showButtonChangeAddres }">Cambiar</button>
+                <mat-radio-button class="example-radio-button mb-3" *ngFor="let address of addressBook" 
+                  [value]="address.razonSocial" 
+                  [ngClass]="{'show': address.default, 'hide': !address.default}">
+                  <div>
+                    <p class="radio-title mb-1">{{address.razonSocial}}</p>
+                    <p class="radio-detail mb-0">{{ this.getDireccion(address) }}</p>
+                    <a href="#">Editar Información</a>
                   </div>
-
-                  <mat-form-field>
-                    <input matInput type="text" placeholder="Calle y número" />
-                  </mat-form-field>
-
-                  <mat-form-field>
-                    <input
-                      matInput
-                      type="text"
-                      placeholder="Departamento, torre, edificio, piso, etc."
-                    />
-                  </mat-form-field>
-
-                  <mat-form-field>
-                    <input matInput type="number" placeholder="Código postal" />
-                  </mat-form-field>
-
-                  <mat-form-field>
-                    <input matInput type="text" placeholder="Colonia" />
-                  </mat-form-field>
-
-                  <mat-form-field>
-                    <input matInput type="text" placeholder="Ciudad" />
-                  </mat-form-field>
-
-                  <mat-form-field>
-                    <input matInput type="text" placeholder="Estado" />
-                  </mat-form-field>
+                </mat-radio-button>                
+              </mat-radio-group>
+              <div>
+                <button mat-icon-button class="remitente_btn-address" (click)="showFormAddress('remitente')">
+                  <mat-icon svgIcon="add_address"></mat-icon>
+                </button><p class="remitente_btn-address">Agregar dirección</p>
+                <div *ngIf="showAddAddress == true">
+                  <h1 class="label-title-black mt-4 mb-4">Nueva dirección</h1>
+                  <app-address-form></app-address-form>
+                  <footer class="formAddresFooter">
+                    <button class="m-2 footer-btnWhite" mat-stroked-button>Cancelar</button>
+                    <button class="but m-2 footer-btnRed" mat-raised-button>Agregar</button>
+                  </footer>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="btns d-flex justify-content-between align-items-center m-4"
-          >
-            <button class="but m-2 btnRed" mat-raised-button matStepperPrevious>
-              Regresar
-            </button>
-            <button class="m-2" mat-stroked-button>Cancelar</button>
-
-            <button class="but m-2 btnRed" mat-raised-button matStepperNext>
-              Continuar
-            </button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel>Confirmar</ng-template>
-        <div class="contenedor1">
-          <p>
-            <strong
-              >Todas las guías seleccionadas para imprimir aparecerán con los
-              datos ingresados en los pasos anteriores.</strong
-            >
-          </p>
-          <div class="card-wrapper">
-            <mat-card class="example-card">
-              <mat-card-header>
-                <mat-card-title class="redText">
-                  <strong>Productos disponibles</strong>
-                </mat-card-title>
-              </mat-card-header>
-              <mat-card-content>
-                <mat-grid-list cols="5" rowHeight="100px">
-                  <mat-grid-tile
-                    *ngFor="let tile of tiles"
-                    [colspan]="tile.cols"
-                    [rowspan]="tile.rows"
-                    [style.background]="tile.color">
-                    {{ tile.text }}
-                    <mat-card-content>
-                      {{ tile.Desc }}
-                    </mat-card-content>
-                  </mat-grid-tile>
-                </mat-grid-list>
-              </mat-card-content>
-              <mat-card-header>
-                <mat-card-title class="redText">
-                  <strong>Información del remitente</strong>
-                </mat-card-title>
-              </mat-card-header>
-              <mat-card-content>
-                <mat-grid-list cols="5" rowHeight="100px">
-                  <mat-grid-tile
-                    *ngFor="let info of infoRem"
-                    [colspan]="info.cols"
-                    [rowspan]="info.rows"
-                    [style.background]="info.color">
-                    {{ info.text }}
-                    <mat-card-content>
-                      {{ info.Desc }}
-                    </mat-card-content>
-                  </mat-grid-tile>
-                </mat-grid-list>
-              </mat-card-content>
-              <mat-card-header>
-                <mat-card-title class="redText">
-                  <strong>Información del Destinatario </strong>
-                </mat-card-title>
-              </mat-card-header>
-              <mat-card-content>
-                <mat-grid-list cols="5" rowHeight="100px">
-                  <mat-grid-tile
-                    *ngFor="let info of infoDes"
-                    [colspan]="info.cols"
-                    [rowspan]="info.rows"
-                    [style.background]="info.color">
-                    {{ info.text }}
-                    <mat-card-content>
-                      {{ info.Desc }}
-                    </mat-card-content>
-                  </mat-grid-tile>
-                </mat-grid-list>
-              </mat-card-content>
-            </mat-card>
-          </div>
-        </div>
-
-        <div class="btns d-flex justify-content-between align-items-center m-4">
-          <button mat-button matStepperPrevious class="btnRed">Regresar</button>
-          <button class="m-2" mat-stroked-button>Cancelar</button>
-
-          <button class="but m-2 btnRed" mat-raised-button matStepperNext>
-            Confirmar Impresión
-          </button>
-        </div>
-      </mat-step>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup" label="Destinatario">
+          <form [formGroup]="destinatarioForm" class="mt-4" >
+            <h2 class="content_title-red ">Datos del destinatario</h2>
+            <label class="label-title-gray">Seleccione la dirección del destinatario o agregue una.</label>
+            <div class="contenedor container-fluid">
+              <label class="label-title-black mb-4">Mi libreta de direcciones.</label>
+              
+              <mat-radio-group
+                aria-labelledby="example-radio-group-label"
+                class="example-radio-group"
+                formControlName="addressDestinarioSelect" (ngModelChange)="onChangeAddressDestinatario($event)" >
+                <button type="button" class="btn btn-light btnMostrarAll" (click)="mostrarAlldirecciones('destinatario')" [ngClass]="{'show': showButtonChangeAddresDestinatario, 'hide': !showButtonChangeAddresDestinatario }">Cambiar</button>
+                <mat-radio-button class="example-radio-button mb-3" *ngFor="let address of addressBookDestinatario" 
+                  [value]="address.razonSocial" 
+                  [ngClass]="{'show': address.default, 'hide': !address.default}">
+                  <div>
+                    <p class="radio-title mb-1">{{address.razonSocial}}</p>
+                    <p class="radio-detail mb-0">{{ this.getDireccion(address) }}</p>
+                    <a href="#">Editar Información</a>
+                  </div>
+                </mat-radio-button>                
+              </mat-radio-group>
+              <div>
+                <button mat-icon-button class="remitente_btn-address" (click)="showFormAddress('destinatario')">
+                  <mat-icon svgIcon="add_address"></mat-icon>
+                </button><p class="remitente_btn-address">Agregar dirección</p>
+                <div *ngIf="showAddAddressDestinatario == true">
+                  <h1 class="label-title-black mt-4 mb-4">Nueva dirección</h1>
+                  <app-address-form></app-address-form>
+                  <footer class="formAddresFooter">
+                    <button class="m-2 footer-btnWhite" mat-stroked-button>Cancelar</button>
+                    <button class="but m-2 footer-btnRed" mat-raised-button>Agregar</button>
+                  </footer>
+                </div>
+              </div>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="thirdFormGroup" label="Confirmar información">
+            <div class="contenedor container-fluid">
+              <p class="label-title-black mb-4 mt-4">Todas las guías seleccionadas para imprimir aparecerán con los datos
+                  ingresados en los pasos anteriores.
+              </p>
+              <mat-card>
+                <mat-card-content>
+                  <h2 class="content_title-red ">Productos disponibles</h2>
+                </mat-card-content>
+              </mat-card>
+              <mat-card>
+                <mat-card-content>
+                  <h2 class="content_title-red ">Información del remitente</h2>
+                </mat-card-content>
+              </mat-card>
+              <mat-card>
+                <mat-card-content>
+                  <h2 class="content_title-red ">Información del destinatario</h2>
+                </mat-card-content>
+              </mat-card>
+            </div>
+        </mat-step>
     </mat-stepper>
   </div>
-</div>
+  

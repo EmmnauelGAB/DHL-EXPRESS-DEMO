@@ -38,8 +38,13 @@ const routes: Routes = [
             { path: 'formDetailGuide', component: FormDetailGuideComponent },
             { path: 'management-odc', component: ManagementOdcComponent },
             { path: 'buy-guides', component: BuyGuidesComponent },
-            { path: 'print', component: PrintComponent },
-            { path: 'print-desc', component: PrintDescComponent },
+            { 
+                path: 'print-guides', 
+                    children: [
+                        { path: '', component: PrintComponent },
+                        { path: 'detail', component: PrintDescComponent },
+                    ]
+            },
             { path: 'available-guides', component: AvailableGuidesComponent },
             { path: 'billing', component: BillingComponent },
         ]

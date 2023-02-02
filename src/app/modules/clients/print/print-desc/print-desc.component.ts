@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import {StepperOrientation} from '@angular/material/stepper';
 import {Observable} from 'rxjs';
@@ -16,22 +15,33 @@ import {BreakpointObserver} from '@angular/cdk/layout';
     provide: STEPPER_GLOBAL_OPTIONS, useValue: {displayDefaultIndicatorType: false}
   }]
 })
-export class PrintDescComponent implements AfterViewInit {
+export class PrintDescComponent implements OnInit {
 
   search : String ="";
-  displayedColumns: string[] = ['folio', 'totalGuides','useGuides', 'asingGuides', 'print', 'availableGuides', 'printGuides'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  addressSelect: string;
+  addressDestinarioSelect: string;
+  
+  remitenteForm: FormGroup;
+  destinatarioForm: FormGroup;
 
-  @ViewChild(MatPaginator)
+  showButtonChangeAddres:boolean = true
+  showAddAddress: boolean =  false
+  showButtonChangeAddresDestinatario:boolean = true
+  showAddAddressDestinatario: boolean =  false
 
-  paginator!: MatPaginator;
   constructor(private _formBuilder: FormBuilder, breakpointObserver: BreakpointObserver) {
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 800px)')
       .pipe(map(({matches}) => (matches ? 'horizontal' : 'vertical')));
   }
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+  
+  ngOnInit(): void {
+    this.remitenteForm = this._formBuilder.group({
+      addressSelect: ['', Validators.required],
+    });
+    this.destinatarioForm = this._formBuilder.group({
+      addressDestinarioSelect: ['', Validators.required],
+    });
   }
 
   firstFormGroup = this._formBuilder.group({
@@ -43,67 +53,139 @@ export class PrintDescComponent implements AfterViewInit {
   thirdFormGroup = this._formBuilder.group({
     thirdCtrl: ['', Validators.required],
   });
+
   stepperOrientation: Observable<StepperOrientation>;
 
-  //Confirmacion
-  tiles: Tile[] = [
-    {text: 'Descripción', cols: 4, rows: 1, color: 'grey', Desc: ''},
-    {text: 'Guías a imprimir', cols: 1, rows: 2, color: 'grey', Desc: ''},
-    {text: 'Guías totales', cols: 2, rows: 1, color: 'grey', Desc: ''},
-    {text: 'Guías disponibles', cols: 2, rows: 1, color: 'grey', Desc: ''},
+  public getDireccion (address: ADDRRES_BOOK):string {
+    return `${address.calle}, CP. ${address.cp}, COL. ${address.colonia}, ${address.ciudad}`
+  }
+
+  public mostrarAlldirecciones(id:string) {
+    if(id === 'remitente') {
+      this.remitenteForm.controls['addressSelect'].reset()
+      this.showButtonChangeAddres = false
+      this.addressBook.forEach((addres) => {
+        addres.default = true
+      })
+    } else if(id === 'destinatario') {
+      this.destinatarioForm.controls['addressDestinarioSelect'].reset()
+      this.showButtonChangeAddresDestinatario = false
+      this.addressBookDestinatario.forEach((addres) => {
+        addres.default = true
+      })
+    }
+
+  }
+
+  public onChangeAddress(name:any) {
+    this.showButtonChangeAddres = true
+    this.addressBook.forEach((addres) => {
+      if(addres.razonSocial != name){
+        addres.default = false
+      } 
+    })
+  }
+
+  public onChangeAddressDestinatario(name:any) {
+    this.showButtonChangeAddresDestinatario = true
+    this.addressBookDestinatario.forEach((addres) => {
+      if(addres.razonSocial != name){
+        addres.default = false
+      } 
+    })
+  }
+
+  public showFormAddress(id:string) {
+    if(id === 'remitente'){
+      this.showAddAddress = !this.showAddAddress
+    } else if(id === 'destinatario') {
+      this.showAddAddressDestinatario = !this.showAddAddressDestinatario
+    }
+    
+  } 
+
+  addressBook: ADDRRES_BOOK[] = [{
+        razonSocial: "Praxis IT | OMAR CABRERA",
+        contacto: "OMAR CABRERA",
+        email: "omar@gmail.com",
+        telefono: "5555555555",
+        calle: "Insurgentes sur 64 Insurgentes sur 64 Insurgentes sur 64 Insurgentes sur 64",
+        cp: "06600",
+        colonia: "Juarez",
+        ciudad: "CDMX",
+        estado: "CDMX",
+        default: true
+    }, {
+      razonSocial: "Praxis IT",
+      contacto: "OMAR CABRERA",
+      email: "omar@gmail.com",
+      telefono: "5555555555",
+      calle: "Insurgentes sur 64",
+      cp: "06600",
+      colonia: "Juarez",
+      ciudad: "CDMX",
+      estado: "CDMX"
+    },
+    {
+      razonSocial: "OMAR CABRERA",
+      contacto: "OMAR CABRERA",
+      email: "omar@gmail.com",
+      telefono: "5555555555",
+      calle: "Insurgentes sur 64",
+      cp: "06600",
+      colonia: "Juarez",
+      ciudad: "CDMX",
+      estado: "CDMX",
+    }
   ];
 
-  infoRem: infoRe[] = [
-    {text: 'Nombre de la empresa', cols: 5, rows: 1, color: 'grey', Desc: ''},
-    {text: 'Contacto', cols: 3, rows: 1, color: 'grey', Desc: ''},
-    {text: 'Direccion de Correo electronico', cols: 2, rows: 1, color: 'grey', Desc: ''},
-    {text: 'Número de teléfono', cols: 3, rows: 1, color: 'grey', Desc: ''},
-    {text: 'Extensión', cols: 2, rows: 1, color: 'grey', Desc: ''},
-    {text: 'Dirección', cols: 5, rows: 2, color: 'grey', Desc: ''},
+  addressBookDestinatario: ADDRRES_BOOK[] = [{
+        razonSocial: "Praxis IT | OMAR CABRERA",
+        contacto: "OMAR CABRERA",
+        email: "omar@gmail.com",
+        telefono: "5555555555",
+        calle: "Insurgentes sur 64 Insurgentes sur 64 Insurgentes sur 64 Insurgentes sur 64",
+        cp: "06600",
+        colonia: "Juarez",
+        ciudad: "CDMX",
+        estado: "CDMX",
+        default: true
+    }, {
+      razonSocial: "Praxis IT",
+      contacto: "OMAR CABRERA",
+      email: "omar@gmail.com",
+      telefono: "5555555555",
+      calle: "Insurgentes sur 64",
+      cp: "06600",
+      colonia: "Juarez",
+      ciudad: "CDMX",
+      estado: "CDMX"
+    },
+    {
+      razonSocial: "OMAR CABRERA",
+      contacto: "OMAR CABRERA",
+      email: "omar@gmail.com",
+      telefono: "5555555555",
+      calle: "Insurgentes sur 64",
+      cp: "06600",
+      colonia: "Juarez",
+      ciudad: "CDMX",
+      estado: "CDMX",
+    }
   ]
-
-  infoDes: infoDe[] = [
-    {text: 'Nombre de la empresa', cols: 5, rows: 1, color: 'grey', Desc: ''},
-    {text: 'Contacto', cols: 3, rows: 1, color: 'grey', Desc: ''},
-    {text: 'Direccion de Correo electronico', cols: 2, rows: 1, color: 'grey', Desc: ''},
-    {text: 'Número de teléfono', cols: 3, rows: 1, color: 'grey', Desc: ''},
-    {text: 'Extensión', cols: 2, rows: 1, color: 'grey', Desc: ''},
-    {text: 'Dirección', cols: 5, rows: 2, color: 'grey', Desc: ''},
-  ]
-
-
-}
-export interface PeriodicElement {
-  folio: string;
-  date: string;
-  totalGuides: number;
-  useGuides: number;
-  asingGuides: number;
-  availableGuides: number;
 }
 
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-  Desc: string;
+export interface ADDRRES_BOOK {
+  razonSocial: string,
+  contacto: string,
+  email: string,
+  telefono: string,
+  extencion?: string,
+  calle: string,
+  departamento?: string,
+  cp: string,
+  colonia: string,
+  ciudad: string,
+  estado: string,
+  default?:boolean
 }
-
-export interface infoRe {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-  Desc: string;
-}
-
-export interface infoDe {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-  Desc: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [];

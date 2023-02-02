@@ -21,6 +21,8 @@ export class AppComponent {
     this.matIconRegistry.addSvgIcon('pdf_icon', this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/modules/clients/img_pdf-a.svg"))
     this.matIconRegistry.addSvgIcon('ic_block_user', this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/modules/managment/profile/ic_block_user.svg"))
     this.matIconRegistry.addSvgIcon('ic_edit', this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/modules/managment/profile/ic_edit.svg"))
+    this.matIconRegistry.addSvgIcon('add_address', this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/modules/clients/plus.svg"))
+    // this.matIconRegistry.addSvgIcon('ic_edit', this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/modules/managment/profile/ic_edit.svg"))
   }
 
 }

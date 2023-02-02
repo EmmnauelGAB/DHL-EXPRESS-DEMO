@@ -66,6 +66,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
+import { AddressFormComponent } from './modules/clients/print/address-form/address-form.component';
 
 //funcion exportable AOT traslate
 export function createTranslateLoader(http: HttpClient) {
@@ -102,9 +103,8 @@ export function createTranslateLoader(http: HttpClient) {
     PrintDescComponent,
     BillingComponent,
     AvailableGuidesComponent,
-    ConfirmDialogComponent
-
-
+    ConfirmDialogComponent,
+    AddressFormComponent,
   ],
   imports: [
     BrowserModule,
