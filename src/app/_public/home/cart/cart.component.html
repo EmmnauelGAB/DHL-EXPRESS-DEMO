@@ -1,0 +1,27 @@
+<div class="container3">
+  <p>Inicio > Carrito</p>
+
+  <mat-card-header color="warn">
+    <mat-card-title class="Text">
+      <strong>Carrito</strong>
+    </mat-card-title>
+  </mat-card-header>
+</div>
+
+<div class="container3">
+  <mat-card-header class="Text">
+    <mat-card-title>Revisar y pagar</mat-card-title>
+  </mat-card-header>
+  <mat-card-header class="redText">
+    <mat-card-title><strong>Productos</strong> </mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+
+  <mat-list *ngFor="let product of selectedProducts">
+    {{ product.name }} - {{ product.price }}
+    <button mat-icon-button (click)="deselectProduct(product)">
+      <mat-icon>remove</mat-icon>
+    </button>
+  </mat-list>
+
+</div>

@@ -1,7 +1,7 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { MatPaginator} from '@angular/material/paginator';
+import { MatTableDataSource} from '@angular/material/table';
+import { MatDialog} from '@angular/material/dialog';
 
 
 @Component({
@@ -87,7 +87,39 @@ const ELEMENT_DATA: PeriodicElement[] = [
   },
   {
     usuario: 'emmanuel.garcia',
-    name: 'GEmmanuel Garcia Barron',
+    name: 'Emmanuel Garcia Barron',
+    roles: 'Administrador',
+    estatus: 'Validado',
+    fechaAl: 'mm/dd/aaaa',
+    ultimoIn: 'mm/dd/aaaa',
+  },
+  {
+    usuario: 'Juan.miranda',
+    name: 'juan Miranda Herrera',
+    roles: 'Cliente',
+    estatus: 'Validado',
+    fechaAl: 'mm/dd/aaaa',
+    ultimoIn: 'mm/dd/aaaa',
+  },
+  {
+    usuario: 'clau.miranda',
+    name: 'Claudia',
+    roles: 'Administrador',
+    estatus: 'No Validado',
+    fechaAl: 'mm/dd/aaaa',
+    ultimoIn: 'mm/dd/aaaa',
+  },
+  {
+    usuario: 'Vostro.gab@praxisglobe.net',
+    name: 'Vostro Garcia Acero',
+    roles: 'Cliente',
+    estatus: 'No Validado',
+    fechaAl: 'mm/dd/aaaa',
+    ultimoIn: 'mm/dd/aaaa',
+  },
+  {
+    usuario: 'Luz.garcia',
+    name: 'Luz Garcia Barron',
     roles: 'Administrador',
     estatus: 'Validado',
     fechaAl: 'mm/dd/aaaa',

@@ -9,6 +9,7 @@ import { ProfileComponent } from './modules/management/profile/profile.component
 import { FormEditComponent } from './modules/management/form-edit/form-edit.component';
 import { ProfileAddComponent } from './modules/management/profile/profile-add/profile-add.component';
 import { ProfileEditComponent } from './modules/management/profile/profile-edit/profile-edit.component';
+import { CartComponent } from './_public/home/cart/cart.component';
 
 const appRoutes = [
   // clients: ClientsRoutingModule
@@ -20,6 +21,7 @@ const appRoutes = [
   { path: 'form-edit', component: FormEditComponent },
   { path: 'profile-add', component: ProfileAddComponent },
   { path: 'profile-edit', component: ProfileEditComponent },
+  { path: 'cart', component: CartComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 

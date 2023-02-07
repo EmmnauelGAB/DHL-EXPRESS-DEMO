@@ -60,6 +60,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
+import { AddressFormComponent } from './modules/clients/print/address-form/address-form.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { CartComponent } from './_public/home/cart/cart.component';
 
 //importar csv
 import { MatTableExporterModule } from 'mat-table-exporter';
@@ -68,8 +72,6 @@ import { MatTableExporterModule } from 'mat-table-exporter';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
-import { AddressFormComponent } from './modules/clients/print/address-form/address-form.component';
 
 //funcion exportable AOT traslate
 export function createTranslateLoader(http: HttpClient) {
@@ -108,6 +110,7 @@ export function createTranslateLoader(http: HttpClient) {
     AvailableGuidesComponent,
     ConfirmDialogComponent,
     AddressFormComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -137,6 +140,7 @@ export function createTranslateLoader(http: HttpClient) {
     MatCheckboxModule,
     MatDividerModule,
     MatToolbarModule,
+    MatSidenavModule,
     MatButtonToggleModule,
     TranslateModule.forRoot({
       loader: {

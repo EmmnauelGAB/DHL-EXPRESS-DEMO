@@ -34,11 +34,8 @@
       <button
         class="btnDown"
         mat-stroked-button
-        (click)="
-          exporter.exportTable('csv', { fileName: 'Administracion-Usuarios' })
-        "
-        aria-label="Example icon button with a menu icon"
-      >
+        (click)="exporter.exportTable('csv', { fileName: 'Administracion-Usuarios' })
+        "aria-label="Example icon button with a menu icon">
         <mat-icon>save_alt</mat-icon>
         Descargar CSV
       </button>
@@ -46,12 +43,13 @@
   </div>
 </div>
 
-<table
+<div class="example-container mat-elevation-z0">
+  <table
   mat-table
   [dataSource]="dataSource"
   matTableExporter
   #exporter="matTableExporter"
->
+  >
   <!-- Position Column -->
   <ng-container matColumnDef="usuario">
     <th mat-header-cell *matHeaderCellDef>
@@ -126,3 +124,5 @@
   aria-label="Select page of periodic elements"
 >
 </mat-paginator>
+</div>
+

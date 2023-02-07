@@ -210,4 +210,15 @@
       </mat-card-title-group>
     </mat-card-header>
   </mat-card>
+
+  <div>
+
+  </div>
+
+  <mat-card *ngFor="let product of products">
+    <mat-card-content>
+      {{ product.name }} - {{ product.price }}
+      <button mat-button (click)="selectProduct(product)">Add to Cart</button>
+    </mat-card-content>
+  </mat-card>
 </div>
