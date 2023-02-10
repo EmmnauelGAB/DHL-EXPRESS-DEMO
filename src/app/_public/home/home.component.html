@@ -42,14 +42,14 @@
   </mat-card>
 </div>
 <div class="container2" >
-  <mat-card class="example-card">
+  <mat-card *ngFor="let paquete of packagesData" class="example-card">
     <mat-card-header>
       <mat-card-title-group>
         <div style="text-align: left">
           <img mat-card-lg-image src="./assets/images/home/packages@2x.png" />
         </div>
         <div class="containerInfo">
-          <mat-card-title><strong>Paquete 10</strong> </mat-card-title>
+          <mat-card-title><strong>{{paquete.tipoPaquete}}</strong> </mat-card-title>
           <mat-card-content>
             {{ "PACK" | translate }}
           </mat-card-content>
@@ -57,152 +57,12 @@
         <div id="lateral">
           <mat-card-title>
               <mat-chip-listbox aria-label="Fish selection">
-                <mat-chip-option class="textYellow"> Ahorra $530 </mat-chip-option>
-                <mat-chip-option class="textSize"> <small> Antes $2,490.00</small> </mat-chip-option>
+                <mat-chip-option class="textYellow"> Ahorra {{paquete.descuento | currency }} </mat-chip-option>
+                <mat-chip-option class="textSize"> <small> Antes {{paquete.precioNeto | currency}}</small> </mat-chip-option>
               </mat-chip-listbox>
 
           </mat-card-title>
-          <mat-card-title class="price"><strong>$ 1,960.00</strong> </mat-card-title>
-          <button class="btn btnRed" type="button" id="button-addon2">
-            {{ "BTNADD" | translate }}
-          </button>
-        </div>
-      </mat-card-title-group>
-    </mat-card-header>
-  </mat-card>
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <div style="text-align: left">
-          <img mat-card-lg-image src="./assets/images/home/packages@2x.png" />
-        </div>
-        <div class="containerInfo">
-          <mat-card-title><strong>Paquete 20</strong> </mat-card-title>
-          <mat-card-content>
-            {{ "PACK20" | translate }}
-          </mat-card-content>
-        </div>
-        <div id="lateral">
-          <mat-card-title>
-              <mat-chip-listbox aria-label="Fish selection">
-                <mat-chip-option class="textYellow"> Ahorra $530 </mat-chip-option>
-                <mat-chip-option class="textSize"> <small> Antes $2,490.00</small> </mat-chip-option>
-              </mat-chip-listbox>
-
-          </mat-card-title>
-          <mat-card-title class="price"><strong>$ 1,960.00</strong> </mat-card-title>
-          <button class="btn btnRed" type="button" id="button-addon2">
-            {{ "BTNADD" | translate }}
-          </button>
-        </div>
-      </mat-card-title-group>
-    </mat-card-header>
-  </mat-card>
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <div style="text-align: left">
-          <img mat-card-lg-image src="./assets/images/home/packages@2x.png" />
-        </div>
-        <div class="containerInfo">
-          <mat-card-title><strong>Paquete 40</strong> </mat-card-title>
-          <mat-card-content>
-            {{ "PACK40" | translate }}
-          </mat-card-content>
-        </div>
-        <div id="lateral">
-          <mat-card-title>
-              <mat-chip-listbox aria-label="Fish selection">
-                <mat-chip-option class="textYellow"> Ahorra $530 </mat-chip-option>
-                <mat-chip-option class="textSize"> <small> Antes $2,490.00</small> </mat-chip-option>
-              </mat-chip-listbox>
-
-          </mat-card-title>
-          <mat-card-title class="price"><strong>$ 1,960.00</strong> </mat-card-title>
-          <button class="btn btnRed" type="button" id="button-addon2">
-            {{ "BTNADD" | translate }}
-          </button>
-        </div>
-      </mat-card-title-group>
-    </mat-card-header>
-  </mat-card>
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <div style="text-align: left">
-          <img mat-card-lg-image src="./assets/images/home/packages@2x.png" />
-        </div>
-        <div class="containerInfo">
-          <mat-card-title><strong>Paquete 60</strong> </mat-card-title>
-          <mat-card-content>
-            {{ "PACK60" | translate }}
-          </mat-card-content>
-        </div>
-        <div id="lateral">
-          <mat-card-title>
-              <mat-chip-listbox aria-label="Fish selection">
-                <mat-chip-option class="textYellow"> Ahorra $530 </mat-chip-option>
-                <mat-chip-option class="textSize"> <small> Antes $2,490.00</small> </mat-chip-option>
-              </mat-chip-listbox>
-
-          </mat-card-title>
-          <mat-card-title class="price"><strong>$ 1,960.00</strong> </mat-card-title>
-          <button class="btn btnRed" type="button" id="button-addon2">
-            {{ "BTNADD" | translate }}
-          </button>
-        </div>
-      </mat-card-title-group>
-    </mat-card-header>
-  </mat-card>
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <div style="text-align: left">
-          <img mat-card-lg-image src="./assets/images/home/packages@2x.png" />
-        </div>
-        <div class="containerInfo">
-          <mat-card-title><strong>Paquete 80</strong> </mat-card-title>
-          <mat-card-content>
-            {{ "PACK80" | translate }}
-          </mat-card-content>
-        </div>
-        <div id="lateral">
-          <mat-card-title>
-              <mat-chip-listbox aria-label="Fish selection">
-                <mat-chip-option class="textYellow"> Ahorra $530 </mat-chip-option>
-                <mat-chip-option class="textSize"> <small> Antes $2,490.00</small> </mat-chip-option>
-              </mat-chip-listbox>
-
-          </mat-card-title>
-          <mat-card-title class="price"><strong>$ 1,960.00</strong> </mat-card-title>
-          <button class="btn btnRed" type="button" id="button-addon2">
-            {{ "BTNADD" | translate }}
-          </button>
-        </div>
-      </mat-card-title-group>
-    </mat-card-header>
-  </mat-card>
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <div style="text-align: left">
-          <img mat-card-lg-image src="./assets/images/home/packages@2x.png" />
-        </div>
-        <div class="containerInfo">
-          <mat-card-title><strong>Paquete 100</strong> </mat-card-title>
-          <mat-card-content>
-            {{ "PACK100" | translate }}
-          </mat-card-content>
-        </div>
-        <div id="lateral">
-          <mat-card-title>
-              <mat-chip-listbox aria-label="Fish selection">
-                <mat-chip-option class="textYellow"> Ahorra $530 </mat-chip-option>
-                <mat-chip-option class="textSize"> <small> Antes $2,490.00</small> </mat-chip-option>
-              </mat-chip-listbox>
-
-          </mat-card-title>
-          <mat-card-title class="price"><strong>$ 1,960.00</strong> </mat-card-title>
+          <mat-card-title class="price"><strong> {{paquete.montoTotal | currency}}</strong> </mat-card-title>
           <button class="btn btnRed" type="button" id="button-addon2">
             {{ "BTNADD" | translate }}
           </button>
