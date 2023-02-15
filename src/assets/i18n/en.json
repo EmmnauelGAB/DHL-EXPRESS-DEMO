@@ -1,5 +1,6 @@
 {
   "_comentario1": "navbar",
+  "USER": "!Hello",
   "CAR": "Shopping",
   "INICIO": "Home",
   "ADMIN": "Management",
@@ -11,6 +12,7 @@
   "TEXT2": "Number of guides",
   "TEXT3": "Enter the guide number",
   "BTNADD": "Add to cart",
+  "TEXT4": "Save with our guide packages",
   "PACK": "10 prepaid guides for next day delivery, cost per guide $196.00. National coverage, maximum weight 1 kg. Valid for 1 fiscal year. Collection does not apply, product terms and conditions apply.",
   "PACK20": "20 prepaid guides for next-day delivery, cost per guide $193.06. National coverage, maximum weight 1 kg. Valid for 1 fiscal year. Collection does not apply, product terms and conditions apply.",
   "PACK40": "40 prepaid guides for next-day delivery, cost per guide $190.12. National coverage, maximum weight 1 kg. Valid for 1 fiscal year. Collection does not apply, product terms and conditions apply.",

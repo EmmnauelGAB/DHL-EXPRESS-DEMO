@@ -15,8 +15,8 @@ export class AppComponent {
 
   constructor(private matIconRegistry: MatIconRegistry, private domSanitizer:DomSanitizer, private translate: TranslateService){
     //Configuracion defaul de idioma -- begin
-    translate.setDefaultLang('en');
-    translate.use('en');
+    translate.setDefaultLang('es');
+    translate.use('es');
     //Configuracion defaul de idioma -- ends
     this.matIconRegistry.addSvgIcon('pdf_icon', this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/modules/clients/img_pdf-a.svg"))
     this.matIconRegistry.addSvgIcon('ic_block_user', this.domSanitizer.bypassSecurityTrustResourceUrl("./assets/images/modules/managment/profile/ic_block_user.svg"))

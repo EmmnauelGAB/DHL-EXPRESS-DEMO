@@ -34,3 +34,21 @@
 mat-grid-tile {
   background: lightsalmon;
 }
+
+/**Boton Nuevo Usuario*/
+.btnRed{
+  background-color: #D40511;
+  color: #ffffff;
+  float: right;
+  margin: -55px 17px 0px 0px;
+  width: 160px;
+}
+
+/**Boton Descarga CSV*/
+.btnDown{
+  color: #D40511;
+  float: right;
+  margin-right: 1rem;
+  border: 1px solid #D40511;
+  width: 160px;
+}
