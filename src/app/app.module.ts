@@ -64,6 +64,7 @@ import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.c
 import { AddressFormComponent } from './modules/clients/print/address-form/address-form.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CartComponent } from './_public/home/cart/cart.component';
+import { NewAccountComponent } from './_public/login/new-account/new-account.component';
 
 //importar csv
 import { MatTableExporterModule } from 'mat-table-exporter';
@@ -72,6 +73,7 @@ import { MatTableExporterModule } from 'mat-table-exporter';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 
 //funcion exportable AOT traslate
 export function createTranslateLoader(http: HttpClient) {
@@ -110,7 +112,8 @@ export function createTranslateLoader(http: HttpClient) {
     AvailableGuidesComponent,
     ConfirmDialogComponent,
     AddressFormComponent,
-    CartComponent
+    CartComponent,
+    NewAccountComponent
   ],
   imports: [
     BrowserModule,

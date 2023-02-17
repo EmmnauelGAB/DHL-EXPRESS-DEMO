@@ -10,6 +10,7 @@ import { FormEditComponent } from './modules/management/form-edit/form-edit.comp
 import { ProfileAddComponent } from './modules/management/profile/profile-add/profile-add.component';
 import { ProfileEditComponent } from './modules/management/profile/profile-edit/profile-edit.component';
 import { CartComponent } from './_public/home/cart/cart.component';
+import { NewAccountComponent } from './_public/login/new-account/new-account.component';
 
 const appRoutes = [
   // clients: ClientsRoutingModule
@@ -22,7 +23,9 @@ const appRoutes = [
   { path: 'profile-add', component: ProfileAddComponent },
   { path: 'profile-edit', component: ProfileEditComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'create-user', component: NewAccountComponent },
   { path: '**', component: PageNotFoundComponent },
+
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
