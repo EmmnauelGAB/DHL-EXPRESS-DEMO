@@ -1,32 +1,35 @@
-<div class=" container-fluid px-1 px-md-2 px-lg-1 px-xl-2 py-2 mx-auto">
+<div class=" container-fluid px-1 px-md-2 px-lg-1 px-xl-2 py-2 mx-auto containeer-login-pather">
   <div class=" card card0 border-0">
     <div class=" row d-flex">
       <div class="col-lg-6">
         <form [formGroup]="formLogin" (ngSubmit)="doLogin()" class="card3">
-          <div *ngIf="tipoFormularioLogin" class="px-5 py-3 border-0">
+          <div *ngIf="tipoFormularioLogin" class="px-5 py-3 border-0 start-form-login">
             <div class="row px-1 mb-2">
-              <div class="text-gray">Guias prepago</div>
+              <div class="text-gray title-login-guides">Guias prepago</div>
             </div>
             <div class="row px-1 mb-4">
-              <div class="or text-md">Inicie sesión</div>
+              <div class="or text-md text-login">Inicie sesión</div>
             </div>
             <div class="row px-3">
-              <input class="mb-4" type="text" name="email" placeholder="Ingrese su usuario" formControlName="user">
+              <input class="mb-4 input-email-user" type="text" name="email" placeholder="Correo electrónico o usuario" formControlName="user">
             </div>
-            <div class="row px-3">
-              <input class="mb-4" type="password" name="password" placeholder="Ingrese su contraseña" formControlName="password">
+            <div class="row px-3 div-input-form-login div-password">
+              <mat-icon class="show-password-icon">remove_red_eye</mat-icon>
+              <input class="mb-4 input-form-login input-password" type="password" name="password" placeholder="Ingrese su contraseña" formControlName="password">
             </div>
             <div class="row px-1 mb-4">
-              <a (click)="onGoToRecuperarPass()" class="ml-auto mb-0 text-sm">¿Olvidó su contraseña?</a>
+              <a (click)="onGoToRecuperarPass()" class="ml-auto mb-0 text-sm text-forgotten-pass">¿Olvidó su contraseña?</a>
             </div>
 
             <div class="row px-1 mb-4">
-              <a (click)="onGoToVencioPass()" class="ml-auto mb-0 text-sm">Su contraseña venció</a>
+              <mat-checkbox color="warn" class="checkbox-session-strarting">Mantener sesión inciada</mat-checkbox>
             </div>
 
             <div class="row mb-4 px-3">
-              <button type="submit" class="btn btn-blue text-center">Inicie sesión</button>
+              <button type="submit" class="btn btn-blue text-center btn-login-form">Iniciar sesión</button>
             </div>
+
+            <p>¿Aún no estás registrado? <span class="tittle-create-account">Crear una cuenta</span></p>
           </div>
         </form>
 

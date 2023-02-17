@@ -17,6 +17,10 @@ body { margin: 0; font-family: 'Delivery App', Roboto, "Helvetica Neue", sans-se
     color: #D40511;
 }
 
+html{
+    overflow-x: hidden;
+}
+
 .content {
     min-height: 70%;
     background-color: #FBFBFB;

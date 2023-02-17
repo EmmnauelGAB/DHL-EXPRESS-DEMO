@@ -7,23 +7,30 @@
 
 /**Columna 3 de card*/
 #lateral {
-  width: 400px;
+  width: 550px;
 
 }
+
+
 
 /**fondo de ahorro */
 .textYellow {
   background-color: #FFCC00;
-  font-size: 70%
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 5px;
 }
 
 /**fuente de antes */
 .textSize {
-  font-size: 50%
+  font-size: 14px;
+  margin-left: 15px;
 }
 /** Texto Informacion Card central */
 .containerInfo {
-  margin: 12px;
+  margin-left: 40px;
+  margin-right: 70px;
 }
 
 /**Contenedor central*/
@@ -38,4 +45,174 @@ mat-icon{
   color: #D40511;
   width: 179px;
   margin-left: 1rem;
+}
+
+
+.div-top-img-back-and-info{
+  display: inline-block;
+  height: 75vh;
+  width: 100%;
+  background-image: url('../../../assets/images/home/dpdhl-group-insights-global-photo-shoot-thumb@2x.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: fill;
+}
+
+.div-quot-guide{
+  /*border: 1px solid red;*/
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 45px;
+}
+
+.title-div-top{
+  color: #fff;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0px;
+  margin-top: 15px;
+}
+
+.text-div-top-img{
+  width: 85%;
+  color: #fff;
+  font-size: 24px;
+  font-family: sans-serif;
+  margin-top: 25px;
+  line-height: 115%;
+}
+
+
+.div-columns-input-more-less-and-total{
+  display: grid;
+  width: 35%;
+  margin-top: 70px;
+  grid-template-columns: 50% 50%;
+}
+
+.p-quantity-guide{
+  color: #fff;
+  font-size: 19px;
+  font-weight: lighter;
+}
+
+
+
+.input-increase-decrease, .input-increase-decrease-paq{
+  display: inline-block;
+  width: 135px;
+  height: 40px;
+}
+.input-increase-decrase-value-paq{
+  outline: none;
+  border: 1px solid #D5D5D5;
+}
+
+.input-increase-decrase-value, .input-increase-decrase-value-paq{
+  width: 45px;
+  height: 41.5px;
+  text-align: center;
+}
+
+.input-increase-decrase-value::-webkit-outer-spin-button,
+.input-increase-decrase-value::-webkit-inner-spin-button,
+.input-increase-decrase-value-paq::-webkit-outer-spin-button,
+.input-increase-decrase-value-paq::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+.input-increase-decrase-value input[type="number"],.input-increase-decrase-value.paq  {
+	-moz-appearance: textfield;
+}
+.input-increase-decrase-value:focus, .input-increase-decrase-value-paq:focus{
+  outline: none;
+
+}
+
+
+mat-icon{
+  width: 100%;
+  margin-left: 0px;
+}
+
+.btn-remove, .btn-add{
+  color: #000;
+}
+
+.mat-icon-button {
+    padding: 0;
+    min-width: 0;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    line-height: 40px;
+    border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    -ms-border-radius: 0px !important;
+    -o-border-radius: 0px !important;
+    margin: 0px !important;
+    border: none !important;
+}
+
+.buton-less, .buton-add{
+  background-color: #fff;
+  font-size: 100%;
+  width: 40px;
+  text-align: center;
+ border: none !important ;
+}
+
+.buton-less, .buton-less-paq{
+  border-top-left-radius: 4px !important;
+  border-bottom-left-radius: 4px !important;
+}
+
+.buton-add, .buton-add-paq{
+  border-top-right-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+}
+
+.buton-add-paq, .buton-less-paq{
+  border: 1px solid #D5D5D5 !important;
+}
+
+.p-amount-payment{
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.total-amount-pay{
+  font-weight: 700;
+  font-size: 35px;
+  color: #fff;
+  text-align: right;
+}
+
+.btn-add-cart-top{
+  background-color: #D40511;
+  width: 200px;
+  margin-top: 30px;
+}
+
+.price{
+  text-align: right;
+  font-size: 35px;
+  font-weight: bolder;
+  margin-top: 35px !important;
+}
+
+.btn-add-cart{
+  margin-top: 35px;
+  width: 100%;
+}
+
+.mat-card-subtitle-p{
+  margin-top: 10px !important;
+  color: #000;
+  margin-bottom: 5px !important;
 }

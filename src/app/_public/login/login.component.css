@@ -27,6 +27,7 @@ transform: translateY(-50%);
 
 }
 
+
 .logo {
   width: 200px;
   height: 100px;
@@ -197,3 +198,97 @@ a {
 }
 
 
+
+
+.title-login-guides{
+  color: #000;
+  font-weight: 900;
+}
+
+.text-login{
+  letter-spacing: 1px;
+}
+
+.input-email-user::placeholder, 
+.input-password::placeholder{
+  color: #000;
+ }
+
+ .text-forgotten-pass{
+  color: #D40511;
+ }
+
+ .mat-checkbox-checked.mat-accent
+  .mat-checkbox-background {
+  background-color: black !important;
+}
+
+ .checkbox-session-strarting{
+  width: 45px !important;
+
+}
+
+mat-checkbox ::ng-deep .mat-checkbox-inner-container {
+  width: 20px;
+  height: 20px;
+  background-color: #ffff;
+  color: silver;
+}
+
+.tittle-create-account{
+  display: inline-block;
+  text-decoration: underline;
+  color: #D40511;
+  cursor: pointer;
+  padding-top: 15px;
+}
+
+
+.div-input-form-login{
+  width: 100%;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.div-input-form-login > input{
+  width: 100%;
+}
+
+.div-password{
+  position: relative;
+}
+
+.input-form-login{
+  width: 100% !important;
+  margin: none !important;
+}
+
+mat-icon{
+  margin-left: 0px !important;
+  padding: 0px !important;
+}
+
+.show-password-icon{
+  position: absolute;
+  right: 10px;
+  top:10px;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+.show-password-icon:hover{
+  background-color: #B0BEC5;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: black !important;
+}
+
+.btn-login-form:hover{
+  background-color: #720006;
+}

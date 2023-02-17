@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
       private router: Router) {
 
     this.formLogin = this.formBuilder.group({
-      user: ['admin@gmail.com', Validators.compose([Validators.required, Validators.maxLength(50),])],
-      password: ['admin', Validators.compose([Validators.required, Validators.maxLength(50),])]
+      user: ['', Validators.compose([Validators.required, Validators.maxLength(50),])],
+      password: ['', Validators.compose([Validators.required, Validators.maxLength(50),])]
     });
 
   }

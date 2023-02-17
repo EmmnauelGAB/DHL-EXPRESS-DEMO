@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     { id: 3, name: 'Product 3', price: 300 },
   ];
 
-  public packagesData: Package[];
+  //public packagesData: Package[];
 
   @Input()
   public cart: CartComponent;
@@ -47,18 +47,22 @@ export class HomeComponent implements OnInit {
   PACK = `10 guías prepagadas para entrega al día siguiente, costo por guía $ 196.00. Cobertura nacional, pesó máximo 1 kg. Vigencia 1 año fiscal. No aplica recolección, aplican términos y condiciones del producto.`;
 
 
-  constructor(private packagesService: PackagesService) { }
+  constructor(/*private packagesService: PackagesService*/) { }
 
   ngOnInit(): void {
-    this.obtenerPaquetesGuias();
-    console.log("Data" + this.packagesData);
+    //this.obtenerPaquetesGuias();  TODO Descomentar
+    //console.log("Data" + this.packagesData);
   }
 
-  obtenerPaquetesGuias(){
+  
+  /* TODO
+   * Descomentar una vez que ya haya servicos del backend
+   */
+ /* obtenerPaquetesGuias(){
     this.packagesService.getAllGuidesAvailable().subscribe(data => {
       this.packagesData = data.response;
       console.log(this.packagesData);
     });
-  }
+  }*/
 
 }
