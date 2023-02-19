@@ -1,5 +1,10 @@
 <div class="container3">
-  <p>Inicio > Carrito</p>
+  <div class="direction-navbar">
+    <p class="pbefore-page-direction">Inicio</p>
+    <p>></p>
+    <p>Carrito</p>
+  </div>
+
 
   <mat-card-header color="warn">
     <mat-card-title class="Text">
@@ -8,27 +13,146 @@
   </mat-card-header>
 </div>
 
-<div class="container3">
-  <mat-card-header class="Text">
-    <mat-card-title>Revisar y pagar</mat-card-title>
-  </mat-card-header>
-  <mat-card-header class="redText">
-    <mat-card-title><strong>Productos</strong> </mat-card-title>
-  </mat-card-header>
-  <mat-divider></mat-divider>
+<div class="div-columns-cart">
+  <div class="div-rows-products-cart">
+    <div class="div-column-product-detail"> <!--AQui va el ciclo de productos-->
+      <button mat-icon-button class="btn-remove-product">
+        <mat-icon>delete_outline</mat-icon>
+      </button>
+      <div class="div-img-product">
+        <img mat-card-lg-image src="./assets/images/home/packages@2x.png" />
+      </div>
+      <div class="div-info-product">
+        <mat-card-subtitle class="Text title-product-info">
+          Paquete 10
+        </mat-card-subtitle>
+        <mat-card-content class="div-info-product-description">
+          <p>
+            10 guias prepagadas para entrega al día siguiente, costo por guia
+            $196.00. <br>
+            Cobertura nacional, peso máximo 1kg Vigencia 1 año fisca.
+          </p>
+          <p>
+            No aplica recolección, aplican <b class="label-conditions">terminos y condiciones</b> del producto.
+          </p>
+        </mat-card-content>
+        <div class="div-columns-increase-price">
+          <div class="div-quantity-packages">
+            <mat-card-content class="subtitle-quantity">Cantidad de paquetes</mat-card-content>
+            <div class="input-increase-decrease-paq">
+              <button class="buton-less-paq" mat-icon-button>
+                <mat-icon class="btn-remove">remove</mat-icon>
+              </button>
+              <input value="1" appearance='outline' class="input-increase-decrase-value-paq" type="number">
+              <button class="buton-add-paq" mat-icon-button>
+                <mat-icon class="btn-add">add</mat-icon>
+              </button>
+            </div>
+          </div>
+          <div>
+            <div id="lateral">
+              <mat-card-title class="div-prices">
+                <mat-chip-listbox aria-label="Fish selection">
+                  <mat-chip-option class="textYellow"> Ahorra $530 </mat-chip-option>
+                  <mat-chip-option class="textSize"> <small> Antes $2,490.00</small> </mat-chip-option>
+                </mat-chip-listbox>
+              </mat-card-title>
+              <mat-card-title class="price-cart-product"><strong>$ 1,960.00</strong> </mat-card-title>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <mat-list *ngFor="let product of selectedProducts">
-    {{ product.name }} - {{ product.price }}
-    <button mat-icon-button (click)="deselectProduct(product)">
-      <mat-icon>remove</mat-icon>
-    </button>
-  </mat-list>
-  <div>
-    <button class="btnDown" mat-stroked-button routerLink="">
-      Continuar comprando
-    </button>
-    <button class="btnRed" mat-raised-button routerLink="/clients/buy-guides" aria-label="">
-      Elegir forma de pago
-    </button>
+    <!--Otro producto-->
+    <div class="div-column-product-detail"> <!--AQui va el ciclo de productos-->
+      <button mat-icon-button class="btn-remove-product">
+        <mat-icon>delete_outline</mat-icon>
+      </button>
+      <div class="div-img-product">
+        <img mat-card-lg-image src="./assets/images/home/packages@2x.png" />
+      </div>
+      <div class="div-info-product">
+        <mat-card-subtitle class="Text title-product-info">
+          Paquete 10
+        </mat-card-subtitle>
+        <mat-card-content class="div-info-product-description">
+          <p>
+            10 guias prepagadas para entrega al día siguiente, costo por guia
+            $196.00. <br>
+            Cobertura nacional, peso máximo 1kg Vigencia 1 año fisca.
+          </p>
+          <p>
+            No aplica recolección, aplican <b class="label-conditions">terminos y condiciones</b> del producto.
+          </p>
+        </mat-card-content>
+        <div class="div-columns-increase-price">
+          <div class="div-quantity-packages">
+            <mat-card-content class="subtitle-quantity">Cantidad de paquetes</mat-card-content>
+            <div class="input-increase-decrease-paq">
+              <button class="buton-less-paq" mat-icon-button>
+                <mat-icon class="btn-remove">remove</mat-icon>
+              </button>
+              <input value="1" appearance='outline' class="input-increase-decrase-value-paq" type="number">
+              <button class="buton-add-paq" mat-icon-button>
+                <mat-icon class="btn-add">add</mat-icon>
+              </button>
+            </div>
+          </div>
+          <div>
+            <div id="lateral">
+              <mat-card-title class="div-prices">
+                <mat-chip-listbox aria-label="Fish selection">
+                  <mat-chip-option class="textYellow"> Ahorra $530 </mat-chip-option>
+                  <mat-chip-option class="textSize"> <small> Antes $2,490.00</small> </mat-chip-option>
+                </mat-chip-listbox>
+              </mat-card-title>
+              <mat-card-title class="price-cart-product">$ 1,960.00 </mat-card-title>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <mat-card-subtitle class="Text title-summary-total-prod">
+      Subtotal (2 productos) <mat-card-title class="total-bottom-products">$9,564.00</mat-card-title>
+    </mat-card-subtitle>
+
+
+    <button class="btn-go-pay" mat-raised-button color="warn">Continuar comprando</button>
+
+  </div>
+  <div class="div-summary-pay">
+    <div class="div-square-summary">
+      <mat-card-subtitle class="Text title-summary">
+        Resumen del pedido
+      </mat-card-subtitle>
+      <div class="summary-points">
+        <mat-card-content class="div-info-product-description">
+          <div class="div-column-points-summary">
+            <p class="detail-summ-point">Precio original</p>
+            <p class="detial-value-point">$12,450.00</p>
+          </div>
+          <div class="div-column-points-summary">
+            <p class="detail-summ-point">Ahorros</p>
+            <p class="detial-value-point">$2,885.00</p>
+          </div>
+          <div class="div-column-points-summary">
+            <p class="detail-summ-point">IVA (16%)</p>
+            <p class="detial-value-point">$1,319.00</p>
+          </div>
+          <hr>
+          <div class="div-column-points-summary-total">
+            <p class="detail-summ-point">Total a pagar</p>
+            <p class="detial-value-point">
+              <b class="moneda">MXN</b>
+              <b>$9,564.00</b>
+            </p>
+          </div>
+
+          <button routerLink="/clients/buy-guides" class="btn-type-payment" mat-raised-button color="warn">Elegir forma de pago</button>
+        </mat-card-content>
+      </div>
+    </div>
   </div>
 </div>

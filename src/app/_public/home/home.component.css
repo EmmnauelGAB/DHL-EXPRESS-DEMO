@@ -16,10 +16,10 @@
 /**fondo de ahorro */
 .textYellow {
   background-color: #FFCC00;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: bold;
   border-radius: 4px;
-  padding: 5px;
+  padding: 4px;
 }
 
 /**fuente de antes */
