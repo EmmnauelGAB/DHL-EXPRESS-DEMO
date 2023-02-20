@@ -1,3 +1,5 @@
+import { ReportsPageComponent } from './reports-page/reports-page.component';
+
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
@@ -38,6 +40,7 @@ const routes: Routes = [
             { path: 'formDetailGuide', component: FormDetailGuideComponent },
             { path: 'management-odc', component: ManagementOdcComponent },
             { path: 'buy-guides', component: BuyGuidesComponent },
+            { path: 'reports', component: ReportsPageComponent },
             { 
                 path: 'print-guides', 
                     children: [

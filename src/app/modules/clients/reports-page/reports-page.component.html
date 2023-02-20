@@ -1,0 +1,791 @@
+<div class="div-pather-reports">
+    <div class="div-titles-reports">
+        <mat-card-title class="title-reports">
+            reportes
+        </mat-card-title>
+        <mat-card-subtitle class="title-finds">
+            Búsqueda múltiple
+        </mat-card-subtitle>
+    </div>
+
+    <div class="div-multiply-search">
+        <div class="input-and-buttons">
+            <div class="div-input-icon">
+                <mat-icon class="icon-search">search</mat-icon>
+                <input type="text" value="PRE-78576487" class="input-search-report">
+            </div>
+            <div class="buttons-controls-report-csv">
+                <button (click)="showItemsAddSearch()" mat-stroked-button color="warn"
+                    class="button-add-report">Agregar</button>
+                <button mat-raised-button class="button-download-csv" color="warn">
+                    <div class="icon-download">
+                        <div class="icons">
+                            <mat-icon class="icon-arrow">arrow_downward</mat-icon>
+                            <mat-icon class="icon-underline">maximize</mat-icon>
+                        </div>
+                    </div>
+                    <p class="text-download-csv">Descargar CSV</p>
+                </button>
+            </div>
+        </div>
+        <div #divItems class="div-added-reports">
+            <div class="div-added-item">
+                <div class="item-add">
+                    <div class="div-item-info-report-search">
+                        <mat-card-subtitle class="name-item">Factura: &nbsp;</mat-card-subtitle>
+                        <mat-card-subtitle class="value-item">PRE-1232145</mat-card-subtitle>
+
+                        <button mat-icon-button class="btn-remove-item">
+                            <mat-icon class="icon-item-remove" aria-label="CAncel">close</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-add">
+                    <div class="div-item-info-report-search">
+                        <mat-card-subtitle class="name-item">Orden de la compra: &nbsp;</mat-card-subtitle>
+                        <mat-card-subtitle class="value-item">016562222</mat-card-subtitle>
+
+                        <button mat-icon-button class="btn-remove-item">
+                            <mat-icon class="icon-item-remove" aria-label="CAncel">close</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-add">
+                    <div class="div-item-info-report-search">
+                        <mat-card-subtitle class="name-item">Guía: &nbsp;</mat-card-subtitle>
+                        <mat-card-subtitle class="value-item">234324234</mat-card-subtitle>
+
+                        <button mat-icon-button class="btn-remove-item">
+                            <mat-icon class="icon-item-remove" aria-label="CAncel">close</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-add">
+                    <div class="div-item-info-report-search">
+                        <mat-card-subtitle class="name-item">Factura: &nbsp;</mat-card-subtitle>
+                        <mat-card-subtitle class="value-item">PRE-12321455</mat-card-subtitle>
+
+                        <button mat-icon-button class="btn-remove-item">
+                            <mat-icon class="icon-item-remove" aria-label="CAncel">close</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-add">
+                    <div class="div-item-info-report-search">
+                        <mat-card-subtitle class="name-item">Guía: &nbsp;</mat-card-subtitle>
+                        <mat-card-subtitle class="value-item">986967687</mat-card-subtitle>
+
+                        <button mat-icon-button class="btn-remove-item">
+                            <mat-icon class="icon-item-remove" aria-label="CAncel">close</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-add">
+                    <div class="div-item-info-report-search">
+                        <mat-card-subtitle class="name-item">Guía: &nbsp;</mat-card-subtitle>
+                        <mat-card-subtitle class="value-item">2324523435</mat-card-subtitle>
+
+                        <button mat-icon-button class="btn-remove-item">
+                            <mat-icon class="icon-item-remove" aria-label="CAncel">close</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="item-add">
+                    <div class="div-item-info-report-search">
+                        <mat-card-subtitle class="name-item">Factura: &nbsp;</mat-card-subtitle>
+                        <mat-card-subtitle class="value-item">PRE-78576487</mat-card-subtitle>
+
+                        <button mat-icon-button class="btn-remove-item">
+                            <mat-icon class="icon-item-remove" aria-label="CAncel">close</mat-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <!--Button selection clean-->
+                <div class="btn-remove-selection">
+                    <div (click)="hiddeItemsAddSearch()" class="btn-selection-clean">
+                        <mat-icon class="icon-return-selection">keyboard_return</mat-icon>
+                        <p class="text-celan-items">Limpiar selección</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="div-reporting">
+        <div class="div-title-reporting">
+            <mat-card-subtitle class="title-finds">
+                Reportería
+            </mat-card-subtitle>
+        </div>
+        <div class="div-column-list-reports-and-table">
+            <div class="list-reports-filters">
+                <mat-card-subtitle class="title-list-reports">
+                    Listado de reportes
+                </mat-card-subtitle>
+                <mat-card-content class="text-list-reports">
+                    <p>
+                        Elija un rango de fechas y <br>
+                        seleccione su reporte a descargar.
+                    </p>
+                </mat-card-content>
+                <mat-card-content class="text-list-reports range-text">
+                    <p>
+                        Elige un rango de fechas
+                    </p>
+                </mat-card-content>
+                <div class="div-input-range-date">
+                    
+                    <div class="labels-date-picker">
+                        <mat-label>Desde</mat-label>
+                        <mat-label>Hasta</mat-label>
+                    </div>
+
+                    <div class="div-inputs-start-end">
+                        <input type="date"  name="datestart" id="datestart" >
+                        <input type="date"  name="dateend" id="dateend" >
+                    </div>
+         
+                </div>
+
+                <div class="div-add-template">
+                    <p class="icon-add-template" style="margin: 0 0 0px !important;">
+                        <mat-icon style="margin: 0 0 0px !important;" class="icon-add">add</mat-icon>
+                    </p>
+                    <p class="text-add-template">Agregar plantilla</p>
+                </div>
+
+                <div class="div-list-templates">
+                    
+                    <div class="div-add-template div-buttons-control-template-pather">
+                        <p class="text-add-template">Mi plantilla de reporte</p>
+                        <div class="div-buttons-control-template">
+                            <button mat-icon-button>
+                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                              </button>
+                              <button mat-icon-button>
+                                <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
+                              </button>
+                        </div>
+                    </div>
+                    <div class="div-add-template div-buttons-control-template-pather">
+                        <p class="text-add-template">ODC vendidas</p>
+                        <div class="div-buttons-control-template">
+                            <button mat-icon-button>
+                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                              </button>
+                              <button mat-icon-button>
+                                <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
+                              </button>
+                        </div>
+                    </div>
+                    <div class="div-add-template div-buttons-control-template-pather">
+                        <p class="text-add-template">Guías utilizadas</p>
+                        <div class="div-buttons-control-template">
+                            <button mat-icon-button>
+                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                              </button>
+                              <button mat-icon-button>
+                                <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
+                              </button>
+                        </div>
+                    </div>
+                    <div class="div-add-template div-buttons-control-template-pather">
+                        <p class="text-add-template">ODC generadas</p>
+                        <div class="div-buttons-control-template">
+                            <button mat-icon-button>
+                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                              </button>
+                              <button mat-icon-button>
+                                <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
+                              </button>
+                        </div>
+                    </div>
+                    <div class="div-add-template div-buttons-control-template-pather">
+                        <p class="text-add-template">Guías disponibles</p>
+                        <div class="div-buttons-control-template">
+                            <button mat-icon-button>
+                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                              </button>
+                              <button mat-icon-button>
+                                <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
+                              </button>
+                        </div>
+                    </div>
+                    <div class="div-add-template div-buttons-control-template-pather">
+                        <p class="text-add-template">Refacturaciones</p>
+                        <div class="div-buttons-control-template">
+                            <button mat-icon-button>
+                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                              </button>
+                              <button mat-icon-button>
+                                <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
+                              </button>
+                        </div>
+                    </div>
+                    <div class="div-add-template div-buttons-control-template-pather">
+                        <p class="text-add-template">Refacturaciones</p>
+                        <div class="div-buttons-control-template">
+                            <button mat-icon-button>
+                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                              </button>
+                              <button mat-icon-button>
+                                <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
+                              </button>
+                        </div>
+                    </div>
+                    <div class="div-add-template div-buttons-control-template-pather">
+                        <p class="text-add-template">Refacturaciones</p>
+                        <div class="div-buttons-control-template">
+                            <button mat-icon-button>
+                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                              </button>
+                              <button mat-icon-button>
+                                <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
+                              </button>
+                        </div>
+                    </div>
+                    <div class="div-add-template div-buttons-control-template-pather">
+                        <p class="text-add-template">Refacturaciones</p>
+                        <div class="div-buttons-control-template">
+                            <button mat-icon-button>
+                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                              </button>
+                              <button mat-icon-button>
+                                <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
+                              </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-button-download-csv-templates">
+                    <button mat-raised-button class="btn-downl-csv-bottom" color="warn">
+                        <div class="div-center-text-button">
+                            <div class="icon-download">
+                                <div class="icons">
+                                    <mat-icon class="icon-arrow">arrow_downward</mat-icon>
+                                    <mat-icon class="icon-underline">maximize</mat-icon>
+                                </div>
+                            </div>
+                            Descargar CSV
+                        </div>
+                        
+                    </button>
+                </div>
+            </div>
+            <div class="table-report-items-list">
+                <div class="title-column-two-details-table">
+                    <div class="header-column-title">
+                        <div class="title-header">
+                            <mat-card-subtitle class="title-list-reports column-two-title">
+                                Resporte estándar / Mi plantilla de reporte
+                            </mat-card-subtitle>
+                        </div>
+                        <div class="header-button-downl">
+                            <button mat-raised-button class="btn-downl-csv-bottom btn-down-column" color="warn">
+                                <div class="div-center-text-button">
+                                    <div class="icon-download">
+                                        <div class="icons">
+                                            <mat-icon class="icon-arrow">arrow_downward</mat-icon>
+                                            <mat-icon class="icon-underline">maximize</mat-icon>
+                                        </div>
+                                    </div>
+                                    Descargar CSV
+                                </div>
+                                
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-templates-columns">
+                    <div class="div-table-templates">
+                        <table class="table-data">
+                            <thead>
+                                <tr class="tr-thead">
+                                    <th class="title-column-table">Fecha de compra</th>
+                                    <th>Cuenta</th>
+                                    <th>Tipo de transacción</th>
+                                    <th>Número de factura</th>
+                                    <th>Número de refactura</th>
+                                    <th>Fecha de factura</th>
+                                    <th>Fecha de factura anterior</th>
+                                    <th>Número de orden de compra</th>
+                                    <th>Importe de la cotización</th>
+                                    <th>Nombre del cliente</th>
+                                    <th>Nombre del vendedor</th>
+                                    <th>RFC del cliente</th>
+                                    <th>Correo del cliente</th>
+                                    <th>Teléfono del cliente</th>
+                                    <th>Rango de guías</th>
+                                    <th>Canal de compra o venta</th>
+                                    <th>Estatus de la guía</th>
+                                    <th>Fecha de guía vencida</th>
+                                    <th>Fecha de guia por vencer</th>
+                                    <th>Porcentaje de uso por cada Orden de compra</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+                                <tr>
+                                    <td>dd/mm/aaaa</td>
+                                    <td>112312888</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                    <td>Valor de prueba</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="div-paginator-table-data">
+                        <div class="div-fragment-pagination">
+                            <p>1</p> &nbsp;
+                            <p>-</p>&nbsp;
+                            <p>5</p>&nbsp;
+                            <p>de</p>&nbsp;
+                            <p>10</p>&nbsp;
+
+                            <button mat-icon-button>
+                                <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_left</mat-icon>
+                              </button>
+                              <button mat-icon-button>
+                                <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_right</mat-icon>
+                              </button>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            
+        </div>
+        <div class="div-fast-search">
+            <mat-card-subtitle class="title-finds text-serach-fast-title">
+                Búsqueda rápida
+            </mat-card-subtitle> 
+            <div class="div-three-columns-search-fast">
+                <div class="div-type-search-pather">
+                    <div class="div-type-search">
+                        <mat-card-content class="text-list-reports">
+                            <p>
+                                Búsqueda de factura
+                            </p>
+                        </mat-card-content>
+                        <div class="input-and-buttons input-f-s">
+                            <div class="div-input-icon div-input-f-s">
+                                <mat-icon class="icon-search">search</mat-icon>
+                                <input type="text" placeholder="Número de factura" class="input-search-report">
+                            </div>
+                            <div class="buttons-controls-report-csv butn">
+                                <button (click)="showItemsAddSearch()" mat-stroked-button color="warn"
+                                    class="button-add-report btn-search-f">Buscar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-type-search-pather">
+                    <div class="div-type-search">
+                        <mat-card-content class="text-list-reports">
+                            <p>
+                                Búsqueda de orden de compra (ODC)
+                            </p>
+                        </mat-card-content>
+                        <div class="input-and-buttons input-f-s">
+                            <div class="div-input-icon div-input-f-s">
+                                <mat-icon class="icon-search">search</mat-icon>
+                                <input type="text" placeholder="Número de ODC" class="input-search-report">
+                            </div>
+                            <div class="buttons-controls-report-csv butn">
+                                <button (click)="showItemsAddSearch()" mat-stroked-button color="warn"
+                                    class="button-add-report btn-search-f">Buscar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-type-search-pather">
+                    <div class="div-type-search">
+                        <mat-card-content class="text-list-reports">
+                            <p>
+                                Búsqueda por guía
+                            </p>
+                        </mat-card-content>
+                        <div class="input-and-buttons input-f-s">
+                            <div class="div-input-icon div-input-f-s">
+                                <mat-icon class="icon-search">search</mat-icon>
+                                <input type="text" placeholder="Número de guía" class="input-search-report">
+                            </div>
+                            <div class="buttons-controls-report-csv butn">
+                                <button (click)="showItemsAddSearch()" mat-stroked-button color="warn"
+                                    class="button-add-report btn-search-f">Buscar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>

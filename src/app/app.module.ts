@@ -18,6 +18,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 
 
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './_public/home/home.component';
 import { LoginComponent } from './_public/login/login.component';
@@ -73,6 +74,7 @@ import { MatTableExporterModule } from 'mat-table-exporter';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ReportsPageComponent } from './modules/clients/reports-page/reports-page.component';
 
 
 //funcion exportable AOT traslate
@@ -113,7 +115,8 @@ export function createTranslateLoader(http: HttpClient) {
     ConfirmDialogComponent,
     AddressFormComponent,
     CartComponent,
-    NewAccountComponent
+    NewAccountComponent,
+    ReportsPageComponent
   ],
   imports: [
     BrowserModule,
