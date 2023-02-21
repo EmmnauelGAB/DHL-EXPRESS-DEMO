@@ -1,17 +1,21 @@
 <!-- Navbar -->
 <div class="sticky-top">
   <!-- Jumbotron -->
-  <div class="p-3 bg-yellow" >
+  <div class="p-3 bg-yellow">
     <div class="container">
       <div class="row">
         <!-- Left elements logo -->
-        <div class="col-md-6 d-flex justify-content-center justify-content-md-start mb-3 mb-md-2">
+        <div
+          class="col-md-6 d-flex justify-content-center justify-content-md-start mb-3 mb-md-2"
+        >
           <a href="#!" class="ms-md-2">
             <img src="./assets/images/home/size%207x24(1).png" height="35" />
           </a>
         </div>
         <!-- Right elements -->
-        <div class="col-md-6 d-flex justify-content-center justify-content-md-end align-items-center">
+        <div
+          class="col-md-6 d-flex justify-content-center justify-content-md-end align-items-center"
+        >
           <div class="d-flex">
             <!-- Languages -->
             <form class="d-flex" role="search">
@@ -22,24 +26,56 @@
                 <select
                   class="form-select form-select-sm danger"
                   #langSelect
-                  (change)="changeLang(langSelect.value)">
+                  (change)="changeLang(langSelect.value)"
+                >
                   <option selected *ngFor="let lang of langs" [value]="lang">
                     {{ lang }}
                   </option>
                 </select>
               </div>
-              <!-- User -->
-              <button mat-icon-button aria-label="" routerLink="/login">
-                <mat-icon  matBadgeColor="warn">person</mat-icon>
-              </button>
-              <div class="labelNav">{{ "USER" | translate}} </div>
+
+                  <!-- User -->
+                  <div *ngIf="viewLabelHello">
+                    <button mat-icon-button aria-label="" routerLink="/login">
+                      <mat-icon>person</mat-icon>
+                    </button>
+                  </div>
+                    <div class="labelNav" *ngIf="viewLabelHello">{{ "USER" | translate }}</div>
+
+                  <!-- Cerrar -->
+                  <div class="demo-section" *ngIf="viewLabelHello">
+                    <button mat-icon-button aria-label="" routerLink="" (click)="exit()">
+                      <mat-icon matBadgeColor="warn">exit_to_app</mat-icon>
+                    </button>
+                  </div>
+                  <div class="labelNav" *ngIf="viewLabelHello" >Cerrar sesión</div>
+
+              <!-- add  -->
+              <section *ngIf="viewlogin">
+                <div class="example-button-row labelNav">
+                  <button
+                    mat-button
+                    (click)="mostrarHello()"
+                    routerLink="/create-user"
+                  >
+                    Crear cuenta
+                  </button>
+                  <button
+                    mat-button
+                    (click)="mostrarHello()"
+                    routerLink="/login"
+                  >
+                    Iniciar sesión
+                  </button>
+                </div>
+              </section>
+
               <!-- Cart -->
               <div class="demo-section">
                 <button mat-icon-button aria-label="" routerLink="/cart">
-                  <mat-icon matBadge="15" matBadgeColor="warn">add_shopping_cart</mat-icon>
-                  <span class="cdk-visually-hidden">
-                    Example with a home icon with overlaid badge showing the number 15
-                  </span>
+                  <mat-icon matBadge="15" matBadgeColor="warn"
+                    >add_shopping_cart</mat-icon
+                  >
                 </button>
               </div>
               <div class="labelNav">{{ "CAR" | translate }}</div>
@@ -47,7 +83,6 @@
                 <div class="example-flex-container"></div>
               </div>
             </form>
-
           </div>
         </div>
         <!-- Right elements -->
@@ -55,10 +90,18 @@
     </div>
   </div>
   <!-- Jumbotron -->
-  <nav class="navbar navbar-expand-lg bg-yellow">
+  <nav class="navbar navbar-expand-lg bg-yellow" *ngIf="viewLabelHello">
     <div class="container-fluid">
       <a class="nav-link" routerLink="">{{ "INICIO" | translate }}</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -79,7 +122,9 @@
               <a class="dropdown-item" routerLink="/management"
                 >Administracion Usuarios</a
               >
-              <a class="dropdown-item" routerLink="/profile">Administrar perfiles</a>
+              <a class="dropdown-item" routerLink="/profile"
+                >Administrar perfiles</a
+              >
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -111,7 +156,9 @@
                 >Comprar Guías</a
               >
               <a class="dropdown-item">Manual de Usuario</a>
-              <a class="dropdown-item" routerLink="/clients/print-guides">Impresión</a>
+              <a class="dropdown-item" routerLink="/clients/print-guides"
+                >Impresión</a
+              >
               <a class="dropdown-item" routerLink="/clients/available-guides"
                 >Guías disponibles</a
               >

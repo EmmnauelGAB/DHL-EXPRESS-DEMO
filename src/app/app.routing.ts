@@ -11,6 +11,7 @@ import { ProfileAddComponent } from './modules/management/profile/profile-add/pr
 import { ProfileEditComponent } from './modules/management/profile/profile-edit/profile-edit.component';
 import { CartComponent } from './_public/home/cart/cart.component';
 import { NewAccountComponent } from './_public/login/new-account/new-account.component';
+import { FormDetailComponent } from './modules/management/form-detail/form-detail.component';
 
 const appRoutes = [
   // clients: ClientsRoutingModule
@@ -24,6 +25,7 @@ const appRoutes = [
   { path: 'profile-edit', component: ProfileEditComponent },
   { path: 'cart', component: CartComponent },
   { path: 'create-user', component: NewAccountComponent },
+  { path: 'detail', component: FormDetailComponent },
   { path: '**', component: PageNotFoundComponent },
 
 ];

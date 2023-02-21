@@ -2,36 +2,39 @@
   <div class="div-quot-guide">
     <h1 class="title-div-top">Cotice sus guías prepagadas</h1>
     <p class="text-div-top-img">
-      Calcule el costo de sus guías de manera individual, o elija 
-      uno de nuestro paquetes en la siguiente sección.
+      Calcule el costo de sus guías de manera individual, o elija uno de nuestro
+      paquetes en la siguiente sección.
     </p>
 
     <div class="div-columns-input-more-less-and-total">
       <div class="div-input-increase-decrase">
-        <p class="p-quantity-guide">
-          Cantidad de guías
-        </p>
+        <p class="p-quantity-guide">Cantidad de guías</p>
 
         <div class="input-increase-decrease">
           <button class="buton-less" mat-icon-button>
             <mat-icon class="btn-remove">remove</mat-icon>
           </button>
-          <input value="1" appearance='outline' class="input-increase-decrase-value" type="number">
+          <input
+            value="1"
+            appearance="outline"
+            class="input-increase-decrase-value"
+            type="number"
+          />
           <button class="buton-add" mat-icon-button>
             <mat-icon class="btn-add">add</mat-icon>
           </button>
         </div>
       </div>
       <div class="total-amount-payment">
-        <p class="p-amount-payment">
-          Total a pagar
-        </p>
+        <p class="p-amount-payment">Total a pagar</p>
         <p class="total-amount-pay">
-            {{ 199 | currency}}
+          {{ 199 | currency }}
         </p>
       </div>
     </div>
-    <button class="btn-add-cart-top" mat-raised-button color="warn">Agregar a carrito</button>
+    <button class="btn-add-cart-top" mat-raised-button color="warn">
+      Agregar a carrito
+    </button>
   </div>
 </div>
 <div class="container2">
@@ -45,48 +48,57 @@
     </mat-card-header>
   </mat-card>
 </div>
-<div class="container2" >
+<div class="container2">
   <mat-card class="example-card">
-        <mat-card-header>
-          <mat-card-title-group>
-            <div style="text-align: left">
-              <img mat-card-lg-image src="./assets/images/home/packages@2x.png" />
-            </div>
-            <div class="containerInfo">
-              <mat-card-title><strong>Paquete 20</strong> </mat-card-title>
-              <mat-card-content>
-                {{ "PACK20" | translate }}
-              </mat-card-content>
-              <mat-card-subtitle class="mat-card-subtitle-p">Cantidad de paquetes</mat-card-subtitle>
-              <div class="input-increase-decrease-paq">
-                <button class="buton-less-paq" mat-icon-button>
-                  <mat-icon class="btn-remove">remove</mat-icon>
-                </button>
-                <input value="1" appearance='outline' class="input-increase-decrase-value-paq" type="number">
-                <button class="buton-add-paq" mat-icon-button>
-                  <mat-icon class="btn-add">add</mat-icon>
-                </button>
-              </div>
-            </div>
-            <div id="lateral">
-              <mat-card-title>
-                  <mat-chip-listbox aria-label="Fish selection">
-                    <mat-chip-option class="textYellow"> Ahorra $530 </mat-chip-option>
-                    <mat-chip-option class="textSize"> <small> Antes $2,490.00</small> </mat-chip-option>
-                  </mat-chip-listbox>
-    
-              </mat-card-title>
-              <mat-card-title class="price"><strong>$ 1,960.00</strong> </mat-card-title>
-              <button class="btn-add-cart-top" mat-raised-button color="warn">{{ "BTNADD" | translate }}</button>
-            </div>
-          </mat-card-title-group>
-        </mat-card-header>
-      </mat-card>
-
-  <div>
-
-  </div>
-
+    <mat-card-header>
+      <mat-card-title-group>
+        <div style="text-align: left">
+          <img mat-card-lg-image src="./assets/images/home/packages@2x.png" />
+        </div>
+        <div class="containerInfo">
+          <mat-card-title><strong>Paquete 20</strong> </mat-card-title>
+          <mat-card-content>
+            {{ "PACK20" | translate }}
+          </mat-card-content>
+          <mat-card-subtitle class="mat-card-subtitle-p"
+            >Cantidad de paquetes</mat-card-subtitle
+          >
+          <div class="input-increase-decrease-paq">
+            <button class="buton-less-paq" mat-icon-button>
+              <mat-icon class="btn-remove">remove</mat-icon>
+            </button>
+            <input
+              value="1"
+              appearance="outline"
+              class="input-increase-decrase-value-paq"
+              type="number"
+            />
+            <button class="buton-add-paq" mat-icon-button>
+              <mat-icon class="btn-add">add</mat-icon>
+            </button>
+          </div>
+        </div>
+        <div id="lateral">
+          <mat-card-title>
+            <mat-chip-listbox aria-label="Fish selection">
+              <mat-chip-option class="textYellow">
+                Ahorra $530
+              </mat-chip-option>
+              <mat-chip-option class="textSize">
+                <small> Antes $2,490.00</small>
+              </mat-chip-option>
+            </mat-chip-listbox>
+          </mat-card-title>
+          <mat-card-title class="price"
+            ><strong>$ 1,960.00</strong>
+          </mat-card-title>
+          <button class="btn-add-cart-top" mat-raised-button color="warn">
+            {{ "BTNADD" | translate }}
+          </button>
+        </div>
+      </mat-card-title-group>
+    </mat-card-header>
+  </mat-card>
   <mat-card *ngFor="let product of products">
     <mat-card-content>
       {{ product.name }} - {{ product.price }}

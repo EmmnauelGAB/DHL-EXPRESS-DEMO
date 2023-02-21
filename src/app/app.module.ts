@@ -66,6 +66,7 @@ import { AddressFormComponent } from './modules/clients/print/address-form/addre
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CartComponent } from './_public/home/cart/cart.component';
 import { NewAccountComponent } from './_public/login/new-account/new-account.component';
+import { FormDetailComponent } from './modules/management/form-detail/form-detail.component';
 
 //importar csv
 import { MatTableExporterModule } from 'mat-table-exporter';
@@ -116,7 +117,8 @@ export function createTranslateLoader(http: HttpClient) {
     AddressFormComponent,
     CartComponent,
     NewAccountComponent,
-    ReportsPageComponent
+    ReportsPageComponent,
+    FormDetailComponent
   ],
   imports: [
     BrowserModule,

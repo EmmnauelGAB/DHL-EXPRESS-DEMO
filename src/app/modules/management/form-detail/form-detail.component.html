@@ -1,0 +1,62 @@
+
+<div class="content">
+  <div class="titulo pt-3">
+      <p>Administrar usuarios  >  Detalle de usuario</p>
+      <h1 class="Text"> DETALLE DE USUARIO </h1>
+      <button  mat-raised-button class="btn btnDescargar" type="button"  routerLink="/form-edit">
+        Editar usuario
+    </button>
+  </div>
+  <form class="form" [formGroup]="formFindInvoice" (ngSubmit)="findInvoice()">
+
+              <h2 class="content_title-red"> Perfiles y roles</h2>
+              <div class="detailInvoice">
+                  <div class="groupDetailInvoice">
+                      <p>Perfil</p>
+                      <p class="txtNegrita"> Administrador</p>
+                  </div>
+                  <div class="groupDetailInvoice">
+                      <p>Roles</p>
+                      <p class="txtNegrita"> Áreas comerciales | Cliente | Retail | Tesorería | Contabilidad | Billing | Soporte </p>
+                  </div>
+              </div>
+              <h2 class="content_title-red"> Información del cliente/usuario</h2>
+              <div class="detailInvoice">
+                  <div class="groupDetailInvoice">
+                      <p>Nombre completo con apellidos</p>
+                      <p class="txtNegrita"> Gerardo Miranda Herrera </p>
+                  </div>
+                  <div class="groupDetailInvoice">
+                      <p>Usuario (ldap)</p>
+                      <p class="txtNegrita"> gerardo.miranda</p>
+                  </div>
+              </div>
+              <h2 class="content_title-red"> Datos de facturación </h2>
+              <div class="detailInvoice">
+                  <div class="groupDetailInvoice">
+                      <p>Razón social o nombre</p>
+                      <p class="txtNegrita"> Gerardo Miranda Herrera </p>
+                  </div>
+                  <div class="groupDetailInvoice">
+                      <p>Persona física | moral</p>
+                      <p class="txtNegrita"> Persona física</p>
+                  </div>
+                  <div class="groupDetailInvoice">
+                    <p>RFC</p>
+                    <p class="txtNegrita"> XAXX010101000 </p>
+                </div>
+                  <div class="groupDetailInvoice">
+                      <p>Código postal</p>
+                      <p class="txtNegrita"> 01010 </p>
+                  </div>
+                  <div class="groupDetailInvoice">
+                    <p>Régimen fiscal</p>
+                    <p class="txtNegrita"> Personas físicas con actividades empresariales y profesionales</p>
+                </div>
+                <div class="groupDetailInvoice">
+                    <p>Uso del CFDI</p>
+                    <p class="txtNegrita"> Dados, troqueles, moldes, matrices y herramental.</p>
+                </div>
+              </div>
+  </form>
+</div>

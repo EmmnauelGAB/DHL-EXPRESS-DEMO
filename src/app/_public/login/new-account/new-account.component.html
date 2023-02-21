@@ -1,203 +1,234 @@
 <div class="container3">
-
   <mat-card-header color="warn">
-    <mat-card-title class="Text"
-      ><strong>CREAR CUENTA</strong>
-    </mat-card-title>
+    <mat-card-title class="Text"><strong>CREAR CUENTA</strong> </mat-card-title>
   </mat-card-header>
 </div>
 <!--Formulario de Cliente -->
 <div class="contenedor1">
-  <mat-card-header class="redText">
-    <mat-card-title><strong>Información del Cliente</strong> </mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <p class="TextDesc">
-      Por favor ingrese la información solicitada, todos los campos son
-      obligatorios.
-    </p>
-  </mat-card-content>
+  <form>
+    <mat-card-header class="redText">
+      <mat-card-title><strong>Información del Cliente</strong> </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="TextDesc">
+        Por favor ingrese la información solicitada, todos los campos son
+        obligatorios.
+      </p>
+    </mat-card-content>
 
-  <mat-form-field  appearance="outline">
-    <mat-label>Nombre completo con apellidos</mat-label>
-    <input matInput type="text" [(ngModel)]="name" />
-  </mat-form-field>
-
-  <mat-form-field [ngDisabled]="!isCheckEnabled"  appearance="outline">
-    <mat-label>Usuario (Correo electrónico)</mat-label>
-    <input matInput type="text" />
-  </mat-form-field>
-
-  <mat-form-field  appearance="outline">
-    <mat-label>Contraseña</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'" />
-    <button
-      mat-icon-button
-      matSuffix
-      (click)="hide = !hide"
-      [attr.aria-label]="'Hide password'"
-      [attr.aria-pressed]="hide"
-    >
-      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-    </button>
-  </mat-form-field>
-
-  <mat-form-field  appearance="outline">
-    <mat-label>Confirmar contraseña</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'" />
-    <button
-      mat-icon-button
-      matSuffix
-      (click)="hide = !hide"
-      [attr.aria-label]="'Hide password'"
-      [attr.aria-pressed]="hide"
-    >
-      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-    </button>
-  </mat-form-field>
-
-  <mat-card-content>
-    <p class="TextDesc">Política de privacidad</p>
-    <section class="example-section">
-      <mat-checkbox class="example-margin" (click)="toggleCheck()"
-        >He leído y acepto la política de privacidad.</mat-checkbox
-      >
-    </section>
-  </mat-card-content>
-
-  <mat-card-content>
-    <p class="TextDesc">¿Desea facturar?</p>
-    <section class="example-section">
-      <mat-slide-toggle class="example-margin"> Sí! </mat-slide-toggle>
-    </section>
-  </mat-card-content>
-
-  <mat-card-header class="redText">
-    <mat-card-title
-      ><strong>Información de facturación</strong>
-    </mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <p class="TextDesc">
-      Por favor ingrese los datos de facturación preferidos, tendrá a
-      posibilidad de agregar más opciones de facturación y al momento de comprar
-      guías elegir la opción que desee.
-    </p>
-  </mat-card-content>
-
-  <label id="example-radio-group-label">Seleccione</label>
-  <mat-radio-group
-    aria-labelledby="example-radio-group-label"
-    class="example-radio-group"
-    [(ngModel)]="infoFact">
-    <mat-radio-button
-      class="example-radio-button"
-      *ngFor="let season of seasons"
-      [value]="season">
-      {{ season }}
-    </mat-radio-button>
-  </mat-radio-group>
-
-  <mat-form-field  appearance="outline">
-    <mat-label>RFC (Registro Federal de Contribuyentes)</mat-label>
-    <input
-      matInput
-      type="text"
-      [(ngModel)]="rfc"
-    />
-  </mat-form-field>
-
-  <mat-card-content>
-    <p class="TextDesc">
-      Colocar la razón social sin Régimen Capital (ejemplo: SA de CV), conforme
-      esté registrado en la constancia de situación fiscal.
-    </p>
-  </mat-card-content>
-
-  <mat-form-field  appearance="outline">
-    <mat-label>Razón social o nombre</mat-label>
-    <input matInput type="text"/>
-  </mat-form-field>
-
-  <mat-card-content>
-    <p class="TextDesc">
-      Colocar el código postal del domicilio fiscal conforme al registrado en la
-      constancia de situación fiscal.
-    </p>
-  </mat-card-content>
-
-  <mat-card-content>
     <mat-form-field appearance="outline">
-      <mat-label>Código postal</mat-label>
-      <input matInput type="text" [(ngModel)]="cp"/>
+      <mat-label>Nombre completo con apellidos</mat-label>
+      <input matInput type="text" [(ngModel)]="name" />
     </mat-form-field>
-    <button mat-raised-button class="btnCP">Validar</button>
-  </mat-card-content>
 
-  <mat-card-content>
-    <p class="TextDesc">
-      Colocar régimen fiscal conforme al registrando en la constancia de
-      situación fiscal.
-    </p>
-  </mat-card-content>
+    <mat-form-field [ngDisabled]="!isCheckEnabled" appearance="outline">
+      <mat-label>Usuario (Correo electrónico)</mat-label>
+      <input matInput type="text" />
+    </mat-form-field>
 
-  <mat-form-field  appearance="outline">
-    <mat-label>Régimen fiscal</mat-label>
-    <input matInput type="text" [(ngModel)]="regFis"/>
-  </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Numero Telefonico</mat-label>
+      <input matInput type="number" />
+    </mat-form-field>
 
-  <mat-form-field appearance="outline">
-    <mat-label>Uso del CFDI</mat-label>
-    <mat-select [(ngModel)]="selectedValue" name="food">
-      <mat-option *ngFor="let food of foods" [value]="food.value">
-        {{ food.viewValue }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Contraseña</mat-label>
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        formControlName="password"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
 
-  <mat-card-header class="redText">
-    <mat-card-title>
-      <strong>Confirmar datos de facturación</strong>
-    </mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <p class="TextDesc">¿Desea facturar con la siguiente información?</p>
-  </mat-card-content>
+    <mat-form-field appearance="outline">
+      <mat-label>Confirmar contraseña</mat-label>
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        formControlName="confirmarPassword"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
 
-  <mat-radio-group
-    aria-labelledby="example-radio-group-label"
-    class="example-radio-group">
-    <mat-radio-button value="1">
-      <div>
-        <mat-card-content>
-          <p><mat-card-subtitle>Razón social o nombre:</mat-card-subtitle></p>
-          <p><strong>{{ name }}</strong></p>
-          <mat-divider></mat-divider>
-          <p><mat-card-subtitle>RFC:</mat-card-subtitle></p>
-          <p><strong>{{ rfc }}</strong></p>
-          <mat-divider></mat-divider>
-          <p><mat-card-subtitle>Persona:</mat-card-subtitle></p>
-          <p><strong>{{ infoFact}}</strong></p>
-          <mat-divider></mat-divider>
-          <p><mat-card-subtitle>Régimen fiscal:</mat-card-subtitle></p>
-          <p><strong>{{ regFis }}</strong></p>
-          <mat-divider></mat-divider>
-          <p><mat-card-subtitle>Uso del CFDI</mat-card-subtitle></p>
-          <p><strong>{{ selectedValue }}</strong></p>
-          <mat-divider></mat-divider>
-          <p><mat-card-subtitle>Código postal</mat-card-subtitle></p>
-          <p><strong>{{ cp }}</strong></p>
-        </mat-card-content>
-      </div>
-    </mat-radio-button>
-    <mat-radio-button value="2">Ingresar datos de facturación distintos.</mat-radio-button>
-  </mat-radio-group>
 
-  <div class="btns d-flex justify-content-between align-items-center">
-    <button mat-stroked-button color="warn" routerLink="">
-      Cancelar
-    </button>
 
-    <button mat-raised-button class="btnRed" routerLink="/cart">Crear cuenta nueva</button>
-  </div>
+    <mat-card-content>
+      <p class="TextDesc">Política de privacidad</p>
+      <section class="example-section">
+        <mat-checkbox class="example-margin" (click)="toggleCheck()"
+          >He leído y acepto la política de privacidad.</mat-checkbox
+        >
+      </section>
+    </mat-card-content>
+
+    <mat-card-content>
+      <p class="TextDesc">¿Desea facturar?</p>
+      <section class="example-section">
+        <mat-slide-toggle class="example-margin"> Sí! </mat-slide-toggle>
+      </section>
+    </mat-card-content>
+
+    <mat-card-header class="redText">
+      <mat-card-title
+        ><strong>Información de facturación</strong>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="TextDesc">
+        Por favor ingrese los datos de facturación preferidos, tendrá a
+        posibilidad de agregar más opciones de facturación y al momento de
+        comprar guías elegir la opción que desee.
+      </p>
+    </mat-card-content>
+
+    <label id="example-radio-group-label">Seleccione</label>
+    <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+      [(ngModel)]="infoFact"
+    >
+      <mat-radio-button
+        class="example-radio-button"
+        *ngFor="let season of seasons"
+        [value]="season"
+      >
+        {{ season }}
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field appearance="outline">
+      <mat-label>RFC (Registro Federal de Contribuyentes)</mat-label>
+      <input matInput type="text" [(ngModel)]="rfc" />
+    </mat-form-field>
+
+    <mat-card-content>
+      <p class="TextDesc">
+        Colocar la razón social sin Régimen Capital (ejemplo: SA de CV),
+        conforme esté registrado en la constancia de situación fiscal.
+      </p>
+    </mat-card-content>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Razón social o nombre</mat-label>
+      <input matInput type="text" />
+    </mat-form-field>
+
+    <mat-card-content>
+      <p class="TextDesc">
+        Colocar el código postal del domicilio fiscal conforme al registrado en
+        la constancia de situación fiscal.
+      </p>
+    </mat-card-content>
+
+    <mat-card-content>
+      <mat-form-field appearance="outline">
+        <mat-label>Código postal</mat-label>
+        <input matInput type="text" [(ngModel)]="cp" />
+      </mat-form-field>
+      <button mat-raised-button class="btnCP">Validar</button>
+    </mat-card-content>
+
+    <mat-card-content>
+      <p class="TextDesc">
+        Colocar régimen fiscal conforme al registrando en la constancia de
+        situación fiscal.
+      </p>
+    </mat-card-content>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Régimen fiscal</mat-label>
+      <input matInput type="text" [(ngModel)]="regFis" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Uso del CFDI</mat-label>
+      <mat-select [(ngModel)]="selectedValue" name="food">
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{ food.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-card-header class="redText">
+      <mat-card-title>
+        <strong>Confirmar datos de facturación</strong>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="TextDesc">¿Desea facturar con la siguiente información?</p>
+    </mat-card-content>
+
+    <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+    >
+      <mat-radio-button value="1">
+        <div>
+          <mat-card-content>
+            <p><mat-card-subtitle>Razón social o nombre:</mat-card-subtitle></p>
+            <p>
+              <strong>{{ name }}</strong>
+            </p>
+            <mat-divider></mat-divider>
+            <p><mat-card-subtitle>RFC:</mat-card-subtitle></p>
+            <p>
+              <strong>{{ rfc }}</strong>
+            </p>
+            <mat-divider></mat-divider>
+            <p><mat-card-subtitle>Persona:</mat-card-subtitle></p>
+            <p>
+              <strong>{{ infoFact }}</strong>
+            </p>
+            <mat-divider></mat-divider>
+            <p><mat-card-subtitle>Régimen fiscal:</mat-card-subtitle></p>
+            <p>
+              <strong>{{ regFis }}</strong>
+            </p>
+            <mat-divider></mat-divider>
+            <p><mat-card-subtitle>Uso del CFDI</mat-card-subtitle></p>
+            <p>
+              <strong>{{ selectedValue }}</strong>
+            </p>
+            <mat-divider></mat-divider>
+            <p><mat-card-subtitle>Código postal</mat-card-subtitle></p>
+            <p>
+              <strong>{{ cp }}</strong>
+            </p>
+          </mat-card-content>
+        </div>
+      </mat-radio-button>
+      <mat-radio-button value="2"
+        >Ingresar datos de facturación distintos.</mat-radio-button
+      >
+    </mat-radio-group>
+
+    <div class="btns d-flex justify-content-between align-items-center">
+      <button mat-stroked-button color="warn" routerLink="">Cancelar</button>
+
+      <button
+        mat-raised-button
+        class="btnRed"
+        routerLink="/cart"
+      >
+        Crear cuenta nueva
+      </button>
+    </div>
+  </form>
 </div>

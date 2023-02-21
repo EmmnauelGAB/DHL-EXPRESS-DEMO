@@ -102,3 +102,8 @@ mat-icon {
 .example-radio-button {
   margin: 5px;
 }
+
+
+.form{
+  margin-inline: 30px;
+}

@@ -5,6 +5,7 @@ import { LogService } from '../../core/service/log.service';
 import { LoginService } from './service/login.service';
 import { SessionStorageService } from '../../core/service/session-storage.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -47,6 +48,7 @@ export class LoginComponent implements OnInit {
     this.tipoFormularioRecuperarPass = false;
     this.tipoFormularioLogin = true;
     this.tipoFormularioVencioPass = false;
+
   }
 
   public doLogin() {

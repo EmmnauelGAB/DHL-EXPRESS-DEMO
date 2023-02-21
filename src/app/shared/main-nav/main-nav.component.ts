@@ -26,6 +26,19 @@ export class MainNavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public viewlogin: boolean = true;
+  public viewLabelHello: boolean = false;
+  public mostrarHello() {
+    this.viewLabelHello = true;
+    this.viewlogin = false
+
+  }
+
+  public exit() {
+    this.viewLabelHello = false;
+    this.viewlogin = true;
+  }
+
 
 
 }

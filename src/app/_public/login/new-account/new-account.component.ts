@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 interface Food {
   value: string;
   viewValue: string;
 }
-
 @Component({
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
