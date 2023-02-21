@@ -2,7 +2,9 @@
   color: #CC120F;
   background: linear-gradient(45deg, #F8C709, #fcf196);
 }
-
+.navbarr{
+  z-index: 1;
+}
 .labelNav{
   margin-top: 10px;
   color: black;

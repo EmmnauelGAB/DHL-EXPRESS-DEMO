@@ -1,5 +1,6 @@
 import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { ReportsDeleteModalComponent } from './reports-delete-modal/reports-delete-modal.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -26,6 +27,8 @@ const NAMES: string[] = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
 })
 
 export class ReportsPageComponent implements OnInit {
+
+  isVisibleModalDelete: boolean = false;
 
   displayedColumns: string[] = ['id', 'name', 'progress', 'color'];
   dataSource: MatTableDataSource<UserData>;
@@ -58,7 +61,15 @@ export class ReportsPageComponent implements OnInit {
       this.itemsList.nativeElement.classList.remove('show-items-flow-under');  
   }
 
-  
+  showModalDeleteTemplate(){
+    this.isVisibleModalDelete = true;
+  }
+
+  handleChildVariableChange(newChildVariableValue: boolean) {
+    this.isVisibleModalDelete = newChildVariableValue;
+  }
+
+
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;

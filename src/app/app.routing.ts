@@ -1,3 +1,4 @@
+import { ReportsPageComponent } from './modules/clients/reports-page/reports-page.component';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './_public/login/login.component';
 import { HomeComponent } from './_public/home/home.component';

@@ -1,0 +1,27 @@
+<div class="div-mask-white">
+    <div class="modal-delete-template">
+        <button (click)="hiddenModalDeleteTemplate()" mat-icon-button class="btn-close-modal">
+            <mat-icon aria-label="Example icon-button with a heart icon">close</mat-icon>
+          </button>
+        
+        <div class="title-header-modal">
+            <mat-card-title class="mat-card-title-modal">
+                Eliminar plantilla
+            </mat-card-title>
+        </div>
+
+        <div class="div-body-modal">
+            <mat-card-content>
+                Estás seguro que desea eliminar su plantilla. Si desea crear una nueva plantilla puede 
+                hacerlo en la sección de listadode reportes del menú Reportes.
+            </mat-card-content>
+        </div>
+
+        <div class="div-footer-buttons">
+            <div class="div-buttons">
+                <button (click)="hiddenModalDeleteTemplate()" class="btn-cancel" mat-raised-button color="warn">Cancelar</button>
+                <button (click)="hiddenModalDeleteTemplate()" class="btn-confirm" mat-raised-button color="warn">Si, eliminar plantilla</button>
+            </div>
+        </div>
+    </div>
+</div>

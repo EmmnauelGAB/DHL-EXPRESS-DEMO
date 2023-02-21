@@ -76,6 +76,8 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ReportsPageComponent } from './modules/clients/reports-page/reports-page.component';
+import { ReportsAddComponent } from './modules/clients/reports-page/reports-add/reports-add.component';
+import { ReportsDeleteModalComponent } from './modules/clients/reports-page/reports-delete-modal/reports-delete-modal.component';
 
 
 //funcion exportable AOT traslate
@@ -118,7 +120,9 @@ export function createTranslateLoader(http: HttpClient) {
     CartComponent,
     NewAccountComponent,
     ReportsPageComponent,
-    FormDetailComponent
+    FormDetailComponent,
+    ReportsAddComponent,
+    ReportsDeleteModalComponent
   ],
   imports: [
     BrowserModule,

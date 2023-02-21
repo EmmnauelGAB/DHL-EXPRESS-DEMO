@@ -1,4 +1,7 @@
-<div class="div-pather-reports">
+<app-reports-delete-modal [childVariable]="isVisibleModalDelete"
+(isVisibleModalDeleteChange)="handleChildVariableChange($event)" 
+*ngIf="isVisibleModalDelete" ></app-reports-delete-modal>
+<div class="div-pather-reports">    
     <div class="div-titles-reports">
         <mat-card-title class="title-reports">
             reportes
@@ -149,7 +152,7 @@
          
                 </div>
 
-                <div class="div-add-template">
+                <div class="div-add-template"  routerLink="/clients/reports-add">
                     <p class="icon-add-template" style="margin: 0 0 0px !important;">
                         <mat-icon style="margin: 0 0 0px !important;" class="icon-add">add</mat-icon>
                     </p>
@@ -162,9 +165,9 @@
                         <p class="text-add-template">Mi plantilla de reporte</p>
                         <div class="div-buttons-control-template">
                             <button mat-icon-button>
-                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                                <mat-icon routerLink="/clients/reports-edit" class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
                               </button>
-                              <button mat-icon-button>
+                              <button  (click)="showModalDeleteTemplate()" mat-icon-button>
                                 <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
                               </button>
                         </div>
@@ -172,8 +175,8 @@
                     <div class="div-add-template div-buttons-control-template-pather">
                         <p class="text-add-template">ODC vendidas</p>
                         <div class="div-buttons-control-template">
-                            <button mat-icon-button>
-                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                            <button  (click)="showModalDeleteTemplate()" mat-icon-button>
+                                <mat-icon routerLink="/clients/reports-edit" class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
                               </button>
                               <button mat-icon-button>
                                 <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
@@ -184,9 +187,9 @@
                         <p class="text-add-template">Guías utilizadas</p>
                         <div class="div-buttons-control-template">
                             <button mat-icon-button>
-                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                                <mat-icon routerLink="/clients/reports-edit" class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
                               </button>
-                              <button mat-icon-button>
+                              <button  (click)="showModalDeleteTemplate()" mat-icon-button>
                                 <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
                               </button>
                         </div>
@@ -195,9 +198,9 @@
                         <p class="text-add-template">ODC generadas</p>
                         <div class="div-buttons-control-template">
                             <button mat-icon-button>
-                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                                <mat-icon routerLink="/clients/reports-edit" class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
                               </button>
-                              <button mat-icon-button>
+                              <button  (click)="showModalDeleteTemplate()" mat-icon-button>
                                 <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
                               </button>
                         </div>
@@ -206,9 +209,9 @@
                         <p class="text-add-template">Guías disponibles</p>
                         <div class="div-buttons-control-template">
                             <button mat-icon-button>
-                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                                <mat-icon routerLink="/clients/reports-edit" class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
                               </button>
-                              <button mat-icon-button>
+                              <button  (click)="showModalDeleteTemplate()" mat-icon-button>
                                 <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
                               </button>
                         </div>
@@ -217,9 +220,9 @@
                         <p class="text-add-template">Refacturaciones</p>
                         <div class="div-buttons-control-template">
                             <button mat-icon-button>
-                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                                <mat-icon routerLink="/clients/reports-edit" class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
                               </button>
-                              <button mat-icon-button>
+                              <button  (click)="showModalDeleteTemplate()" mat-icon-button>
                                 <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
                               </button>
                         </div>
@@ -228,9 +231,9 @@
                         <p class="text-add-template">Refacturaciones</p>
                         <div class="div-buttons-control-template">
                             <button mat-icon-button>
-                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                                <mat-icon routerLink="/clients/reports-edit" class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
                               </button>
-                              <button mat-icon-button>
+                              <button  (click)="showModalDeleteTemplate()" mat-icon-button>
                                 <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
                               </button>
                         </div>
@@ -239,9 +242,9 @@
                         <p class="text-add-template">Refacturaciones</p>
                         <div class="div-buttons-control-template">
                             <button mat-icon-button>
-                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                                <mat-icon routerLink="/clients/reports-edit" class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
                               </button>
-                              <button mat-icon-button>
+                              <button  (click)="showModalDeleteTemplate()" mat-icon-button>
                                 <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
                               </button>
                         </div>
@@ -250,9 +253,9 @@
                         <p class="text-add-template">Refacturaciones</p>
                         <div class="div-buttons-control-template">
                             <button mat-icon-button>
-                                <mat-icon class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
+                                <mat-icon routerLink="/clients/reports-edit" class="icon-edit-tem" aria-label="Example edit icon">edit</mat-icon>
                               </button>
-                              <button mat-icon-button>
+                              <button  (click)="showModalDeleteTemplate()" mat-icon-button>
                                 <mat-icon aria-label="Example delete icon">delete_outline</mat-icon>
                               </button>
                         </div>

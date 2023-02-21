@@ -1,0 +1,136 @@
+.div-pather-add-template{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.div-direction-nav{
+    margin-top: 40px;
+    font-family: sans-serif;
+    margin-bottom: 60px;
+    
+}
+.div-direction-nav > p {
+    display: inline-block;
+    margin-right: 15px;
+    color: #858585;
+}
+.p-last-direction{
+    color: #000 !important;
+}
+
+.title-add-edit-template{
+font-size: 40px;
+text-transform: uppercase;
+font-weight: 900;
+}
+
+.div-title-page-and-btn{
+    height: max-content;
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+.button-upload-csv{
+    background: transparent;
+    border: 2px solid #D40511;
+    color: #D40511;
+    width: 100%;
+    padding: 3px;
+}
+.text-upload-csv {
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.icons{
+    display: inline-block;
+    display: relative;
+    margin-bottom: 0px;
+    height:25px;
+    vertical-align: middle;
+    margin-right: 5px;
+    
+}
+
+.icon-arrow{
+    position: absolute;
+    top:10px;
+}
+
+.icon-upload{
+    display: inline-block;
+}
+
+.text-upload-csv{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.div-text-seelct-elements{
+    margin-top: 60px;
+}
+
+.div-text-seelct-elements{
+    font-size: 116%;
+}
+
+.div-items-elemts{
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+    row-gap: 15px;
+}
+
+.checkbox-element{
+    position: absolute;
+    visibility: hidden;
+}
+.checkbox-element:checked ~ .element{
+    border: 1px solid #D40511;
+}
+
+.element{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20), 0px 0px 8px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    height:65px;
+}
+
+.element:hover{
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.name-element{
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.div-btn-save-template{
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.btn-save-template{
+    position: absolute;
+    right: 0;
+    background-color: #D40511;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 200px;
+}
+

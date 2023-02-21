@@ -1,3 +1,4 @@
+import { ReportsAddComponent } from './reports-page/reports-add/reports-add.component';
 import { ReportsPageComponent } from './reports-page/reports-page.component';
 
 import { Routes, RouterModule } from '@angular/router';
@@ -41,6 +42,8 @@ const routes: Routes = [
             { path: 'management-odc', component: ManagementOdcComponent },
             { path: 'buy-guides', component: BuyGuidesComponent },
             { path: 'reports', component: ReportsPageComponent },
+            { path: 'reports-add', component: ReportsAddComponent },
+            { path: 'reports-edit', component: ReportsAddComponent },
             { 
                 path: 'print-guides', 
                     children: [

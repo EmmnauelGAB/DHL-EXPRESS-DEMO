@@ -666,3 +666,22 @@ width: 100%;
 .input-search-report::placeholder{
     color: #000;
 }
+
+
+@media screen and (max-width: 1028px){
+    .div-pather-reports{
+        width: 95%;
+    }
+    .btn-down-column{
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 828px){
+    .div-pather-reports{
+        width: 98%;
+    }
+    .btn-down-column{
+        width: 100% !important;
+    }
+}
