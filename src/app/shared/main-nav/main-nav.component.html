@@ -6,82 +6,74 @@
       <div class="row">
         <!-- Left elements logo -->
         <div
-          class="col-md-6 d-flex justify-content-center justify-content-md-start mb-3 mb-md-2"
-        >
+          class="col-md-6 d-flex justify-content-center justify-content-md-start mb-3 mb-md-2">
           <a href="#!" class="ms-md-2">
             <img src="./assets/images/home/size%207x24(1).png" height="35" />
           </a>
         </div>
         <!-- Right elements -->
         <div
-          class="col-md-6 d-flex justify-content-center justify-content-md-end align-items-center"
-        >
+          class="col-md-6 d-flex justify-content-center justify-content-md-end align-items-center">
           <div class="d-flex">
             <!-- Languages -->
             <form class="d-flex" role="search">
               <button mat-icon-button aria-label="">
                 <mat-icon>language</mat-icon>
               </button>
-              <div class="">
+              <div class="text">
                 <select
                   class="form-select form-select-sm danger"
                   #langSelect
-                  (change)="changeLang(langSelect.value)"
-                >
+                  (change)="changeLang(langSelect.value)">
                   <option selected *ngFor="let lang of langs" [value]="lang">
                     {{ lang }}
                   </option>
                 </select>
               </div>
 
-                  <!-- User -->
-                  <div *ngIf="viewLabelHello">
-                    <button mat-icon-button aria-label="" routerLink="/login">
-                      <mat-icon>person</mat-icon>
-                    </button>
-                  </div>
-                    <div class="labelNav" *ngIf="viewLabelHello">{{ "USER" | translate }}</div>
-
-                  <!-- Cerrar -->
-                  <div class="demo-section" *ngIf="viewLabelHello">
-                    <button mat-icon-button aria-label="" routerLink="" (click)="exit()">
-                      <mat-icon matBadgeColor="warn">exit_to_app</mat-icon>
-                    </button>
-                  </div>
-                  <div class="labelNav" *ngIf="viewLabelHello" >Cerrar sesión</div>
-
+              <!-- User -->
+              <div class="labelNav" *ngIf="viewLabelHello">
+                <button mat-button aria-label="" routerLink="/login">
+                  <mat-icon>person</mat-icon>
+                  {{ "USER" | translate }}
+                </button>
+              </div>
+              <!-- Cerrar -->
+              <div class="labelNav" *ngIf="viewLabelHello">
+                <button
+                  mat-button
+                  aria-label=""
+                  routerLink=""
+                  (click)="openDialog()">
+                  <mat-icon>exit_to_app</mat-icon>
+                  Cerrar sesión
+                </button>
+              </div>
               <!-- add  -->
-              <section *ngIf="viewlogin">
-                <div class="example-button-row labelNav">
+                <div class="labelNav" *ngIf="viewlogin">
                   <button
                     mat-button
                     (click)="mostrarHello()"
-                    routerLink="/create-user"
-                  >
-                    Crear cuenta
+                    routerLink="/create-user">
+                    Crear una cuenta
                   </button>
+                </div>
+                <!-- login  -->
+                <div class="labelNav" *ngIf="viewlogin">
                   <button
                     mat-button
                     (click)="mostrarHello()"
-                    routerLink="/login"
-                  >
+                    routerLink="/login">
                     Iniciar sesión
                   </button>
                 </div>
-              </section>
-
               <!-- Cart -->
-              <div class="demo-section">
-                <button mat-icon-button aria-label="" routerLink="/cart">
-                  <mat-icon matBadge="15" matBadgeColor="warn"
-                    >add_shopping_cart</mat-icon
-                  >
-                </button>
-              </div>
-              <div class="labelNav">{{ "CAR" | translate }}</div>
-              <div class="example-button-row">
-                <div class="example-flex-container"></div>
-              </div>
+              <button mat-button (click)="mostrarHello()" routerLink="/login">
+                <mat-icon matBadge="15" matBadgeColor="warn"
+                  >add_shopping_cart</mat-icon
+                >
+                {{ "CAR" | translate }}
+              </button>
             </form>
           </div>
         </div>
@@ -167,8 +159,7 @@
               >
               <a class="dropdown-item" routerLink="/clients/reports"
                 >Reportes
-                </a
-              >
+              </a>
             </div>
           </li>
         </ul>

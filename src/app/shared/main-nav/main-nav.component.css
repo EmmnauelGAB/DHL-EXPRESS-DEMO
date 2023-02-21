@@ -1,10 +1,11 @@
 .bg-yellow {
-  color: #CC120F;
+
   background: linear-gradient(45deg, #F8C709, #fcf196);
 }
 
 .labelNav{
-  margin-top: 10px;
+  margin-top: 4px;
+  margin-inline: 4px;
   color: black;
 }
 
@@ -15,13 +16,26 @@ header {
   z-index: 100;
 }
 
-select,
-option {
-  color: #D40511;
+.icon2 {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  margin-block: -10px;
+  margin-left: -10px;
+  margin-right: 10px;
 }
 
 
 
-.demo-section + .demo-section {
-  margin-top: 16px;
+
+/**Boton Bloquear Usurio POPUP*/
+.btnRedPop{
+  background-color: #D40511;
+  color: #ffffff;
+  float: right;
+  width: 160px;
+}
+
+.text{
+  margin-top: 4px;
 }
