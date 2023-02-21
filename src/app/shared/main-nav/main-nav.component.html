@@ -131,6 +131,7 @@
             >
               {{ "CLIENT" | translate }}
             </a>
+            
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" routerLink="/clients/management-clients"
                 >Administracion Clientes</a
@@ -157,10 +158,21 @@
               <a class="dropdown-item" routerLink="/clients/billing"
                 >Facturación</a
               >
-              <a class="dropdown-item" routerLink="/clients/reports"
-                >Reportes
-              </a>
+              
             </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a routerLink="/clients/reports"
+              class="nav-link "
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-haspopup="false"
+              aria-expanded="false"
+              style="cursor: pointer"
+            >
+              Reportes
+            </a>
           </li>
         </ul>
       </div>
