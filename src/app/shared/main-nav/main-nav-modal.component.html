@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="px-1 d-flex" mat-dialog-content>
+    <img class="icon2" src="./assets/images/home/ic_alert.png" />
+    <h1 mat-dialog-title><b>Quiere cerrar la sesión?</b></h1>
+  </div>
+  <div mat-dialog-content>
+    <p>
+      Al cerrar sesión, cualquier elemento no guardado o compra sin completar será cancelada.
+    </p>
+  </div>
+  <div
+    class=""
+    mat-dialog-actions>
+    <button mat-button  class="btnRedCancel" (click)="exit()">Cancelar</button>
+    <button mat-raised-button mat-dialog-close class="btnRedPop" (click)="exit()">Cerrar sesión</button>
+  </div>
+</div>
