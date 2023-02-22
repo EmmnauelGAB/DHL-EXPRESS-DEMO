@@ -11,7 +11,7 @@
         <p class="p-quantity-guide">Cantidad de guías</p>
 
         <div class="input-increase-decrease">
-          <button class="buton-less" mat-icon-button>
+          <button btnrest="guides" (click)="decrementToOne($event)" class="buton-less" mat-icon-button>
             <mat-icon class="btn-remove">remove</mat-icon>
           </button>
           <input
@@ -19,8 +19,9 @@
             appearance="outline"
             class="input-increase-decrase-value"
             type="number"
+            id="guides"
           />
-          <button class="buton-add" mat-icon-button>
+          <button  btnsum="guides" (click)="incrementToOne($event)" class="buton-add" mat-icon-button>
             <mat-icon class="btn-add">add</mat-icon>
           </button>
         </div>
@@ -32,7 +33,7 @@
         </p>
       </div>
     </div>
-    <button class="btn-add-cart-top" mat-raised-button color="warn">
+    <button  class="btn-add-cart-top" mat-raised-button color="warn" >
       Agregar a carrito
     </button>
   </div>
@@ -64,17 +65,18 @@
             >Cantidad de paquetes</mat-card-subtitle
           >
           <div class="input-increase-decrease-paq">
-            <button class="buton-less-paq" mat-icon-button>
-              <mat-icon class="btn-remove">remove</mat-icon>
+            <button btnrest="pack20" (click)="decrementToOne($event)" class="buton-less-paq" mat-icon-button>
+              <mat-icon  class="btn-remove">remove</mat-icon>
             </button>
             <input
               value="1"
               appearance="outline"
               class="input-increase-decrase-value-paq"
               type="number"
+              id="pack20"
             />
-            <button class="buton-add-paq" mat-icon-button>
-              <mat-icon class="btn-add">add</mat-icon>
+            <button btnsum="pack20" (click)="incrementToOne($event)" class="buton-add-paq" mat-icon-button>
+              <mat-icon   class="btn-add">add</mat-icon>
             </button>
           </div>
         </div>
@@ -92,17 +94,69 @@
           <mat-card-title class="price"
             ><strong>$ 1,960.00</strong>
           </mat-card-title>
-          <button class="btn-add-cart-top" mat-raised-button color="warn">
+          <button (click)="addToCart($event)" id="btnAddCartPack20" class="btn-add-cart-top" mat-raised-button color="warn">
             {{ "BTNADD" | translate }}
           </button>
         </div>
       </mat-card-title-group>
     </mat-card-header>
   </mat-card>
-  <mat-card *ngFor="let product of products">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title-group>
+        <div style="text-align: left">
+          <img mat-card-lg-image src="./assets/images/home/packages@2x.png" />
+        </div>
+        <div class="containerInfo">
+          <mat-card-title><strong>Paquete 30</strong> </mat-card-title>
+          <mat-card-content>
+            {{ "PACK20" | translate }}
+          </mat-card-content>
+          <mat-card-subtitle class="mat-card-subtitle-p"
+            >Cantidad de paquetes</mat-card-subtitle
+          >
+          <div class="input-increase-decrease-paq">
+            <button btnrest="pack30" (click)="decrementToOne($event)" class="buton-less-paq" mat-icon-button>
+              <mat-icon  class="btn-remove">remove</mat-icon>
+            </button>
+            <input
+              value="1"
+              appearance="outline"
+              class="input-increase-decrase-value-paq"
+              type="number"
+              id="pack30"
+            />
+            <button btnsum="pack30" (click)="incrementToOne($event)" class="buton-add-paq" mat-icon-button>
+              <mat-icon   class="btn-add">add</mat-icon>
+            </button>
+          </div>
+        </div>
+        <div id="lateral">
+          <mat-card-title>
+            <mat-chip-listbox aria-label="Fish selection">
+              <mat-chip-option class="textYellow">
+                Ahorra $530
+              </mat-chip-option>
+              <mat-chip-option class="textSize">
+                <small> Antes $2,490.00</small>
+              </mat-chip-option>
+            </mat-chip-listbox>
+          </mat-card-title>
+          <mat-card-title class="price"
+            ><strong>$ 1,960.00</strong>
+          </mat-card-title>
+          <button (click)="addToCart($event)" id="btnAddCartPack30" class="btn-add-cart-top" mat-raised-button color="warn">
+            {{ "BTNADD" | translate }}
+          </button>
+        </div>
+      </mat-card-title-group>
+    </mat-card-header>
+  </mat-card>
+ <!-- <mat-card *ngFor="let product of products">
     <mat-card-content>
       {{ product.name }} - {{ product.price }}
       <button mat-button (click)="selectProduct(product)">Add to Cart</button>
     </mat-card-content>
-  </mat-card>
+  </mat-card>-->
+  
 </div>

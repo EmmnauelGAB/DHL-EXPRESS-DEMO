@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Product } from 'src/app/core/models/paquetes/package';
 import { CartComponent } from './cart/cart.component';
@@ -12,8 +12,6 @@ export interface Vegetable {
   name: string;
 }
 
-
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -21,6 +19,8 @@ export interface Vegetable {
 })
 
 export class HomeComponent implements OnInit {
+
+  isZeroInputGeneric: boolean = false;
 
   public products: Product[] = [
     { id: 1, name: 'Product 1', price: 100 },
@@ -33,6 +33,11 @@ export class HomeComponent implements OnInit {
   @Input()
   public cart: CartComponent;
 
+  validValueInput(event: any){
+    return false;
+  }
+
+
   selectProduct(product: Product) {
     this.cart.addProduct(product);
   }
@@ -40,8 +45,45 @@ export class HomeComponent implements OnInit {
   deselectProduct(product: Product) {
     this.cart.removeProduct(product);
   }
+ 
+  incrementToOne(event: MouseEvent){
+    const valueAttr = this.extractValueOfEventLabel(event, 'btnsum');
+    const input = document.getElementById(valueAttr) as HTMLInputElement;
+    input.value = (parseInt(input.value) + 1).toString();
+  }
+
+  
+
+  addToCart(event: MouseEvent){
+    const valueAttr = this.extractValueOfEventLabel(event, 'id');
+    const btn = document.getElementById(valueAttr) as HTMLInputElement;
+    btn.classList.add("btn-add-to-cart-ok");
+    btn.innerHTML = 'Agregado';
+
+    setTimeout(() =>{
+      btn.classList.remove("btn-add-to-cart-ok");
+    btn.innerHTML = 'Agregar al carrito';
+    }, 5000)
+  }
+
+  decrementToOne(event: MouseEvent){ 
+    const valueAttr = this.extractValueOfEventLabel(event, 'btnrest');
+    const input = document.getElementById(valueAttr) as HTMLInputElement;
+    if(parseInt(input.value) > 0){
+      input.value = (parseInt(input.value) - 1).toString();
+    }
+    
+  }
 
 
+
+  extractValueOfEventLabel(event: MouseEvent, label: string){
+    const valueAttr = (event.currentTarget as HTMLButtonElement).getAttribute(label);
+    const strValue: string = valueAttr ?? '';
+    return strValue;
+  }
+
+  
 
 
   PACK = `10 guías prepagadas para entrega al día siguiente, costo por guía $ 196.00. Cobertura nacional, pesó máximo 1 kg. Vigencia 1 año fiscal. No aplica recolección, aplican términos y condiciones del producto.`;

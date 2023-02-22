@@ -216,3 +216,15 @@ mat-icon{
   color: #000;
   margin-bottom: 5px !important;
 }
+
+.disable-btn-rest{
+  opacity: 0.5;
+  cursor: none;
+}
+
+.btn-add-to-cart-ok{
+  background-color: transparent !important;
+  border: 2px solid #D40511 !important;
+  color: #D40511 !important;
+
+}
