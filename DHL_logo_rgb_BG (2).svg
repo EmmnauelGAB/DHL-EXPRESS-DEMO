@@ -1,0 +1,25 @@
+<svg id="DHL_logo_rgb_BG" xmlns="http://www.w3.org/2000/svg" width="128" height="18" viewBox="0 0 128 18">
+  <g id="Group_9" data-name="Group 9" transform="translate(0 11.978)">
+    <g id="Group_7" data-name="Group 7">
+      <path id="Path_14" data-name="Path 14" d="M0,22.1H17.31l-.946,1.28H0V22.1Z" transform="translate(0 -19.726)" fill="#d40511"/>
+      <path id="Path_15" data-name="Path 15" d="M0,18.445H19.069l-.948,1.277H0V18.445Z" transform="translate(0 -18.445)" fill="#d40511"/>
+      <path id="Path_16" data-name="Path 16" d="M0,25.759H15.553l-.942,1.271H0V25.759Z" transform="translate(0 -21.009)" fill="#d40511"/>
+    </g>
+    <g id="Group_8" data-name="Group 8" transform="translate(109.004)">
+      <path id="Path_17" data-name="Path 17" d="M186.84,23.381H169.6l.945-1.279h16.3v1.279Z" transform="translate(-167.845 -19.727)" fill="#d40511"/>
+      <path id="Path_18" data-name="Path 18" d="M185.909,27.03h-19l.941-1.272h18.055V27.03Z" transform="translate(-166.913 -21.009)" fill="#d40511"/>
+      <path id="Path_19" data-name="Path 19" d="M173.233,18.445h14.54v1.279H172.287l.946-1.279Z" transform="translate(-168.777 -18.445)" fill="#d40511"/>
+    </g>
+  </g>
+  <g id="Group_10" data-name="Group 10" transform="translate(16.766 6.901)">
+    <path id="Path_20" data-name="Path 20" d="M25.673,21.724l8.214-11.1H44.08c1.127,0,1.112.425.562,1.167s-1.511,2.049-2.08,2.813c-.289.388-.812,1.1.92,1.1H57.137A14.2,14.2,0,0,1,45.7,21.724Z" transform="translate(-25.673 -10.627)" fill="#d40511"/>
+    <path id="Path_21" data-name="Path 21" d="M89.1,18.443l-4.454,6.021H72.893s4.452-6.021,4.456-6.021H89.1Z" transform="translate(-42.055 -13.367)" fill="#d40511"/>
+    <path id="Path_22" data-name="Path 22" d="M115.117,18.445l-4.456,6.021H98.914s4.452-6.021,4.456-6.021Z" transform="translate(-51.083 -13.368)" fill="#d40511"/>
+    <path id="Path_23" data-name="Path 23" d="M128.592,18.444s-.858,1.167-1.275,1.727c-1.475,1.983-.171,4.293,4.644,4.293h18.864l4.456-6.02Z" transform="translate(-60.738 -13.367)" fill="#d40511"/>
+  </g>
+  <g id="Group_11" data-name="Group 11" transform="translate(18.421)">
+    <path id="Path_24" data-name="Path 24" d="M32.3,0l-4.09,5.525H50.495c1.126,0,1.112.425.561,1.167s-1.5,2.063-2.065,2.827c-.289.388-.812,1.1.92,1.1h9.114s1.469-1.988,2.7-3.65C63.4,4.7,61.872,0,55.882,0Z" transform="translate(-28.206)" fill="#d40511"/>
+    <path id="Path_25" data-name="Path 25" d="M110,10.615H81.262L89.121,0h11.746l-4.5,6.086h5.243L106.113,0h11.745L110,10.615Z" transform="translate(-46.613)" fill="#d40511"/>
+    <path id="Path_26" data-name="Path 26" d="M151.422,0l-7.857,10.615H131.118S138.978,0,138.982,0Z" transform="translate(-63.91)" fill="#d40511"/>
+  </g>
+</svg>
